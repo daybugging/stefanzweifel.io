@@ -1,0 +1,18 @@
+.site-nav {
+
+    margin-top: 20px;
+
+    a {
+        margin: 0 20px 0 0;
+        text-transform: uppercase;
+        color: #fff;
+
+
+
+        &:hover, &:visited {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+    }
+
+}

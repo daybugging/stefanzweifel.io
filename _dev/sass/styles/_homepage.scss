@@ -1,0 +1,23 @@
+.home {
+    margin-top: 150px;
+}
+
+.intro {
+    width: 60%;
+}
+
+h1.name, h2.title {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(60, 52, 52, 0.42);
+}
+
+.homepage-body {
+    color: $white;
+
+    background-color: $dark-blue;
+    background-image: url($background-image);
+    background-size: cover;
+    background-position: center center;
+
+}

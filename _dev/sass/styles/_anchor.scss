@@ -1,0 +1,12 @@
+a, a:visited {
+
+    border-bottom: 1px solid $light-gray;
+    color: $dark-gray;
+
+    &:hover {
+        text-decoration: none;
+        color: darken($dark-gray, 10);
+        border-bottom: 1px solid darken($light-gray, 10);
+    }
+
+}

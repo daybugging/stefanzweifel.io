@@ -1,0 +1,14 @@
+//Variables
+$max-width: 900px;
+
+$dark-blue: #162d42;
+$white: #fff;
+
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(max-width $max-width 4);
+
+    //Background Images
+    $background-image: 'http://f.wnx.ch/dropshare/Oce9N2ILB0KHELZd3GeAsUj.jpg';
+    $portfolio-image : '';
+    $blog-image : '';
+    $about-image : '';

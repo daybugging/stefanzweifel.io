@@ -1,0 +1,24 @@
+.page-header {
+    background-color: $dark-blue;
+    background-image: url($background-image);
+    background-size: cover;
+    background-position: center center;
+
+    min-height: 300px;
+    border-bottom: 1px solid #111;
+    margin-bottom: 20px;
+    color: $white;
+}
+
+.portfolio-header {
+    background-image: url($portfolio-image);
+}
+
+.blog-header {
+    background-image: url($blog-image);
+}
+
+.about-header {
+    background-image: url($about-image);
+}
+
