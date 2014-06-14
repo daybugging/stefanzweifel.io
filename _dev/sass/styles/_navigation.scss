@@ -15,4 +15,10 @@
         }
     }
 
+
+    @include media($mobile) {
+        text-align: center;
+        margin-top: 0;
+    }
+
 }

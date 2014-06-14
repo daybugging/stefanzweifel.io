@@ -3,14 +3,9 @@ layout: page
 title: Portfolio
 permalink: /portfolio/
 subheader: Stuff I'm working on
-#bg-class: portfolio-header
+bg-class: portfolio-header
 ---
 
-Coming soon!
+Due to the fact, that I'm a developer, I can't show you something pretty of my work. Most of the time, I have my eyes in my favourite code editor or terminal and do some backend stuff.
 
-<div class="tooltip-item">
-  Hover for Tooltip
-  <div class="tooltip">
-    <p>Tooltip text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, deserunt, reprehenderit, dicta, nesciunt pariatur non laboriosam mollitia inventore temporibus ut provident facilis amet placeat consequuntur nam natus quae quos optio.</p>
-  </div>
-</div>
+However, here I want to show you some projects I've been working on.

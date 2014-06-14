@@ -1,23 +1,12 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
-subheader: My Passion
+subheader: Keep it real
+bg-class: about-header
 ---
 
-# Always more to learn
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, optio, nihil, corporis, ducimus explicabo modi repellendus alias accusantium aut obcaecati consequatur perferendis possimus sit dolorem facilis odit excepturi consequuntur deleniti.
+As you already read on the frontpage, I'm a web developer.
+At [2media](http://2media.ch) I create rich websites and webapplications, wich make the internet a better place. Mostly for agencies and insurances.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, officia quo hic quod optio rerum veritatis illo dignissimos accusamus facere recusandae sit repellat ducimus repellendus voluptatibus accusantium deserunt saepe quia.
-
-<img src="http://f.wnx.ch/dropshare/HC5trOZ9v6dpmEuHQKtKYqo.jpg" alt="">
-
-## Subtitle
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, impedit ullam nam a possimus adipisci veritatis error qui minima fuga repudiandae commodi saepe temporibus cumque praesentium quod eos hic at.
-
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+In my spare time, I like to [code or design](/portfolio) on my own. I also like to [play videogames](http://tv.wnx.ch) on my *Playstation 4*, take some [photos](#) or to read a chapter of *"A Song of Ice and Fire"* (#freetyrion).

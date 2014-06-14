@@ -4,8 +4,8 @@
     background-size: cover;
     background-position: center center;
 
-    min-height: 300px;
-    border-bottom: 1px solid #111;
+    min-height: 250px;
+    border-bottom: 1px solid #A5A5A5;
     margin-bottom: 20px;
     color: $white;
 }
@@ -14,8 +14,8 @@
     background-image: url($portfolio-image);
 }
 
-.blog-header {
-    background-image: url($blog-image);
+.resource-header {
+    background-image: url($resource-image);
 }
 
 .about-header {

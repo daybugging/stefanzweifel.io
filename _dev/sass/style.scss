@@ -13,50 +13,13 @@
 @import "neat/neat";
 @import "bitters/bitters";
 
-// Basic Styles
-
+//Styles
 @import "styles/variables";
+@import "styles/markup";
 @import "styles/anchor";
 @import "styles/navigation";
 @import "styles/homepage";
 @import "styles/footer";
 @import "styles/page-header";
 @import "styles/social";
-
-.typekit-badge {
-    display: none !important;
-}
-
-.container {
-    @include outer-container;
-
-  @include media($tablet) {
-    padding: 20px;
-  }
-
-}
-
-body, html {
-    min-height: 100%;
-    font-family: "source-sans-pro", Helvetica, sans-serif;
-    margin: 0;
-}
-
-body {
-    background: #eaeaea;
-}
-
-.page-heading {
-    margin-top: 100px;
-    text-transform: uppercase;
-}
-
-.page-content {
-
-    img {
-        box-shadow: 0 0 1px 1px rgba(206, 206, 206, 0.67);
-        background: $white;
-        @include background-image(linear-gradient(rgb(219, 219, 219) 0, rgb(197, 197, 197) 100%, transparent 50%));
-    }
-
-}
+@import "styles/page-content";

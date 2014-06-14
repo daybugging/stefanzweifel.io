@@ -3,6 +3,7 @@ layout: page
 title: Blog
 permalink: /blog/
 subheader: This could be interesting
+bg-class: blog-header
 ---
 
   <h1>Posts</h1>

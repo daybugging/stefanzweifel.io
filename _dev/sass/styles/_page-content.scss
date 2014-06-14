@@ -1,0 +1,25 @@
+.page-heading {
+    margin-top: 100px;
+    text-transform: uppercase;
+}
+
+.page-content {
+
+    width: 66.666666%;
+
+    @include media($mobile) {
+        width: 100%;
+    }
+
+    img {
+        box-shadow: 0 0 1px 1px rgba(206, 206, 206, 0.67);
+        background: $white;
+        @include background-image(linear-gradient(rgb(219, 219, 219) 0, rgb(197, 197, 197) 100%, transparent 50%));
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+}

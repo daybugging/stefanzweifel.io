@@ -3,12 +3,13 @@ $max-width: 900px;
 
 $dark-blue: #162d42;
 $white: #fff;
+$yellow: #74713C;
 
 $mobile: new-breakpoint(max-width 480px 4);
 $tablet: new-breakpoint(max-width $max-width 4);
 
     //Background Images
-    $background-image: 'http://f.wnx.ch/dropshare/Oce9N2ILB0KHELZd3GeAsUj.jpg';
-    $portfolio-image : '';
-    $blog-image : '';
-    $about-image : '';
+    $background-image: 'http://f.wnx.ch/dropshare/43jcLz8bZBNKoMTjDrLWoID.jpg'; //portrait
+    $portfolio-image : 'http://f.wnx.ch/dropshare/M1FOYJll2J0UtF0A4ZBBT28.png'; // playstation
+    $resource-image : 'http://f.wnx.ch/dropshare/4apmT3Yhy1nRHR9FGW7VBLi.png'; //skateboard
+    $about-image : 'http://blog.wnx.ch/content/images/2014/May/shattered_island.gif';

@@ -1,12 +1,13 @@
-a, a:visited {
+a {
 
     border-bottom: 1px solid $light-gray;
-    color: $dark-gray;
+    color: $yellow;
+    font-style: italic;
 
     &:hover {
         text-decoration: none;
-        color: darken($dark-gray, 10);
-        border-bottom: 1px solid darken($light-gray, 10);
+        color: $dark-gray;
+        border-bottom: 2px solid darken($light-gray, 10);
     }
 
 }

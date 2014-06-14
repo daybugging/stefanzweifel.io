@@ -4,6 +4,10 @@
 
 .intro {
     width: 60%;
+
+    a {
+        color: $white;
+    }
 }
 
 h1.name, h2.title {
@@ -19,5 +23,23 @@ h1.name, h2.title {
     background-image: url($background-image);
     background-size: cover;
     background-position: center center;
+
+}
+
+.social {
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: .5em;
+    }
+
+    a {
+        color: $white;
+        font-size: .9em;
+    }
 
 }
