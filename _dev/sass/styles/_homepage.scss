@@ -5,6 +5,10 @@
 .intro {
     width: 60%;
 
+    @include media($mobile) {
+        width: 100%;
+    }
+
     a {
         color: $white;
     }

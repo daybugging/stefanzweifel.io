@@ -30,7 +30,7 @@ I'm the one in our office which knows every new app or service, that emerged fro
     <dd>Ulta fast code editor. Worth every penny. You can find my settings-file <a href="https://gist.github.com/stefanzweifel/9397728">here</a>.</dd>
 
     <dt>Dash</dt>
-    <dd>You're on your way home or just somewhere without internet access. Dash.app let's you download entire docs of scripting languages or popular frameworks like <i>Laravel</i> or <i>Foundation</i>.</dd>
+    <dd>You're on your way home or just somewhere without internet access? Dash.app let's you download entire docs of scripting languages or popular frameworks like <i>Laravel</i> or <i>Foundation</i>.</dd>
 
     <dt><i>more coming soon ...</i></dt>
 

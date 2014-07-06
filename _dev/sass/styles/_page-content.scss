@@ -4,15 +4,25 @@
 }
 
 .page-content {
-
     width: 66.666666%;
 
     @include media($mobile) {
         width: 100%;
     }
+}
+
+.page-content, .post-content {
+
+
+
+    p {
+        font-size: em(16);
+        line-height: em(28);
+    }
 
     img {
         box-shadow: 0 0 1px 1px rgba(206, 206, 206, 0.67);
+        border: solid 1px $dark-blue;
         background: $white;
         @include background-image(linear-gradient(rgb(219, 219, 219) 0, rgb(197, 197, 197) 100%, transparent 50%));
     }

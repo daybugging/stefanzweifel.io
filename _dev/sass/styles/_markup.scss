@@ -6,15 +6,15 @@ body, html {
 }
 
 body {
-    background: #eaeaea;
+    background: $white;
 }
 
 h2 {
-    font-size: 1.7em;
+    font-size: em(27);
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: em(19);
 }
 
 ul, ol {
