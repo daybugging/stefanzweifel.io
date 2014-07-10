@@ -1,4 +1,4 @@
-.page-header {
+.page__header {
     background-color: $dark-blue;
     background-image: url($background-image);
     background-size: cover;
@@ -8,6 +8,7 @@
     border-bottom: 1px solid #A5A5A5;
     margin-bottom: 20px;
     color: $white;
+
 }
 
 .portfolio-header {

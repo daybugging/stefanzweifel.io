@@ -2,7 +2,7 @@
     margin-top: 150px;
 }
 
-.intro {
+.home__intro {
     width: 60%;
 
     @include media($mobile) {
@@ -20,7 +20,7 @@ h1.name, h2.title {
     text-shadow: 1px 1px 1px rgba(60, 52, 52, 0.42);
 }
 
-.homepage-body {
+.body--homepage {
     color: $white;
 
     background-color: $dark-blue;
@@ -30,20 +30,3 @@ h1.name, h2.title {
 
 }
 
-.social {
-
-    ul {
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin-right: .5em;
-    }
-
-    a {
-        color: $white;
-        font-size: .9em;
-    }
-
-}

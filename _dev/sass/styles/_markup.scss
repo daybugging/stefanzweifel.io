@@ -1,8 +1,13 @@
 body, html {
     min-height: 100%;
     font-family: "source-sans-pro", Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -19,17 +24,18 @@ h3 {
 
 ul, ol {
     margin: 16px 0;
-    padding: 0 0 0 40px;;
+    padding: 0 0 0 40px;
     list-style-type: initial;
 }
 
 ::selection {
-    background: $dark-blue; /* Safari */
-    color: $white;
-    }
+    background: $white;
+    color: darken($dark-blue, 10);
+}
+
 ::-moz-selection {
-    background: $dark-blue; /* Firefox */
-    color: $white;
+    background: $white;
+    color: darken($dark-blue, 10);
 }
 
 .typekit-badge {
@@ -38,9 +44,13 @@ ul, ol {
 
 .container {
     @include outer-container;
-
     @include media($tablet) {
         padding: 20px;
     }
+}
 
+hr {
+    width: 23em;
+    margin: 3em auto;
+    border-color: #DADADA;
 }

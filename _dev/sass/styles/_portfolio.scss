@@ -1,0 +1,16 @@
+.portfolio__grid {
+
+    list-style: none;
+    padding-left: 0;
+    margin-top: em(40);
+
+    li {
+        // display: inline-block;
+        margin-bottom: em(40);
+
+        h3 {
+            margin: em(5) 0;
+        }
+    }
+
+}
