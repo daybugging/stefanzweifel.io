@@ -11,5 +11,7 @@ Stefan Zweifel <br>
 Ausserdorf 199 <br>
 CH-8455 Rüdlingen
 
+Email: [hello@wnx.ch](hello@wnx.ch)
+
 ###TOS
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat similique ab vero in pariatur atque, tempora fugiat ducimus, dolores dolorum harum deleniti eveniet accusamus, magni laboriosam. Nulla possimus, aut dolorem.
+This page uses [Google Analyticis](http://google.com/analytics).
