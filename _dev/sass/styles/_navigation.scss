@@ -8,11 +8,14 @@
         text-transform: uppercase;
         color: #fff;
 
+        transition: padding .1s ease-in;
+
 
 
         &:hover, &:visited {
             color: #fff;
-            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #fff;
         }
     }
 
