@@ -17,4 +17,4 @@ However, you can't always work. So I often [play](http://tv.wnx.ch) on my *Plays
 
 <hr>
 
-If you wan't more information about myself, just send me an [email](mailto:hello@stefanzweifel.io), [tweet]({{ site.data.urls.twitter }}) or <a download href="/files/CV-stefanzweifel.pdf">download my CV</a>.
+If you wan't more information about myself, just send me an [email](mailto:hello@stefanzweifel.io) or [tweet]({{ site.data.urls.twitter }}).
