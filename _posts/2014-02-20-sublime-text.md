@@ -23,8 +23,6 @@ Der Name sagt alles. Ohne dieses Plugin wäre ich wohl aufgeschmissen. Verbesser
 
 ## Bonus: Sublime-Settings File
 
-Kernstück des Editors ist natürlich `Preferences.settings-sublime`. Hier mein File. Vielleicht ist auch etwas neues für dich dabei.
+Kernstück des Editors ist natürlich `Preferences.settings-sublime`. [Hier](https://gist.github.com/stefanzweifel/9397728) findest du das File. Vielleicht ist auch etwas neues für dich dabei.
 
-<script src="https://gist.github.com/stefanzweifel/9397728.js"></script>
-
-~~Theme~~ Color-Scheme gibts [hier](http://tmtheme-editor.herokuapp.com/#/theme/Monokai).
+<del>Theme</del> Color-Scheme gibts [hier](http://tmtheme-editor.herokuapp.com/#/theme/Monokai).
