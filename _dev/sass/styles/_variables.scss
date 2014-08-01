@@ -1,6 +1,8 @@
 //Variables
 $max-width: 900px;
 
+$sans-serif: 'Open Sans', "source-sans-pro", Helvetica, sans-serif;
+
 $dark-blue: #162d42;
 $white: white;
 $yellow: #74713c;
@@ -10,13 +12,16 @@ $mobile: new-breakpoint(max-width 480px 4);
 $tablet: new-breakpoint(max-width $max-width 4);
 
 //Background Images
-$background-image: "http://f.wnx.ch/dropshare/43jcLz8bZBNKoMTjDrLWoID.jpg";
+$background-image: "/img/background-homepage.jpg";
 
 //portrait
-$portfolio-image: "http://f.wnx.ch/dropshare/M1FOYJll2J0UtF0A4ZBBT28.png";
+$portfolio-image: "/img/background-controller.png";
 
 // playstation
-$resource-image: "http://f.wnx.ch/dropshare/cJbtqi8kaQOhcD.png";
+$resource-image: "/img/background-macbook.png";
 
 //skateboard
-$about-image: "http://f.wnx.ch/dropshare/4apmT3Yhy1nRHR9FGW7VBLi.png";
+$about-image: "/img/background-skateboard.png";
+
+//skateboard
+$posts-image: "/img/background-posts.jpg";
