@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  Laravel + Vagrant + SequelPro
-<!-- date:   2012-06-01 20:50 -->
-subheader: Posts haben keine Subheader
 ---
 
 **Update**: With Version 4.2 Laravel introduced *Homestead*. A Vagrant-Box to use Laravel right out of the box. If the tutorial below is to difficult to you, give [Homestead](http://laravel.com/docs/homestead) a try.

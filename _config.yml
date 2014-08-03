@@ -9,7 +9,7 @@ timezone: Europe/Zurich
 
 # Build settings
 markdown: kramdown
-permalink: post/:title
+permalink: posts/:title
 
 # Collections!
 collections:
