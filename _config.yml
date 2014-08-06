@@ -17,6 +17,11 @@ collections:
         output: true
         permalink: /portfolio/:path/
 
+# SASS Configuration
+sass:
+    style: :compressed
+    sass_dir: _dev/sass
+
 #Special Things
 include:     ['.htaccess']
 exclude:     ['_dev', '_drafts', 'README.md']

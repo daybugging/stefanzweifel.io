@@ -72,6 +72,11 @@ pre {
     background-color: #fbfbfb;
     border-radius: 5px;
     overflow: auto;
+
+    code {
+        background: none;
+        box-shadow: none;
+    }
 }
 
 code {
