@@ -5,23 +5,23 @@ $sans-serif: 'Open Sans', "source-sans-pro", Helvetica, sans-serif;
 
 $dark-blue: #162d42;
 $white: white;
-$yellow: #74713c;
+$yellow: #E8840C;
 $indigo: #4054B2;
 
 $mobile: new-breakpoint(max-width 480px 4);
 $tablet: new-breakpoint(max-width $max-width 4);
 
 //Background Images
-$background-image: "/img/background-test.jpg";
+$background-image: "/img/background-homepage.jpg";
 
 //portrait
-$portfolio-image: "/img/background-controller.png";
+$portfolio-image: "/img/background-controller.jpg";
 
 // playstation
-$resource-image: "/img/background-macbook.png";
+$resource-image: "/img/background-macbook.jpg";
 
 //skateboard
-$about-image: "/img/background-skateboard.png";
+$about-image: "/img/background-skateboard.jpg";
 
 //skateboard
 $posts-image: "/img/background-posts.jpg";

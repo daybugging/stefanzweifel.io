@@ -33,13 +33,13 @@ ul, ol {
 }
 
 ::selection {
-    background: $white;
-    color: darken($indigo, 10);
+    background: $indigo;
+    color: $white;
 }
 
 ::-moz-selection {
-    background: $white;
-    color: darken($indigo, 10);
+    background: $indigo;
+    color: $white;
 }
 
 .container {
