@@ -2,7 +2,6 @@
 layout: post
 title:  Die Rekrutierung
 date:   2012-06-01 20:50
-subheader: Posts haben keine Subheader
 ---
 
 Letzten Dienstag war es soweit. Ich musste mit ein wenig Gepäck für 2 Tage in das Rekrutierungszentrum der Schweizer Armee in Rüthi einrücken.

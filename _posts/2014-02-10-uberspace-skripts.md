@@ -2,7 +2,6 @@
 layout: post
 title:  Uberspace Scripts
 date:   2014-02-10 20:50
-subheader: Posts haben keine Subheader
 ---
 
 > TL;DR: Praktische Sammlung von uberspace-Skripts gibts auf [Github](https://github.com/stefanzweifel/uberspaceScripts).

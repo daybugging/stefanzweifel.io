@@ -2,7 +2,6 @@
 layout: post
 title:  Bulletproof CrossDomain with Ajax
 date:   2014-06-13 14:00:00
-subheader: Posts haben keine Subheader
 ---
 
 At work, I recently had a lot to do with CrossDomain-Scripting. The thing I was building has to be bulletproof on older browsers, even IE8.

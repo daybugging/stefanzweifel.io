@@ -2,7 +2,6 @@
 layout: post
 title:  Gandi Domain auf Uberspace einrichten
 date:   2014-07-30 16:16:08
-subheader: Posts haben keine Subheader
 ---
 
 Ich bin kein Experte in Sachen DNS und Domains. So hatte ich letztens meine Mühe eine bei [Gandi](https://www.gandi.net/) gekaufte Domain auf meinem Uberspace einzurichten.
