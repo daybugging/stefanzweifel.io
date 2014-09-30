@@ -1,0 +1,22 @@
+{
+  "name": "stefanzweifel.io",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "dependencies": {
+    "gulp": "^3.8.8"
+  },
+  "devDependencies": {
+    "gulp-minify-css": "^0.3.10",
+    "gulp-sass": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanzweifel/stefanzweifel.io"
+  },
+  "author": "Stefan Zweifel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanzweifel/stefanzweifel.io/issues"
+  },
+  "homepage": "https://github.com/stefanzweifel/stefanzweifel.io"
+}

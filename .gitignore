@@ -4,3 +4,4 @@ _dev/sass/bitters
 _dev/sass/neat
 .DS_Store
 .sass-cache
+/node_modules
