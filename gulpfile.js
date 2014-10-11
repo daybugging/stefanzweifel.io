@@ -7,6 +7,7 @@ var paths = {
 }
 
 gulp.task('default', function() {
+    gulp.watch(paths.sass + '*/*', ['sass']);
     gulp.watch(paths.sass + '*', ['sass']);
 });
 

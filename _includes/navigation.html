@@ -1,7 +1,6 @@
-<nav class="site-nav animated fadeInDown">
+<nav class="site-nav {{ page.nav }}">
     <a href="{{ site.baseurl }}/" class="page-link">Home</a>
     <a href="{{ "/about/" | prepend: site.baseurl }}" class="page-link">About</a>
-    <a href="{{ "/portfolio/" | prepend: site.baseurl }}" class="page-link">Portfolio</a>
-    <a href="{{ "/posts/" | prepend: site.baseurl }}" class="page-link">Posts</a>
-    <a href="{{ "/resources/" | prepend: site.baseurl }}" class="page-link">Resources</a>
+    <a href="{{ "/portfolio/" | prepend: site.baseurl }}" class="page-link">Work</a>
+    <a href="{{ "/posts/" | prepend: site.baseurl }}" class="page-link">Articles</a>
 </nav>

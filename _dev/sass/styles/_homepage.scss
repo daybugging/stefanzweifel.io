@@ -1,32 +1,5 @@
-.home {
-    margin-top: 150px;
+.homepage-signature {
+    margin-top: 50px;
+
+    p { font-size: 24px; }
 }
-
-.home__intro {
-    width: 60%;
-
-    @include media($mobile) {
-        width: 100%;
-    }
-
-    a {
-        color: $white;
-    }
-}
-
-h1.name, h2.title {
-    font-size: 1.6em;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px rgba(60, 52, 52, 0.42);
-}
-
-.body--homepage {
-    color: $white;
-
-    background-color: $indigo;
-    background-image: url($background-image);
-    background-size: cover;
-    background-position: center center;
-
-}
-

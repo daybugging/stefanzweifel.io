@@ -1,23 +1,23 @@
-.page__heading {
-    margin-top: 100px;
-    text-transform: uppercase;
+.page--heading {
     letter-spacing: 1px;
+
+    hr {
+        margin: 1em 0 0;
+    }
 }
 
 .page__content, .post__content {
 
-    width: 66.666666%;
+    margin: 0 auto;
     @include media($mobile) {
         width: 100%;
     }
 
     p {
-        font-size: em(16);
-        line-height: em(28);
+        line-height: 1.8;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        text-transform: uppercase;
         margin-bottom: 15px;
         margin-top: 40px;
 
@@ -26,32 +26,4 @@
         }
     }
 
-    figure {
-        margin: 0;
-    }
-
-    img {
-        border-radius: 4px;
-
-        @include media($mobile) {
-            margin: 0 auto;
-        }
-    }
-
-}
-
-
-.page__footer {
-
-    width: 66.666666%;
-    @include media($mobile) {
-        width: 100%;
-    }
-
-    margin-top: 20px;
-    padding: 20px;
-
-    background: #fbfbfb;
-    border-radius: 4px;
-    box-shadow: inset 0 0 10px rgba(0,0,0,.05);
 }

@@ -20,7 +20,87 @@
 @import "styles/navigation";
 @import "styles/homepage";
 @import "styles/footer";
-@import "styles/page-header";
-@import "styles/social";
 @import "styles/page-content";
 @import "styles/portfolio";
+@import "styles/syntax";
+
+
+.hero-content {
+    background: $dark-gray;
+    color: $white;
+    min-height: 300px;
+    background-image: url('/img/background-skateboard.jpg');
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page--decoration {
+    height: 5px;
+    width: 100%;
+    background: $dark-gray;
+}
+
+article {
+    padding: 30px 0;
+}
+
+.col--6 {
+    @include span-columns(6);
+
+    @include media($tablet) {
+        width: 100%;
+    }
+
+}
+
+.title {
+    display: inline-block;
+    @include media($tablet) {
+        display: block;
+    }
+}
+
+.align--right {
+    float: right;
+    @include media($tablet) {
+        float: none;
+    }
+}
+
+p, ul, li {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+.text-align--right { text-align: right; }
+
+/**
+ * Eine Liste von Links
+ */
+.anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        display: inline-block;
+        margin: 0 20px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+}
+
+figure, img {
+    margin: 20px auto;
+}

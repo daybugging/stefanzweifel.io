@@ -14,7 +14,7 @@ Implementation is easy.
 Download the code or use the [CDN-Version](http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js) and do your Ajax-Request as usual:
 
 
-{% highlight js %}
+{% highlight js linenos %}
 $.getJSON('http://jsonmoon.jsapp.us/').done(function(data) {
   console.log(data.name.first);
 });

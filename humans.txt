@@ -6,10 +6,8 @@
 Developer: Stefan Zweifel
 Site: hello@stefanzweifel.io
 Twitter: @_stefanzweifel.
-Location: Rüdlingen, Switzerland.
+Location: Ruedlingen, Switzerland.
 
-/* THANKS */
-  Daniel Eden (http://daneden.me/) for the animate.css Project
 
 /* SITE */
 Standards: HTML5, CSS3

@@ -1,18 +1,14 @@
 ---
 layout: page
-title: Posts
+title: Articles
 permalink: /posts/
-subheader: Those weird memories in my head
-bg-class: posts-header
 ---
 
-<ul class="portfolio__grid">
+<ul class="portfolio--grid">
     {% for post in site.posts %}
     <li>
-        <a href="{{ post.url | prepend: site.baseurl }}">
-            <h3 class="title">{{ post.title }}</h3>
-        </a>
-        <p class="description">{{ post.date | date: "%-d %B %Y" }}</p>
+        <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="title">{{ post.title }}</h3></a>
+        <span class="align--right">{{ post.date | date: "%-d %B %Y" }}</span>
     </li>
     {% endfor %}
 </ul>

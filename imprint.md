@@ -2,8 +2,6 @@
 layout: page
 title: Imprint
 permalink: /imprint/
-subheader: Legal stuff
-bg-class: imprint-header
 ---
 
 ###Contact
@@ -14,4 +12,4 @@ CH-8455 Rüdlingen
 Email: [hello@stefanzweifel.io](hello@stefanzweifel.io)
 
 ###TOS
-This page uses [Google Analyticis](http://google.com/analytics). [Deal with it](/img/deal-with-it.gif).
+This page uses [Google Analytics](http://google.com/analytics). [Deal with it](/img/deal-with-it.gif).

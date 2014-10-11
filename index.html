@@ -1,31 +1,40 @@
 ---
 layout: homepage
+nav: site-nav--light
 ---
 
-<div class="home animated fadeInUp">
 
-    <section class="copy">
-        <header>
-            <h1 class="name">Stefan Zweifel</h1>
-            <h2 class="title">Full stack Developer</h2>
-        </header>
+<p>I'm a developer. I'm currently working at 2media as a front- and backend-developer. In my spare time, I work on different side projects, write about development and take photos.If you have any questions to my work or to my person, feel free to contact me.</p>
 
-        <article class="home__intro">
-            <p>I'm a developer. I'm currently working at 2media as a front- and backend-developer. In my spare time, I work on <a href="/portfolio/">different side projects</a>, <a href="/posts/">write about development</a> and <a href="http://photo.wnx.ch">take photos</a>.</p>
-            <p>If you have any questions to my work or to my person, feel free to contact me.</p>
-        </article>
+<ul class="anchor-list">
+    <li><a rel="nofollow" href="{{ site.data.urls.twitter }}">Twitter</a></li>
+    <li><a rel="nofollow" href="{{ site.data.urls.github }}">Github</a></li>
+    <li><a rel="nofollow" href="mailto:hello@stefanzweifel.io">hello@stefanzweifel.io</a></li>
+</ul>
 
+<hr>
 
+    <h2>Recent Articles</h2>
 
-        <footer class="social">
-            <ul>
-                <li><a rel="nofollow" href="{{ site.data.urls.twitter }}">twitter</a></li>
-                <li><a rel="nofollow" href="{{ site.data.urls.github }}">github</a></li>
-                <li><a rel="nofollow" href="{{ site.data.urls.instagram }}">instagram</a></li>
-                <li><a rel="nofollow" href="mailto:hello@stefanzweifel.io">email</a></li>
-            </ul>
-        </footer>
+    <ul class="portfolio--grid">
+        {% for post in site.posts limit:3 %}
+        <li>
+            <h3>{{ post.title }}</h3>
+            <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+        </li>
+        {% endfor %}
+    </ul>
 
-    </section>
+<hr>
 
-</div>
+    <h2>Recent Projects</h2>
+
+    <ul class="portfolio--grid">
+        {% for post in site.portfolio limit:3 %}
+        <li>
+            <h3>{{ post.title }}</h3>
+            <p class="description">{{ post.description }}</p>
+            <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+        </li>
+        {% endfor %}
+    </ul>

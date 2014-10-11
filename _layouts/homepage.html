@@ -2,12 +2,32 @@
 <html>
 
     {% include head.html %}
-    <body class="body--homepage">
+    <body>
+        <div class="page--decoration"></div>
+
+        <div class="hero-content">
+            <div class="container">
+                {% include navigation.html %}
+
+                <div class="homepage-signature">
+                    <h1>Stefan Zweifel</h1>
+                    <p>Fullstack Developer</p>
+                </div>
+
+            </div>
+
+        </div>
 
         <div class="container">
-            {% include navigation.html %}
 
-            {{ content }}
+            <article>
+
+                {{ content }}
+
+            </article>
+
+            {% include footer.html %}
+
         </div>
 
     </body>

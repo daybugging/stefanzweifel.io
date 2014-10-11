@@ -1,13 +1,12 @@
 a {
 
-    border-bottom: 1px solid $light-gray;
-    color: $indigo;
-    // font-style: italic;
+    color: lighten($dark-gray, 10);
+    color: $blue;
 
     &:hover {
         text-decoration: none;
         color: $dark-gray;
-        border-bottom: 2px solid darken($light-gray, 10);
+        border-bottom: 1px solid darken($light-gray, 10);
     }
 
 }

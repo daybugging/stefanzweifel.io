@@ -2,23 +2,25 @@
 layout: page
 title: Portfolio
 permalink: /portfolio/
-subheader: Stuff I'm working on
-bg-class: portfolio-header
 ---
 
-> *Still in development.*
+All projects you see here were made during my free time. Due to NDAs you don't see work I've done for clients.
 
-"Portfolio" is somehow not a good word for this site. I'm a webdeveloper. I work on big projects during my work days and due to NDAs I can't show you the source code or pictures of my work.
-
-However, the work outside of 2media is what you see here. Smaller and bigger sideprojects, useful scripts and other stuff. If you have any questions to my work, hit me on [Twitter]({{ site.data.urls.twitter }}).
-
-
-<ul class="portfolio__grid">
+<ul class="portfolio--grid">
     {% for post in site.portfolio %}
     <li>
         <a href="{{ post.url | prepend: site.baseurl }}">
-            <h3 class="title">{{ post.title }}</h3></a>
-            <p class="description">{{ post.description }}</p>
+            <img src="{{ post.image | prepend: site.baseurl }}" alt="">
+        </a>
+
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+
+        <ul class="anchor-list text-align--right">
+            <li><a href="{{ post.project-url | prepend: site.baseurl }}">Open Project</a></li>
+            <li><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></li>
+        </ul>
+
     </li>
     {% endfor %}
 </ul>

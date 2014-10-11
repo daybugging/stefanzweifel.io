@@ -1,9 +1,9 @@
 ---
-layout: portfolio
+layout: page
 title:  "screeenly.com"
 date:   2014-07-15 16:16:08
-subheader: Dead simple screengraber API
-bg-class: resource-header
+project-url: http://screeenly.com
+image: /img/portfolio/screeenly/hero-image.png
 description: A little sideproject of mine. Screeenly creates screenshots from websites and delivers them through a simple API.
 ---
 
@@ -13,7 +13,7 @@ Since january I'm a big fan of the PHP framework [Laravel](http://laracel.com) a
 
 So I sat down on a rainy weekend and created [screeenly.com](http://screeenly.com).
 
-![Landingpage](/img/portfolio/screeenly-landingpage-2ElK54xUPQaduZ.png)
+![Landingpage](/img/portfolio/screeenly/landingpage.png)
 
 The whole project is really simple:
 
@@ -24,7 +24,7 @@ The whole project is really simple:
 
 After you created some screenshots, you see them in your Dashboard for the next seven days.
 
-![Dashboard](/img/portfolio/screeenly-dashboard-CF79YQHK3KlFXh.png)
+![Dashboard](/img/portfolio/screeenly/dashboard.png)
 
 Furthermore, I created screeenly during the Google I/O 2014. I was really impressed by the new Material Design Guidelines and so I tried to implement them.
 I'm not quite happy yet, but I works for me.

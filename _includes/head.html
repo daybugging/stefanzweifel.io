@@ -6,18 +6,23 @@
     <meta name="description" content="{{ site.description }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/css/animate.css" | prepend: site.baseurl }}">
     <link rel="author" href="{{ "/humans.txt" | prepend: site.baseurl }}">
 
     <!-- Icons -->
-    <!-- <link rel="icon" href="{{ "favicon.ico?v=12" | prepend: site.baseurl }}" type="image/x-icon"> -->
+    <link rel="icon" href="{{ "/favicon.ico?v=12" | prepend: site.baseurl }}" type="image/x-icon">
 
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ "/img/apple-touch-60.png" | prepend: site.baseurl }}" />
     <link rel="apple-touch-icon" sizes="76x76" href="{{ "/img/apple-touch-76.png" | prepend: site.baseurl }}" />
     <link rel="apple-touch-icon" sizes="120x120" href="{{ "/img/apple-touch-120.png" | prepend: site.baseurl }}" />
     <link rel="apple-touch-icon" sizes="152x152" href="{{ "/img/apple-touch-152.png" | prepend: site.baseurl }}" />
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="{{site.title}}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="article:author" content="https://www.facebook.com/stefan.zweifel"/>
+
 
 </head>

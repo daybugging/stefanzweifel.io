@@ -1,11 +1,17 @@
 .page-footer {
-    margin-top: 200px;
-    margin-bottom: 20px;
-    border-top: 1px solid rgba(214, 214, 214, 0.46);
-    padding-top: 10px;
-    font-size: .8em;
 
-    a {
-        color: $dark-gray;
+    border-top: 1px solid $light-gray;
+
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-top: 20px;
+    text-align: center;
+
+    @include media($tablet) {
+        margin-left: initial;
+        margin-right: initial;
     }
+
 }

@@ -10,13 +10,13 @@ Falls noch jemand das Problem hat, hier eine kleine Anleitung.
 
 **auf deinem Uberspace**
 
-{% highlight bash %}
+{% highlight bash linenos %}
 uberspace-add-domain -d domain.tld -w -m
 {% endhighlight %}
 
 Gibt als Return
 
-{% highlight bash %}
+{% highlight php linenos %}
 The webserver's configuration is adapted; it will get active within at most 5 minutes.
 Now you can use the following records for your dns:
   A -> 12.34.56.78
