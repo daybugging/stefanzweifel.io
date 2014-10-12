@@ -47,7 +47,7 @@ Falls ihr in den Einstellungen definiert habt, dass nur ihr allein oder eine Han
 ##4. Port freischalten lassen
 
 Ich hoffe ihr habt euch den Port gemerkt?<br>
-Nun müsst ihr euch beim netten Uberspace Support genau diesen Port freischalten lassen. Klappt super via [Tweet](https://twitter.com/uberspace) oder [Email](mailto:hallo@uberspace.de). Vergesst nicht euren Uberspace-Namen zu erwähnen.
+Nun müsst ihr euch beim netten Uberspace Support genau diesen Port freischalten lassen. Klappt super via [Tweet](https://twitter.com/ubernauten) oder [Email](mailto:hallo@uberspace.de). Vergesst nicht euren Uberspace-Namen zu erwähnen.
 In der Regel dauert dass keine 2 Stunden und der Port ist freigeschaltet.
 
 ##5. .htaccess erstellen
