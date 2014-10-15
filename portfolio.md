@@ -4,7 +4,7 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-All projects you see here were made during my free time. Due to NDAs you don't see work I've done for clients.
+What you see here is my work outside of my day to day job. Due to NDAs I can't show you work I've done for clients.
 
 <ul class="portfolio--grid">
     {% for post in site.portfolio %}
