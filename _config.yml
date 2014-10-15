@@ -19,4 +19,4 @@ collections:
 
 #Special Things
 include:     ['.htaccess']
-exclude:     ['_dev', '_drafts', 'README.md', 'gulpfile.js', 'package.json']
+exclude:     ['_dev', '_drafts', 'README.md', 'gulpfile.js', 'package.json', 'gulpconfig.json']

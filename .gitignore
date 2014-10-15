@@ -5,3 +5,5 @@ _dev/sass/neat
 .DS_Store
 .sass-cache
 /node_modules
+gulpconfig.json
+.gulp
