@@ -12,8 +12,17 @@ h1, h2, h3, h4, h5, h6 {
     text-rendering: optimizeLegibility;
 }
 
+h1 {
+    @include media($tablet) {
+        font-size: em(27);
+    }
+}
+
 h2 {
     font-size: em(27);
+    @include media($tablet) {
+        font-size: em(20);
+    }
 }
 
 h3 {

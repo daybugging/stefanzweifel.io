@@ -30,7 +30,7 @@
     color: $white;
     min-height: 300px;
     background-image: url('/img/background-skateboard.jpg');
-    background-attachment: fixed;
+    // background-attachment: fixed;
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,8 +42,16 @@
     background: $dark-gray;
 }
 
+strong {
+    padding: 2px 5px;
+    background: #FFFDD6;
+}
+
 article {
     padding: 30px 0;
+    @include media($tablet) {
+        padding-top: 0;
+    }
 }
 
 .col--6 {
