@@ -5,6 +5,7 @@ description: "Stefan Zweifel is a fullstack developer based in Zurich."
 baseurl: ""
 url: "https://stefanzweifel.io"
 timezone: Europe/Zurich
+name: stefanzweifel.io
 
 
 # Build settings
