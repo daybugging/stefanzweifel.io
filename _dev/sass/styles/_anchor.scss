@@ -9,4 +9,13 @@ a {
         border-bottom: 1px solid darken($light-gray, 10);
     }
 
+    &.nice-anchor {
+        font-family: 'Lato','Helvetica', sans-serif;
+
+        &:after {
+            content: '\00A0\2192';
+            display: inline-block;
+        }
+    }
+
 }

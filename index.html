@@ -23,7 +23,8 @@ nav: site-nav--light
         {% for post in site.posts limit:3 %}
         <li>
             <h3>{{ post.title }}</h3>
-            <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+            <p> {{ post.excerpt }}</p>
+            <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Continue Reading</a>
         </li>
         {% endfor %}
     </ul>
@@ -37,7 +38,7 @@ nav: site-nav--light
         <li>
             <h3>{{ post.title }}</h3>
             <p class="description">{{ post.description }}</p>
-            <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+            <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Read more</a>
         </li>
         {% endfor %}
     </ul>
