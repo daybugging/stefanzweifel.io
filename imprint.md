@@ -6,8 +6,8 @@ permalink: /imprint/
 
 ###Contact
 Stefan Zweifel <br>
-Ausserdorf 199 <br>
-CH-8455 Rüdlingen
+Boulevard Lilienthal 54 <br>
+CH-8152 Glattpark
 
 Email: [hello@stefanzweifel.io](hello@stefanzweifel.io)
 
