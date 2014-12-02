@@ -39,7 +39,7 @@ gulp.task('sass', function () {
  * Define API key in gulpconfig.json
  */
 gulp.task('png', function () {
-    gulp.src('img/portfolio/**/*.png')
+    gulp.src('img/**/*.png')
         .pipe(tinypng( config.tinypng_api_key ))
-        .pipe(gulp.dest('compressed_images'));
+        .pipe(gulp.dest('img'));
 });

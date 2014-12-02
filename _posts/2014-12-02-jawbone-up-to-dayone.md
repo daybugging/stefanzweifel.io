@@ -10,6 +10,8 @@ Sadly there is no IFTTT-Channel for DayOne, but the guys from DayOne offer a CLI
 
 Maybe you can use it too.
 
+![Dayone.app View of generated entry](/img/posts/jawbone-up-to-dayone/dayone-view.png)
+
 ## What you need
 
 - DayOne.app
