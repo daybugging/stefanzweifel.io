@@ -22,15 +22,15 @@ Maybe you can use it too.
 
 ## What you have to do
 
-1. Grab the [DayOne CLI](http://dayoneapp.com/downloads/dayone-cli.pkg) and install it.
-2. Set up [Dropbox](https://ifttt.com/dropbox) and [Jawbone UP](https://ifttt.com/jawbone_up) IFTTT channels.
-3. Install the following IFTTT recipe and choose a path to store the logs.
+- Grab the [DayOne CLI](http://dayoneapp.com/downloads/dayone-cli.pkg) and install it.
+- Set up [Dropbox](https://ifttt.com/dropbox) and [Jawbone UP](https://ifttt.com/jawbone_up) IFTTT channels.
+- Install the following IFTTT recipe and choose a path to store the logs.
 
 <a href="https://ifttt.com/view_embed_recipe/224961-daily-up-log-to-dropbox" target = "_blank" class="embed_recipe embed_recipe-l_23" id= "embed_recipe-224961"><img src= 'https://ifttt.com/recipe_embed_img/224961' alt="IFTTT Recipe: Daily UP-Log to Dropbox connects up-by-jawbone to dropbox" width="370px" style="max-width:100%"/></a><script async type="text/javascript" src= "//ifttt.com/assets/embed_recipe.js"></script>
 
-4. Get the script from [this repo](//github.com/stefanzweifel/up-to-dayone) onto your machine. Best way is to `git clone https://github.com/stefanzweifel/up-to-dayone` where youre logs will be.
+- Get the script from [this repo](//github.com/stefanzweifel/up-to-dayone) onto your machine. Best way is to `git clone https://github.com/stefanzweifel/up-to-dayone` where youre logs will be.
 
-5.Use your UP for a day and check back tomorrow. IFTTT should put a log file into your Dropbox.
+- Use your UP for a day and check back tomorrow. IFTTT should put a log file into your Dropbox.
 
 ## Usage
 
