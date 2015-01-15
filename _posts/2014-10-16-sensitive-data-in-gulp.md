@@ -21,5 +21,5 @@ gulp.task('png', function () {
 });
 {% endhighlight%}
 
-Now you simply have to add `gulpconfig.json` to your `.gitignore` and commit it.<br>
+Now you simply have to add `gulpconfig.json` to your `.gitignore` and commit it.  
 But add a [`gulpconfig.json.example`](https://github.com/stefanzweifel/stefanzweifel.io/blob/master/gulpconfig.json.example) to your repo so your future you knows how to use it.

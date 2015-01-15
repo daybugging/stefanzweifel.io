@@ -5,8 +5,8 @@ permalink: /imprint/
 ---
 
 ###Contact
-Stefan Zweifel <br>
-Boulevard Lilienthal 54 <br>
+Stefan Zweifel  
+Boulevard Lilienthal 54  
 CH-8152 Glattpark
 
 Email: [hello@stefanzweifel.io](hello@stefanzweifel.io)

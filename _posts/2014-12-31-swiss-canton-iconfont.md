@@ -6,7 +6,7 @@ date:   2014-12-30 16:25
 
 During my christmas holidays I finally found the time to finish some of my side and weekend projects. One of those many project is an iconfont. "Not another FontAwesome or Glyphicons clone" you may think. Nope it's not.
 
-Somewhen in 2014 I stumpled upon [Map Glyphs](http://mapglyphs.com/). An iconfont with all the maps of every country in the world. I tought "Would be cool if I could use this for Switzerland specific maps, like our cantons". I wrote it down and never looked at it again.<br>
+Somewhen in 2014 I stumpled upon [Map Glyphs](http://mapglyphs.com/). An iconfont with all the maps of every country in the world. I tought "Would be cool if I could use this for Switzerland specific maps, like our cantons". I wrote it down and never looked at it again.  
 But during the holidays and wanted to do something with [Bower](http://bower.io) and icons.
 So I grabbed an SVG from Wikipedia, sliced and exported it, uploaded it to [Icomoon.io](http://icomoon.io) and exported it as a font. Done. Thanks to the SVG source the icons are sharp on all display resolutions.
 
