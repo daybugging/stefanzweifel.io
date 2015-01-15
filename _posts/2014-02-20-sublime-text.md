@@ -2,6 +2,7 @@
 layout: post
 title:  Sublime Text 3
 date:   2014-03-06 20:50
+type: post
 ---
 
 [Atom](https://atom.io/) ist zwar gerade der heisse Scheiss &trade;, trotzdem kurz ein paar Worte zu [Sublime Text](https://www.sublimetext.com/).

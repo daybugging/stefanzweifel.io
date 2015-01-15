@@ -2,6 +2,7 @@
 layout: post
 title:  Bulletproof CrossDomain with Ajax
 date:   2014-06-13 14:00:00
+type: post
 ---
 
 At work, I recently had a lot to do with CrossDomain-Scripting. The thing I was building has to be bulletproof on older browsers, even IE8.

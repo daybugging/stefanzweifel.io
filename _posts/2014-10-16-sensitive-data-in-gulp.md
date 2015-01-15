@@ -2,6 +2,7 @@
 layout: post
 title:  Sensitive data in Gulp
 date:   2014-10-16 21:00
+type: post
 ---
 
 While developing this site I decided to use [Gulp](http://gulpjs.com) instead of [Grunt](http://gruntjs.com) to do all the fancy stuff you should do today (SASS, concat, minify, uglify). I'm already familiar with Grunt from work so I wanted to try something new.

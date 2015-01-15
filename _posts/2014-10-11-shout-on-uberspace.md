@@ -2,6 +2,7 @@
 layout: post
 title:  How to install Shout on Uberspace
 date:   2014-10-12 12:00:00
+type: post
 ---
 
 [Shout](http://shout-irc.com/) ist ein self-hosted IRC Client. Das tolle an Shout ist, dass man "Always connected" ist und somit keine Konversation in seinen Lieblingschannels verpasst. Eine Live-Demo des Clients gibt es [hier](http://demo.shout-irc.com/).

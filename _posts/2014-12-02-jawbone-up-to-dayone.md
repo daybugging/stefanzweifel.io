@@ -2,6 +2,7 @@
 layout: post
 title:  Jawbone UP to DayOne
 date:   2014-12-02 21:00
+type: post
 ---
 
 Since August I wear a [Jawbone UP 24](https://jawbone.com/up). The app and the  ecosystem is great, but I would also like to export a daily log to my [Dayone-Journal](http://dayoneapp.com).
@@ -34,7 +35,7 @@ Maybe you can use it too.
 
 ## Usage
 
-Modifiy the variables `LOGDIR` and `YEAR` in `toDayOne.sh` to your desire. After that, just execute the script in your terminal of choice with the following command:
+Modifiy the variable `LOGDIR` in `toDayOne.sh` to your desire. Then just execute the script in your terminal of choice with the following command:
 
 {% highlight bash %}
 sh toDayOne.sh

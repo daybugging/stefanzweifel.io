@@ -1,8 +1,12 @@
 $max-width: 620px;
 
 $sans-serif: Helvetica, sans-serif;
+$serif-fallback: 'Georgia', serif;
 
-$serif: 'Georgia', serif;
+$header-font: "merriweather", $serif-fallback;
+$text-font: "source-serif-pro", $serif-fallback;
+
+$serif: $text-font;
 
 $dark-blue: #162d42;
 $body-color: #3D464D;
@@ -12,3 +16,4 @@ $blue: #3871A3;
 
 $mobile: new-breakpoint(max-width 480px 4);
 $tablet: new-breakpoint(max-width $max-width 4);
+$desktop: new-breakpoint(min-width $max-width 4);

@@ -2,6 +2,7 @@
 layout: post
 title:  Swiss Canton Iconfont
 date:   2014-12-30 16:25
+type: post
 ---
 
 During my christmas holidays I finally found the time to finish some of my side and weekend projects. One of those many project is an iconfont. "Not another FontAwesome or Glyphicons clone" you may think. Nope it's not.

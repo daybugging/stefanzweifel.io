@@ -9,7 +9,7 @@ body, html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $serif;
+    font-family: $header-font;
     text-rendering: optimizeLegibility;
 }
 
@@ -21,6 +21,7 @@ h1 {
 
 h2 {
     font-size: em(27);
+    margin: 2em 0;
     @include media($tablet) {
         font-size: em(20);
     }
@@ -75,6 +76,7 @@ hr {
 code {
     background: $light-gray;
     padding: 2px 6px;
+    word-wrap: break-word;
 }
 
 .feedback {
