@@ -29,5 +29,20 @@
     <meta property="og:type" content="blog"/>
     <meta property="article:author" content="https://www.facebook.com/stefan.zweifel"/>
 
+    {% if page.type == "post" %}
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+        <meta property="og:description" content="{{ page.excerpt | truncatewords:30 | strip_html }}"/>
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@_stefanzweifel" />
+        <meta name="twitter:title" content="{{site.title}}" />
+        <meta name="twitter:description" content="{{ page.excerpt | truncatewords:30 | strip_html }}" />
+        <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+
+        {% if page.cover %}
+            <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+        {% endif %}
+
+    {% endif %}
 
 </head>
