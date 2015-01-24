@@ -4,7 +4,7 @@
 var config    = require('./gulpconfig.json'),
     gulp      = require('gulp'),
     sass      = require('gulp-sass'),
-    minifyCSS = require('gulp-minify-css');
+    minifyCSS = require('gulp-minify-css'),
     tinypng   = require('gulp-tinypng');
 
 /**
