@@ -49,7 +49,7 @@ Yes, you could automate the execution of the script, but I like it simple.
 
 ### It doesn't work!
 
-[Create an issue](//github.com/stefanzweifel/up-to-dayone/issues/new) and we will try to fix it.
+[Create an issue](//github.com/stefanzweifel/up-to-dayone/issues/new) or contact me by [email](mailto:hello@stefanzweifel.io) and we will try to fix it.
 
 ### Bugs / Contribution
 

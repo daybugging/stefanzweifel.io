@@ -4,7 +4,7 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-What you see here is my work outside of my day to day job. Due to NDAs I can't show you work I've done for clients.
+What you see here is my work outside of my day to day job. I only list "bigger" projects in this list, but I regularly publish scripts, snippets or packages in my [Github Profile](//github.com/stefanzweifel).
 
 <ul class="portfolio--grid">
     {% for post in site.portfolio %}
@@ -16,7 +16,7 @@ What you see here is my work outside of my day to day job. Due to NDAs I can't s
         <h3>{{ post.title }}</h3>
         <p>{{ post.description }}</p>
 
-        <ul class="anchor-list text-align--right">
+        <ul class="portfolio-menu text-align--right">
             <li><a href="{{ post.project-url | prepend: site.baseurl }}">Open Project</a></li>
             <li><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></li>
         </ul>
