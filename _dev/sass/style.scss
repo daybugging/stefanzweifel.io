@@ -43,7 +43,7 @@
 
 strong {
     padding: 2px 5px;
-    background: #FFFDD6;
+    background: $yellow;
 }
 
 article {
@@ -109,9 +109,42 @@ p, ul, li {
         }
     }
 
-
 }
 
-figure, img {
-    margin: 20px auto;
+.portfolio-menu {
+
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline-block;
+            margin: 0 20px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+        }
+}
+
+figcaption {
+    border-bottom: solid 1px lighten($body-color, 50);
+    font-style: italic;
+    color: $body-color;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    line-height: 1.8;
+}
+
+figure {
+    margin: 20px auto 50px;
+}
+
+img {
+    margin: 0;
 }
