@@ -3,9 +3,10 @@ layout: post
 title:  Jawbone UP to DayOne
 date:   2014-12-02 21:00
 type: post
+accent: '#1f9bde'
 ---
 
-> Notice: This post was updated at January 26 2015 to simplify the setup. If you have any questions or problems, please [let me know](#it-doesnt-work).
+> Notice: This post was updated on January 26 2015 to simplify the setup. If you have any questions or problems, please [let me know](#it-doesnt-work).
 
 Since August I wear a [Jawbone UP 24](https://jawbone.com/up). The app and the  ecosystem is great, but I would also like to export a daily log to my [Dayone-Journal](http://dayoneapp.com).
 
