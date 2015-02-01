@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Monthly Learning Log (MLL): January"
-date:   2015-02-01 18:00
+date:   2015-02-01 15:00
 type: post
 accent: '#c0392b'
 ---
