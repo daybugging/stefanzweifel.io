@@ -10,8 +10,7 @@ name: stefanzweifel.io
 
 # Build settings
 markdown: kramdown
-kramdown:
-  input: GFM
+
 permalink: posts/:title
 
 # Collections!
