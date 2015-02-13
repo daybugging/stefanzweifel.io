@@ -10,7 +10,7 @@ What you see here is my work outside of my day to day job. I only list "bigger" 
     {% for post in site.portfolio %}
     <li>
         <a href="{{ post.url | prepend: site.baseurl }}">
-            <img src="{{ post.image | prepend: site.baseurl }}" alt="">
+            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.title }}">
         </a>
 
         <h3>{{ post.title }}</h3>

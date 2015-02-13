@@ -4,6 +4,10 @@ title:  Swiss Canton Iconfont
 date:   2014-12-30 16:25
 type: post
 accent: '#ff6600'
+image:
+    - url: posts/swiss-canton-iconfont/demo.png
+      caption: 'Screenshot of a working demo on Github'
+      alt: 'Screenshot of a working demo on Github'
 ---
 
 During my christmas holidays I finally found the time to finish some of my side and weekend projects. One of those many project is an iconfont. "Not another FontAwesome or Glyphicons clone" you may think. Nope it's not.
@@ -15,9 +19,6 @@ So I grabbed an SVG from Wikipedia, sliced and exported it, uploaded it to [Icom
 Then I read the docs of Bower, on how to register a new package and boom... Now I can simply execute `bower install swiss-canton-iconfont --save` and use the font in my projects.
 It was a lot of fun and I learned another thing of the always growing web development universe.
 
-<figure>
-    <img src="/img/posts/swiss-canton-iconfont/demo.png" alt="Screenshot of a working demo on Github">
-    <figcaption>Screenshot of a working demo on Github</figcaption>
-</figure>
+{% figure_img 0 caption %}
 
 You can checkout a working demo [here](http://stefanzweifel.github.io/swiss-canton-iconfont/demo.html). Source code is as always on [Github](https://github.com/stefanzweifel/swiss-canton-iconfont).

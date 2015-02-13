@@ -1,5 +1,7 @@
 # stefanzweifel.io
 
+[![Build Status](https://travis-ci.org/stefanzweifel/stefanzweifel.io.svg?branch=master)](https://travis-ci.org/stefanzweifel/stefanzweifel.io)
+
 Hi. You found the uncompiled source code of my personal [website](https://stefanzweifel.io).
 
 ## Workflow
@@ -28,6 +30,9 @@ And in another terminal session execute Gulp. Gulp will now compile SASS to CSS 
 $ cd path/to/stefanzweifel.io
 $ gulp
 ```
+
+## Continous Integration
+This website has some simple tests, which will be triggered everytime someone pushes to this repository. [See Travis-CI](https://travis-ci.org/stefanzweifel/stefanzweifel.io/)
 
 ## Contribution
 

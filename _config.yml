@@ -22,3 +22,6 @@ collections:
 #Special Things
 include:     ['.htaccess']
 exclude:     ['_dev', '_drafts', 'README.md', 'gulpfile.js', 'package.json', 'gulpconfig.json', 'gulpconfig.json.example']
+
+
+image_url: "http://stefanzweifel.io/img"
