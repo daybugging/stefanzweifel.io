@@ -1,0 +1,9 @@
+language: ruby
+
+rvm: 2.0.0
+
+before_install:
+- travis_retry gem install html-proofer
+- travis_retry gem install jekyll
+
+script: jekyll build && htmlproof ./_site
