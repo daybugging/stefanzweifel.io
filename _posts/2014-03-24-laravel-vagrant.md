@@ -2,6 +2,8 @@
 layout: post
 title:  Laravel + Vagrant + SequelPro
 type: post
+date:   2014-03-24 16:25
+accent: '#f4645f'
 ---
 
 **Update**: With Version 4.2 Laravel introduced *Homestead*. A Vagrant-Box to use Laravel right out of the box. If the tutorial below is to difficult to you, give [Homestead](http://laravel.com/docs/homestead) a try.
@@ -18,15 +20,15 @@ Since I didn't found a proper solution that worked for me, here is my little tut
 Head over to [PuPHPet](https://puphpet.com) and configure your server like so:
 
 **Deploy Target**
-![](/img/posts/laravel-vagrant/deploy_target-2.png)
+<img src="/img/posts/laravel-vagrant/deploy_target-2.png" alt="Screenshot of PuPHPet.com">
 Remember `Local VM IP Address`. We need this later.
 
 **Webserver**
-![](/img/posts/laravel-vagrant/webservers.png)
+<img src="/img/posts/laravel-vagrant/webservers.png" alt="Screenshot of PuPHPet.com">
 Set `Server Name`to a URL you want to work with. Change `Document Root`to `/var/www/your-project-name/public`.
 
 **MySQL**
-![](/img/posts/laravel-vagrant/mysql.png)
+<img src="/img/posts/laravel-vagrant/mysql.png" alt="Screenshot of PuPHPet.com">
 Just remember the credentials. We need them later.
 
 All set? Then hit the download button.
@@ -46,11 +48,11 @@ with
 (You find an example file [here](https://gist.github.com/stefanzweifel/9722708) ).
 Save the file and open a terminal window and `cd` into your development folder.
 
-![](/img/posts/laravel-vagrant/terminal.png)
+<img src="/img/posts/laravel-vagrant/terminal.png" alt="Screenshot of Terminal App with example structure">
 
 - Initialize Vagrant with `vagrant up`. This may take some minutes
 
-![](/img/posts/laravel-vagrant/vagrant_demo_2.gif)
+<img src="/img/posts/laravel-vagrant/vagrant_demo_2.gif" alt="Animated GIF containing booting process of vagrant">
 
 - SSH into VM with `vagrant ssh`
 - `cd /var/www`
@@ -59,12 +61,11 @@ Save the file and open a terminal window and `cd` into your development folder.
 
 Next we need to adjust our `hosts`-File. Open your Hosts-File via `sudo nano /etc/hosts/`and enter your previously entered IP-address and server name. In my example I used `10.10.10.10 project.dev`.
 
-![](/img/posts/laravel-vagrant/vagrant_demo_3.gif)
+<img src="/img/posts/laravel-vagrant/vagrant_demo_3.gif" alt="Animated GIF showing the process of chaning hosts files">
 
+If your'e done, open your browser and head to `http://project.dev`.
 
-If your'e done, open your browser and head to [http://project.dev](http://project.dev).
-
-![](/img/posts/laravel-vagrant/success.png)
+<img src="/img/posts/laravel-vagrant/success.png" alt="Screenshot of the Laravel Welcomepage">
 
 If you don't see anything, try this in your terminal:
 `chmod -R 777 your-project-name/app/storage`.
@@ -72,7 +73,7 @@ If you don't see anything, try this in your terminal:
 ###Sequel Pro Settings
 PhpMyAdmin is ugly as hell and I don't like it anymore. So I use [Sequel Pro](http://www.sequelpro.com/). These are the credentials I use to connect to my VM.
 
-![](/img/posts/laravel-vagrant/sequel_pro.png)
+<img src="/img/posts/laravel-vagrant/sequel_pro.png" alt="Screenshot of SequelPro Settings Page">
 
 >MySQL-Host: `10.10.10.10` (or IP that you choose for it)
 Username: `dbuser` (or username you created)
