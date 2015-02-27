@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bower and Laravel Elixir"
-date:   2015-02-27 21:00
+date:   2015-02-27 20:45
 type: post
 accent: '#f4645f'
 ---
