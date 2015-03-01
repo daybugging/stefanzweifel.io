@@ -31,7 +31,7 @@ gulp.task('sass', function () {
     gulp.src(paths.sass + '*.scss')
         .pipe(sass())
         .pipe(minifyCSS( { keepBreaks:false } ))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./_includes/css'));
 });
 
 /**

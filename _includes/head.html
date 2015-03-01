@@ -12,14 +12,16 @@
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script>
+        document.createElement( "picture" ); function loadCSS( href, before, media, callback ){ "use strict"; var ss = window.document.createElement( "link" ); var ref = before || window.document.getElementsByTagName( "script" )[ 0 ]; var sheets = window.document.styleSheets; ss.rel = "stylesheet"; ss.href = href; ss.media = "only x"; ss.onload = callback || function() {}; ref.parentNode.insertBefore( ss, ref ); function toggleMedia(){ var defined; for( var i = 0; i < sheets.length; i++ ){ if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){ defined = true; } } if( defined ){ ss.media = media || "all"; } else { setTimeout( toggleMedia ); } } toggleMedia(); return ss; }
+        loadCSS( "https://fonts.googleapis.com/css?family=Lato" );
+    </script>
+    <noscript><link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'></noscript>
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/rss.xml">
 
     <meta name="theme-color" content="#2C2C2C">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
     <link rel="author" href="{{ "/humans.txt" | prepend: site.baseurl }}">
 
     <!-- Icons -->
@@ -48,10 +50,14 @@
         <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
 
         {% if page.cover %}
-            <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+            <meta name="twitter:image" content="{{ page.cover }}" />
         {% endif %}
 
     {% endif %}
+
+    <style>
+        {% include css/style.css %}
+    </style>
 
     {% if page.accent != '' %}
         <style>
