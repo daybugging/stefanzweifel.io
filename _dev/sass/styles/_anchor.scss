@@ -16,3 +16,35 @@ a {
     }
 
 }
+
+.animated-link {
+    position:relative;
+    overflow:hidden;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: none;
+    }
+}
+
+.animated-link::after {
+    position:absolute;
+
+    display: block;
+
+    content: '';
+    width: 100%;
+
+    bottom:0;
+    height: 2px;
+
+    background: $blue;
+
+    transform:translateX(-100%);
+    transition: transform .3s;
+}
+
+.animated-link:hover::after {
+    transform:translateX(0);
+}
