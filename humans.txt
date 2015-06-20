@@ -1,12 +1,10 @@
 /* the humans responsible & colophon */
 /* humanstxt.org */
 
-/* TEAM */
-
 Developer: Stefan Zweifel
 Site: hello@stefanzweifel.io
-Twitter: @_stefanzweifel.
-Location: Ruedlingen, Switzerland.
+Twitter: @_stefanzweifel
+Location: Zurich, Switzerland
 
 
 /* SITE */

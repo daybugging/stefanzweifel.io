@@ -512,3 +512,9 @@ FileETag None
 <IfModule mod_headers.c>
     Header set Connection keep-alive
 </IfModule>
+
+
+
+# RewriteRule ^posts/(.*) /journal/$1 [R=301,L]
+
+RewriteRule ^about / [R=301,L]

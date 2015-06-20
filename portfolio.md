@@ -6,21 +6,32 @@ permalink: /portfolio/
 
 What you see here is my work outside of my day to day job. I only list "bigger" projects in this list, but I regularly publish scripts, snippets or packages in my [Github Profile](//github.com/stefanzweifel).
 
-<ul class="portfolio--grid">
-    {% for post in site.portfolio %}
-    <li>
-        <a href="{{ post.url | prepend: site.baseurl }}">
-            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.title }}">
+
+{% for post in site.portfolio %}
+
+<div class="m0">
+      
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <img src="{{ post.image | prepend: site.baseurl }}" class="border border-silver" alt="{{ post.title }}">
+    </a>
+
+    <h2 class="h2 serif">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="black">
+            {{ post.title }}
         </a>
+    </h2>
 
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.description }}</p>
+    <p class="sans gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
 
-        <ul class="portfolio-menu text-align--right">
-            <li><a href="{{ post.project-url | prepend: site.baseurl }}">Open Project</a></li>
-            <li><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></li>
-        </ul>
+    <p>{{ post.description }}</p>
 
-    </li>
-    {% endfor %}
-</ul>
+    <div class="mr2 ml2 md-mr4 md-ml4 mt3">
+        <a href="{{ post.project-url | prepend: site.baseurl }}" class="nice-anchor p2">Open Project</a>
+        <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor p2">Continue Reading</a>
+    </div>
+
+</div>
+
+<hr class="divider">
+
+{% endfor %}

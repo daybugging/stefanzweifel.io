@@ -14,7 +14,9 @@ In the early months of 2015 [Imgur](http://imgur.com) released their iOS app. Af
 I often discovered [huge albums with wallpapers](http://imgur.com/gallery/sWhDa) or [interesting stuff about food](http://imgur.com/gallery/zP7nZ) which I wanted to store for further usage.
 And that's how "ImguBox" was born.
 
-<img src="/img/portfolio/imgubox/landingpage.png" alt="Landingpage">
+<div>
+    <img src="/img/portfolio/imgubox/landingpage.png" alt="Landingpage">
+</div>
 
 With my favorite PHP Framework, [Laravel 5](http://laravel.com) I quickly scaffolded a simple app, where you can sign up for an account and setup your Imgur and Dropbox account. That's it!
 
@@ -27,8 +29,11 @@ Let's say the app has 100 users. Every user has 100 favorites. If ImguBox fetche
 
 But now the good news. Imgur is working on webhooks. This would eliminate the database overhead and the app would be even smaller and simpler.
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/_stefanzweifel">@_stefanzweifel</a> On our radar! 🚀</p>&mdash; Imgur API (@imgurAPI) <a href="https://twitter.com/imgurAPI/status/590281859453493248">April 20, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>   
+<div class="m2 md-m4">
+    <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/_stefanzweifel">@_stefanzweifel</a> On our radar! 🚀</p>&mdash; Imgur API (@imgurAPI) <a href="https://twitter.com/imgurAPI/status/590281859453493248">April 20, 2015</a></blockquote>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+   
 
 ## What I've learned from this project
 

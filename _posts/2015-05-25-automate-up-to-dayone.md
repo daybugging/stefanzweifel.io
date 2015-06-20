@@ -6,7 +6,7 @@ type: post
 accent: '#1f9bde'
 ---
 
-Some weeks ago I published [a post on how to store your Jawbone UP data into DayOne.app](https://stefanzweifel.io/posts/jawbone-up-to-dayone/). The script got quite popular and many people reached out to me with questions and smaller problems.
+Some weeks ago I published [a post](https://stefanzweifel.io/posts/jawbone-up-to-dayone/) on how to store your Jawbone UP data into DayOne.app. The script got quite popular and many people reached out to me with questions and smaller problems.
 
 Today I want to show you how you can automate the execution of the script with [Hazel.app](http://www.noodlesoft.com/hazel.php). The app isn't free but has a 14 day trial. Just download it and try it out.
 

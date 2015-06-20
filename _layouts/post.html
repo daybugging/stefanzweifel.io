@@ -1,11 +1,18 @@
 ---
-layout: default
+layout: v5/default
 ---
 
-<main class="post" role="main">
-    <article class="post__content">
-        {{ content }}
+<div class="center mt4 mb4 md-m4">
+    <h1>{{ page.title }}</h1>
+    <ul class="list-reset">
+        <li class="inline-block">
+            Published {{ page.date | date: "%-d. %B %Y" }}
+        </li>
+    </ul>
+</div>
 
-        {% include post_footer.html %}
-    </article>
-</main>
+<article class="article mt2 md-mt4">
+    {{ content }}
+
+    {% include post_footer.html %}
+</article>

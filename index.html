@@ -1,44 +1,87 @@
 ---
-layout: homepage
+layout: v5/default
 nav: site-nav--light
 ---
 
-<p>My name is Stefan, I'm a <strong>fullstack developer</strong> based in Zurich, Switzerland. I currently work at 2media. Most of the time I create projects for our clients or maintain and extend internal applications.</p>
 
-<p>In my free time I like to work on my own <a href="{{ "/portfolio/" | prepend: site.baseurl }}" class="page-link">projects</a>,  <a href="{{ "/posts/" | prepend: site.baseurl }}" class="page-link">write</a> articles about development or just enjoy the day.</p>
+<div class="hero mt4 mb4 ml2 mr2 md-m4">
+    <h1 class="serif h2-responsive mt3 md-mt4 mb0">Hi there! I'm Stefan.</h1>
+    <h2 class="serif h4-responsive mt0 mb3 md-mb4">A Fullstack Developer from Zurich, Switzerland.</h2>
 
-<p>You can stalk me on the following platforms:</p>
+    <ul class="list-reset mb0 center">
+        <li class="inline-block">
+            <a rel="nofollow" href="{{ site.data.urls.github }}" class="inline-block m2">Github</a>
+        </li>
+        <li class="inline-block">
+            <a rel="nofollow" href="{{ site.data.urls.twitter }}" class="inline-block m2">Twitter</a>
+        </li>
+        <li class="inline-block">
+            <a rel="nofollow" href="mailto:hello@stefanzweifel.io" class="inline-block m2">Email</a>
+        </li>
+    </ul>
 
-<ul class="anchor-list">
-    <li><a rel="nofollow" href="{{ site.data.urls.twitter }}">Twitter</a></li>
-    <li><a rel="nofollow" href="{{ site.data.urls.github }}">Github</a></li>
-    <li><a rel="nofollow" href="mailto:hello@stefanzweifel.io">hello@stefanzweifel.io</a></li>
-</ul>
+</div>
 
-<hr>
+<div class="mt4 mb4">
 
-    <h2>Recent Articles</h2>
+    <article class="article">
 
-    <ul class="portfolio--grid">
+        <h2 class="h2 serif">Recent Articles</h2>
+
         {% for post in site.posts limit:3 %}
-        <li>
-            <h3>{{ post.title }}</h3>
-            <p> {{ post.excerpt }}</p>
-            <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Continue Reading</a>
-        </li>
+
+        <div class="md-mb4 md-mt4 mt3 mb3">
+
+            <h2 class="h3 serif">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="black">
+                    {{ post.title }}
+                </a>
+            </h2>
+
+            <p class="sans gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
+
+            <p>{{ post.excerpt | truncatewords:25  }}</p>
+
+            <div class="mr2 ml2 md-mr4 md-ml4 mt3">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Continue Reading</a>
+            </div>
+
+        </div>
+
         {% endfor %}
-    </ul>
+    </article>
+
+</div>
 
 <hr>
 
-    <h2>Recent Projects</h2>
+<div class="mt4 mb4">
 
-    <ul class="portfolio--grid">
+    <article class="article">
+
+        <h2 class="h2 serif">Recent Projects</h2>
+
         {% for post in site.portfolio limit:3 %}
-        <li>
-            <h3>{{ post.title }}</h3>
-            <p class="description">{{ post.description }}</p>
-            <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Read more</a>
-        </li>
+
+        <div class="md-mb4 md-mt4 mt3 mb3">
+
+            <h2 class="h3 serif">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="black">
+                    {{ post.title }}
+                </a>
+            </h2>
+
+            <p>{{ post.description }}</p>
+
+            <div class="mr2 ml2 md-mr4 md-ml4 mt3">
+                <a href="{{ post.project-url | prepend: site.baseurl }}" class="nice-anchor p2">Open Project</a>
+                <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor p2">Continue Reading</a>
+            </div>
+
+
+        </div>
+
         {% endfor %}
-    </ul>
+    </article>
+
+</div>

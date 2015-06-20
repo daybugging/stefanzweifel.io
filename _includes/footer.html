@@ -1,8 +1,10 @@
-<footer class="page-footer">
-    <p>Made with &hearts; in Zurich</p>
-    <p>
-        &copy; {{ site.time | date: '%Y' }} &middot;
-        Built with Jekyll &middot;
-        <a href="{{ site.data.urls.github_repo }}">Source</a> &middot;
-        <a href="{{ "/imprint" | prepend: site.baseurl }}">Imprint</a> </p>
-</footer>
+<div class="container">
+
+    <footer class="site-footer center mb2 mt4">
+        <ul class="list-reset center">
+            <li class="inline-block p1 h5">&copy; {{ site.time | date: '%Y' }} Stefan Zweifel</li>
+            <li class="inline-block p1 h5"><a href="{{ "/imprint" | prepend: site.baseurl }}">Imprint</a></li>
+        </ul>
+    </footer>
+
+</div>

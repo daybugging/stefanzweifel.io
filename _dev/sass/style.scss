@@ -1,201 +1,49 @@
 /**
-*
-* Main SASS File
-*
-* @version 1.0.0
-* @page stefanzweifel.io
-*
-**/
-
-//Bourbon Stuff
-
-@import "bourbon/bourbon";
-@import "neat/neat";
-@import "bitters/bitters";
-
-//Styles
-@import "styles/variables";
-@import "styles/markup";
-@import "styles/anchor";
-@import "styles/navigation";
-@import "styles/homepage";
-@import "styles/footer";
-@import "styles/page-content";
-@import "styles/portfolio";
-@import "styles/syntax";
-
-
-.hero-content {
-    background: $dark-gray;
-    color: $white;
-    min-height: 300px;
-    background-image: url('/img/background-fox.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.page--decoration {
-    height: 5px;
-    width: 100%;
-    background: $dark-gray;
-}
-
-strong {
-    padding: 2px 5px;
-    background: $yellow;
-}
-
-article {
-    padding: 30px 0;
-    @include media($tablet) {
-        padding-top: 0;
-    }
-}
-
-.col--6 {
-    @include span-columns(6);
-
-    @include media($tablet) {
-        width: 100%;
-    }
-
-}
-
-.title {
-    display: inline-block;
-    @include media($tablet) {
-        display: block;
-    }
-}
-
-.align--right {
-    float: right;
-    @include media($tablet) {
-        float: none;
-    }
-}
-
-p, ul, li {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-
-.text-align--right { text-align: right; }
-
-/**
- * Eine Liste von Links
+ * stefanzweifel.io - Version 5
  */
 
-.anchor-list {
-    @include media($desktop) {
-        list-style-type: none;
-        padding: 0;
+/** BASSCSS Stuff */
+@import "basscss_defaults";
+@import "basscss";
+
+@import "./_dev/sass/vendor/basscss-responsive-white-space/index";
+
+@import "stefanzweifel/helpers";
+@import "stefanzweifel/main";
+@import "stefanzweifel/article";
+
+.highlight {
+    background-color: $navy;
+    padding: $space-3;
+    margin: $space-3 0;
+
+    pre {
         margin: 0;
+        overflow: auto;
+    }
 
-        li {
-            display: inline-block;
-            margin: 0 20px;
+    code {
+        color: $white;
+        background: none;
+    }
+}
 
-            &:first-child {
-                margin-left: 0;
-            }
+code {
+    background: $light-gray;
+    padding: 2px 6px;
+    word-wrap: break-word;
+    font-size: 14px;
+}
 
-            &:last-child {
-                margin-right: 0;
-            }
+@media #{$breakpoint-md} {
 
-        }
+    .highlight {
+        margin: $space-4 0;
+        border-radius: 4px;
     }
 
 }
 
-.header-list {
 
-    margin: 0;
-    padding: 0;
+@import "stefanzweifel/syntax";
 
-    li {
-        display: inline-block;
-        font-size: 14px;
-
-        &:after {
-            content: "\00b7";
-            // content: "\2665";
-            display: inline;
-            margin: 0 10px;
-
-        }
-
-        &:last-child:after {
-            content: '';
-        }
-
-    }
-
-}
-
-.portfolio-menu {
-
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-        display: inline-block;
-        margin: 0 20px;
-
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &:last-child {
-            margin-right: 0;
-        }
-
-    }
-}
-
-figcaption {
-    border-bottom: solid 1px lighten($body-color, 50);
-    font-style: italic;
-    color: $body-color;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    line-height: 1.8;
-}
-
-figure {
-    margin: 20px auto 50px;
-}
-
-img {
-    margin: 0;
-}
-
-.footnotes {
-
-    border-top: solid 1px $light-gray;
-    margin: 50px 50px 70px;
-    padding-left: 20px;
-    padding-top: 20px;
-
-    @include media($mobile) {
-        margin: 50px 20px 70px;
-    }
-
-    ol {
-        list-style-type: decimal;
-
-        li {
-            font-size: 0.9rem;
-        }
-    }
-
-    p {
-        font-size: 0.9rem;
-        color: lighten($body-color, 15);
-    }
-
-}

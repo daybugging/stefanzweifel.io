@@ -24,7 +24,7 @@ $ mv gulpconfig.json.example gulpconfig.json
 $ jekyll serve --watch
 ```
 
-And in another terminal session execute Gulp. Gulp will now compile SASS to CSS everytime you change something.
+To compile SASS execute the following command. Gulp will automatically watch for changes in all SASS files.
 
 ```
 $ cd path/to/stefanzweifel.io

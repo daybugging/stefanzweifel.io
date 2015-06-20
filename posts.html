@@ -1,0 +1,27 @@
+---
+layout: page
+title: Articles
+permalink: /posts/
+---
+
+{% for post in site.posts %}
+
+<div class="md-mb4 md-mt4 mt3 mb3">
+
+    <h2 class="h2 serif">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="black">
+            {{ post.title }}
+        </a>
+    </h2>
+
+    <p class="sans gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
+
+    <p>{{ post.excerpt | truncatewords:25  }}</p>
+
+    <div class="mr2 ml2 md-mr4 md-ml4 mt3">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Continue Reading</a>
+    </div>
+
+</div>
+
+{% endfor %}
