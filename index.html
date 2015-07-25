@@ -1,14 +1,12 @@
 ---
 layout: v5/default
-nav: site-nav--light
 ---
 
-
 <div class="hero mt4 mb4 ml2 mr2 md-m4">
-    <h1 class="serif h2-responsive mt3 md-mt4 mb0">Hi there! I'm Stefan.</h1>
-    <h2 class="serif h4-responsive mt0 mb3 md-mb4">A Fullstack Developer from Zurich, Switzerland.</h2>
+    <h1 class="h2-responsive mt3 mb0">Stefan Zweifel</h1>
+    <h2 class="h4-responsive mt0 mb1">Fullstack Developer from Zurich, Switzerland.</h2>
 
-    <ul class="list-reset mb0 center">
+    <ul class="list-reset mb0">
         <li class="inline-block">
             <a rel="nofollow" href="{{ site.data.urls.github }}" class="inline-block m2">Github</a>
         </li>
@@ -26,13 +24,13 @@ nav: site-nav--light
 
     <article class="article">
 
-        <h2 class="h2 serif">Recent Articles</h2>
+        <h2 class="h2">Recent Articles</h2>
 
         {% for post in site.posts limit:3 %}
 
-        <div class="md-mb4 md-mt4 mt3 mb3">
+        <div class="mt3 mb3">
 
-            <h2 class="h3 serif">
+            <h2 class="h3">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="black">
                     {{ post.title }}
                 </a>
@@ -42,7 +40,7 @@ nav: site-nav--light
 
             <p>{{ post.excerpt | truncatewords:25  }}</p>
 
-            <div class="mr2 ml2 md-mr4 md-ml4 mt3">
+            <div class="mr2 ml2 md-mr4 md-ml4 mt2">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Continue Reading</a>
             </div>
 
@@ -53,19 +51,17 @@ nav: site-nav--light
 
 </div>
 
-<hr>
-
 <div class="mt4 mb4">
 
     <article class="article">
 
-        <h2 class="h2 serif">Recent Projects</h2>
+        <h2 class="h2">Recent Projects</h2>
 
         {% for post in site.portfolio limit:3 %}
 
-        <div class="md-mb4 md-mt4 mt3 mb3">
+        <div class="mt3 mb3">
 
-            <h2 class="h3 serif">
+            <h2 class="h3">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="black">
                     {{ post.title }}
                 </a>
@@ -73,11 +69,10 @@ nav: site-nav--light
 
             <p>{{ post.description }}</p>
 
-            <div class="mr2 ml2 md-mr4 md-ml4 mt3">
+            <div class="mr2 ml2 md-mr4 md-ml4 mt2">
                 <a href="{{ post.project-url | prepend: site.baseurl }}" class="nice-anchor p2">Open Project</a>
                 <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor p2">Continue Reading</a>
             </div>
-
 
         </div>
 

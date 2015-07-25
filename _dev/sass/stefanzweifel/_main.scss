@@ -1,10 +1,17 @@
-.navigation a {
-    text-transform: uppercase;
-}
-
 .nice-anchor {
     color: $blue;
     text-transform: uppercase;
-    font-family: $font-family;
     font-weight: 600;
+}
+
+.navigation {
+
+    @media #{$breakpoint-md} {
+
+        margin-left: $space-4;
+        margin-right: $space-4;
+
+
+    }
+
 }

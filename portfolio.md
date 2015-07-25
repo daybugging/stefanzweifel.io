@@ -12,26 +12,26 @@ What you see here is my work outside of my day to day job. I only list "bigger" 
 <div class="m0">
       
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <img src="{{ post.image | prepend: site.baseurl }}" class="border border-silver" alt="{{ post.title }}">
+        <img src="{{ post.image | prepend: site.baseurl }}" class="border border-silver md-mb2" alt="{{ post.title }}">
     </a>
 
-    <h2 class="h2 serif">
+    <h2 class="h2">
         <a href="{{ post.url | prepend: site.baseurl }}" class="black">
             {{ post.title }}
         </a>
     </h2>
 
-    <p class="sans gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
+    <p class="gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
 
     <p>{{ post.description }}</p>
 
-    <div class="mr2 ml2 md-mr4 md-ml4 mt3">
+    <div class="mr2 ml2 md-mr4 md-ml4 mt2">
         <a href="{{ post.project-url | prepend: site.baseurl }}" class="nice-anchor p2">Open Project</a>
         <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor p2">Continue Reading</a>
     </div>
 
 </div>
 
-<hr class="divider">
+<!-- <hr class="divider"> -->
 
 {% endfor %}
