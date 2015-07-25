@@ -4,14 +4,14 @@ title:  screeenly
 date:   2014-07-15 16:16:08
 project-url: http://screeenly.com
 image: /img/portfolio/screeenly/hero-image.png
-description: Screeenly gives you a simple API to create screenshots of websites.
+description: Screeenly is a webservice which allows you to generate Screenshots of websites through a simple API for free.
 ---
 
 > [Screeenly](http://screeenly.com) is a simple webservice to create screenshots of websites. Checkout the source code on [Github](https://github.com/stefanzweifel/screeenly).
 
 <figure>
-    <img src="/img/portfolio/screeenly/landingpage-v2.png" alt="Landingpage">
-    <figcaption>Screeenly doesn't have a big frontend application. The magic happens in the API.</figcaption> 
+    <img src="/img/portfolio/screeenly/landingpage-v3.png" alt="Landingpage">
+    <figcaption>Screeenly landingpage as of July 2015.</figcaption> 
 </figure>
 
 
