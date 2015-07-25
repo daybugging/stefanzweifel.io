@@ -6,11 +6,7 @@ Hi. You found the uncompiled source code of my personal [website](https://stefan
 
 ## Workflow
 
-I recently switched from Grunt to Gulp and use it on this site. So here's a short list of what Gulp does:
-
-- Build CSS with
-- Minify CSS file
-- Compress PNG file by the tinypng.com-API
+This project uses Gulp for it's build process. Gulp compiles and minifys the CSS file. There's also a command to compress image files (`grunt images`).
 
 ## How to setup the site on your local machine
 

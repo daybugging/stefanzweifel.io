@@ -5,31 +5,31 @@ var config       = require('./gulpconfig.json'),
     gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     minifyCSS    = require('gulp-minify-css'),
-    tinypng      = require('gulp-tinypng'),
     cssScss      = require('gulp-css-scss'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    imagemin     = require('gulp-imagemin');
 
 
 /**
  * Default Task
- * Watch for changes in SASS Files
  */
 gulp.task('default', function() {
     gulp.watch('./_dev/sass/**/*.scss', ['css']);
+    gulp.watch('./img/**/*', ['images']);
 });
 
 
 /**
- * Compress PNG Files by tinypng.com API
- * Define API key in gulpconfig.json
+ * Optimize Images
  */
-gulp.task('png', function () {
-    return gulp.src('./_dev/images_to_compress/**/*.png')
-        .pipe(tinypng( config.tinypng_api_key ))
-        .pipe(gulp.dest('img'));
+gulp.task('images', function () {
+
+    return gulp.src('img/**/*')
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest('img/'));
 });
-
-
 
 /**
  * Build CSS for this site
