@@ -8,13 +8,13 @@ layout: v5/default
 
     <ul class="list-reset mb0">
         <li class="inline-block">
-            <a rel="nofollow" href="{{ site.data.urls.github }}" class="inline-block m2">Github</a>
+            <a rel="nofollow" href="{{ site.data.urls.github }}" class="inline-block mr1">Github</a>
         </li>
         <li class="inline-block">
-            <a rel="nofollow" href="{{ site.data.urls.twitter }}" class="inline-block m2">Twitter</a>
+            <a rel="nofollow" href="{{ site.data.urls.twitter }}" class="inline-block m1">Twitter</a>
         </li>
         <li class="inline-block">
-            <a rel="nofollow" href="mailto:hello@stefanzweifel.io" class="inline-block m2">Email</a>
+            <a rel="nofollow" href="mailto:hello@stefanzweifel.io" class="inline-block m1">Email</a>
         </li>
     </ul>
 
@@ -39,10 +39,6 @@ layout: v5/default
             <p class="sans gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
 
             <p>{{ post.excerpt | truncatewords:25  }}</p>
-
-            <div class="mr2 ml2 md-mr4 md-ml4 mt2">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor">Continue Reading</a>
-            </div>
 
         </div>
 
@@ -69,10 +65,14 @@ layout: v5/default
 
             <p>{{ post.description }}</p>
 
-            <div class="mr2 ml2 md-mr4 md-ml4 mt2">
-                <a href="{{ post.project-url | prepend: site.baseurl }}" class="nice-anchor p2">Open Project</a>
-                <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor p2">Continue Reading</a>
-            </div>
+            <ul class="list-reset mb0">
+                <li class="inline-block">
+                   <a href="{{ post.project-url | prepend: site.baseurl }}" class="inline-block mr1">Open Project</a>
+                </li>
+                <li class="inline-block">
+                   <a href="{{ post.url | prepend: site.baseurl }}" class="inline-block ml1">Continue Reading</a>
+                </li>
+            </ul>
 
         </div>
 

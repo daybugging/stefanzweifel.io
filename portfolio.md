@@ -25,10 +25,14 @@ What you see here is my work outside of my day to day job. I only list "bigger" 
 
     <p>{{ post.description }}</p>
 
-    <div class="mr2 ml2 md-mr4 md-ml4 mt2">
-        <a href="{{ post.project-url | prepend: site.baseurl }}" class="nice-anchor p2">Open Project</a>
-        <a href="{{ post.url | prepend: site.baseurl }}" class="nice-anchor p2">Continue Reading</a>
-    </div>
+    <ul class="list-reset mb0">
+        <li class="inline-block">
+           <a href="{{ post.project-url | prepend: site.baseurl }}" class="inline-block mr1">Open Project</a>
+        </li>
+        <li class="inline-block">
+           <a href="{{ post.url | prepend: site.baseurl }}" class="inline-block ml1">Continue Reading</a>
+        </li>
+    </ul>
 
 </div>
 

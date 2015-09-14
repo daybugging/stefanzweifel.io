@@ -12,6 +12,44 @@
 @import "stefanzweifel/main";
 @import "stefanzweifel/article";
 
+body {
+    background: #fefefd;
+}
+
+a {
+    color: $black;
+    text-decoration: underline;
+
+    &:hover {
+        color: $yellow;
+    }
+}
+
+h2 a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation li+li {
+    margin-left: $space-2;
+}
+
 .highlight {
     background-color: $navy;
     padding: $space-3;

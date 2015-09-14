@@ -1,16 +1,13 @@
-.nice-anchor {
-    color: $blue;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
 .navigation {
+
+    margin: $space-2;
 
     @media #{$breakpoint-md} {
 
         margin-left: $space-4;
         margin-right: $space-4;
-
+        margin-top: $space-3;
+        margin-bottom: $space-3;
 
     }
 

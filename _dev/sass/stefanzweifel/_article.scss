@@ -44,6 +44,11 @@
         font-size: 14px;
     }
 
+    .list-reset {
+        margin-top: $space-2;
+        margin-bottom: $space-2;
+    }
+
 
     @media #{$breakpoint-md} {
 
