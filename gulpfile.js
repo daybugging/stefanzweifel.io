@@ -23,7 +23,6 @@ gulp.task('default', function() {
  * Optimize Images
  */
 gulp.task('images', function () {
-
     return gulp.src('img/**/*')
         .pipe(imagemin({
             progressive: true
