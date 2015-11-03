@@ -13,7 +13,7 @@ Sadly there is no IFTTT-Channel for DayOne, but the guys from DayOne offer a CLI
 Maybe you can use it too.
 
 <figure>
-    <img src="/img/posts/jawbone-up-to-dayone/dayone-view.png" alt="Dayone.app View of generated entry">
+    <img src="{{ site.url }}/img/posts/jawbone-up-to-dayone/dayone-view.png" alt="Dayone.app View of generated entry">
     <figcaption>Thanks to Markdown Support in Dayone, your UP Logs will loke like this.</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ Maybe you can use it too.
 
 <figure>
     <a href="/img/posts/jawbone-up-to-dayone/example-structure.png" target="blank">
-        <img src="/img/posts/jawbone-up-to-dayone/example-structure.png" alt="My directory structure">  
+        <img src="{{ site.url }}/img/posts/jawbone-up-to-dayone/example-structure.png" alt="My directory structure">  
     </a>
     <figcaption>This is my personal folder structure. Click on the image to enlarge it.</figcaption>
 </figure>

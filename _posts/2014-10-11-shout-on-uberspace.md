@@ -9,7 +9,7 @@ type: post
 
 Ich selbst nutzte IRC selten, da ich keinen passenden Client fand der "Alyways connected" war. Mit Shout habe ich das nun gelöst.
 
-![Shout in Aktion](/img/posts/shout-on-uberspace/client.png)
+![Shout in Aktion]({{ site.url }}/img/posts/shout-on-uberspace/client.png)
 
 > Die folgende Anleitung gilt nur für den Hoster [Uberspace](http://uberspace.de). Ich übernehme keine Haftung, falls ihr euren Server irgendwie zerschiesst.
 

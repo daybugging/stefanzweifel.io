@@ -9,7 +9,7 @@ accent: '#85144b'
 I like when other developers share their knowledge and their setups. Here is my approach to show other developers how I manage my projects as of March 2015.
 
 <figure>
-    <img src="/img/posts/developer-setup-early-2015/desk.jpg" alt="Retina Macbook Pro specs">
+    <img src="{{ site.url }}/img/posts/developer-setup-early-2015/desk.jpg" alt="Retina Macbook Pro specs">
     <figcaption>My setup when I'm working at home.</figcaption>
 </figure>
 
@@ -25,7 +25,7 @@ My first Mac. And I don't regret buying it. Even though I should have have inves
 My third iPhone. My most important device I always have on me, even though the usage of the phone dropped in the last months. My daily commute to work doesn't take up so long anymore and I removed a lot of unused apps and services which distracted me most of the time.     
 
 <figure>
-    <img src="/img/posts/developer-setup-early-2015/iphone-homescreen.jpg" alt="An iPhone 6">
+    <img src="{{ site.url }}/img/posts/developer-setup-early-2015/iphone-homescreen.jpg" alt="An iPhone 6">
     <figcaption>Current homescreen arrangement. I try to keep the numbers of apps as low as possible.</figcaption>
 </figure>
 

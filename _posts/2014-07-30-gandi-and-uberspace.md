@@ -37,7 +37,7 @@ Hier bitte die Werte für A, AAAA und MX merken.
 - Neue Version anlegen
 - IPs nach folgendem Muster anlegen
 
-![Gandi Zone File](/img/posts/gandi/gandi_zone_file.png)
+![Gandi Zone File]({{ site.url }}/img/posts/gandi/gandi_zone_file.png)
 
 Was mir am Anfang nicht klar war, ist dass das @-Zeichen als "leerer Wert" erkannt wird. Dadurch sind dann auch Domains ohne die www-Subdomain erreichbar.
 

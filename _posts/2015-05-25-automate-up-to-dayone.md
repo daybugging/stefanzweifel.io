@@ -26,7 +26,7 @@ Just replace `$username` with your Mac OS X username or adjust your path so that
 The rule should look like my rule in the picture below.
 
 <figure>
-    <img src="/img/posts/automate-up-to-dayone/hazel-1.png" alt="Hazel rule">
+    <img src="{{ site.url }}/img/posts/automate-up-to-dayone/hazel-1.png" alt="Hazel rule">
     <figcaption>Hazel rule to execute the toDayOne.sh script as soon a new file is added to your Dropbox folder.</figcaption>
 </figure>
 

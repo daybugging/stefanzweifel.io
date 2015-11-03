@@ -11,7 +11,7 @@ name: stefanzweifel.io
 # Build settings
 markdown: kramdown
 
-permalink: posts/:title
+permalink: posts/:title/
 
 # Collections!
 collections:
@@ -21,7 +21,7 @@ collections:
 
 #Special Things
 include:     ['.htaccess']
-exclude:     ['_dev', 'node_modules', '_drafts', 'README.md', 'gulpfile.js', 'package.json', 'gulpconfig.json', 'gulpconfig.json.example', '_deploy.sh']
+exclude:     [ '_dev', 'node_modules', '_drafts', 'README.md', 'gulpfile.js', 'package.json', 'gulpconfig.json', 'gulpconfig.json.example', 'Gemfile', 'Gemfile.lock']
 
 
 image_url: "http://stefanzweifel.io/img"

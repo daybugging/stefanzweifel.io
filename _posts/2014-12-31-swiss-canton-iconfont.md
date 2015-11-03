@@ -16,7 +16,7 @@ Then I read the docs of Bower, on how to register a new package and boom... Now 
 It was a lot of fun and I learned another thing of the always growing web development universe.
 
 <figure>
-    <img src="/img/posts/swiss-canton-iconfont/demo.png" alt="Screenshot of a working demo on Github">
+    <img src="{{ site.url }}/img/posts/swiss-canton-iconfont/demo.png" alt="Screenshot of a working demo on Github">
     <figcaption>Screenshot of a working demo on Github.</figcaption>
 </figure>
 
