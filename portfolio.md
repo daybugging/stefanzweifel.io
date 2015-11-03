@@ -7,7 +7,7 @@ permalink: /portfolio/
 What you see here is my work outside of my day to day job. I only list "bigger" projects in this list, but I regularly publish scripts, snippets or packages in my [Github Profile](//github.com/stefanzweifel).
 
 
-{% for post in site.portfolio %}
+{% for post in site.portfolio reversed %}
 
 <div class="m0">
       
