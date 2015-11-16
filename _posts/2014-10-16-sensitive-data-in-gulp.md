@@ -11,7 +11,7 @@ But what does this have to do with sensitive data in Javascript? Well I use [tin
 
 It's simple. You create a config file - let's call it `gulpconfig.json` - and within the file there is a property called `tinypng_api_key`. Now in the gulpfile you load this the file and use it.
 
-{% highlight javascript linenos%}
+{% highlight javascript %}
 var config    = require('./gulpconfig.json'),
     gulp      = require('gulp');
 
