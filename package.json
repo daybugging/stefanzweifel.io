@@ -13,7 +13,7 @@
     "gulp-css-scss": "0.0.2",
     "gulp-imagemin": "^2.3.0",
     "gulp-minify-css": "^0.3.10",
-    "gulp-sass": "^1.0.0"
+    "gulp-sass": "^2.1.0"
   },
   "repository": {
     "type": "git",
