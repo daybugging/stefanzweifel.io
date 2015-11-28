@@ -2,81 +2,85 @@
 layout: v5/default
 ---
 
-<div class="hero mt4 mb4 ml2 mr2 md-m4">
-    <h1 class="h2-responsive mt3 mb0">Stefan Zweifel</h1>
-    <h2 class="h4-responsive mt0 mb1">Fullstack Developer from Zurich, Switzerland.</h2>
+<div class="container">
 
-    <ul class="list-reset mb0">
-        <li class="inline-block">
-            <a rel="nofollow" href="{{ site.data.urls.github }}" class="inline-block mr1">Github</a>
-        </li>
-        <li class="inline-block">
-            <a rel="nofollow" href="{{ site.data.urls.twitter }}" class="inline-block m1">Twitter</a>
-        </li>
-        <li class="inline-block">
-            <a rel="nofollow" href="mailto:hello@stefanzweifel.io" class="inline-block m1">Email</a>
-        </li>
-    </ul>
+    <div class="hero mt4 mb4 ml2 mr2 md-m4">
+        <h1 class="h2-responsive mt3 mb0">Stefan Zweifel</h1>
+        <h2 class="h4-responsive mt0 mb1">Fullstack Developer from Zurich, Switzerland.</h2>
 
-</div>
+        <ul class="list-reset mb0">
+            <li class="inline-block">
+                <a rel="nofollow" href="{{ site.data.urls.github }}" class="inline-block mr1">Github</a>
+            </li>
+            <li class="inline-block">
+                <a rel="nofollow" href="{{ site.data.urls.twitter }}" class="inline-block m1">Twitter</a>
+            </li>
+            <li class="inline-block">
+                <a rel="nofollow" href="mailto:hello@stefanzweifel.io" class="inline-block m1">Email</a>
+            </li>
+        </ul>
 
-<div class="mt4 mb4">
+    </div>
 
-    <article class="article">
+    <div class="mt4 mb4">
 
-        <h2 class="h2">Recent Articles</h2>
+        <article class="article">
 
-        {% for post in site.posts limit:3 %}
+            <h2 class="h2">Recent Articles</h2>
 
-        <div class="mt3 mb3">
+            {% for post in site.posts limit:3 %}
 
-            <h2 class="h3">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="black">
-                    {{ post.title }}
-                </a>
-            </h2>
+            <div class="mt3 mb3">
 
-            <p class="sans gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
+                <h2 class="h3">
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="black">
+                        {{ post.title }}
+                    </a>
+                </h2>
 
-            <p>{{ post.excerpt | truncatewords:25  }}</p>
+                <p class="sans gray caps">Published: {{ post.date | date: "%-d %B %Y" }}</p>
 
-        </div>
+                <p>{{ post.excerpt | truncatewords:25  }}</p>
 
-        {% endfor %}
-    </article>
+            </div>
 
-</div>
+            {% endfor %}
+        </article>
 
-<div class="mt4 mb4">
+    </div>
 
-    <article class="article">
+    <div class="mt4 mb4">
 
-        <h2 class="h2">Recent Projects</h2>
+        <article class="article">
 
-        {% for post in site.portfolio reversed limit:3 %}
+            <h2 class="h2">Recent Projects</h2>
 
-        <div class="mt3 mb3">
+            {% for post in site.portfolio reversed limit:3 %}
 
-            <h2 class="h3">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="black">
-                    {{ post.title }}
-                </a>
-            </h2>
+            <div class="mt3 mb3">
 
-            <p>{{ post.description }}</p>
+                <h2 class="h3">
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="black">
+                        {{ post.title }}
+                    </a>
+                </h2>
 
-            <ul class="list-reset mb0">
-                <li class="inline-block">
-                   <a href="{{ post.project-url | prepend: site.baseurl }}" class="inline-block mr1">Open Project</a>
-                </li>
-                <li class="inline-block">
-                   <a href="{{ post.url | prepend: site.baseurl }}" class="inline-block ml1">Continue Reading</a>
-                </li>
-            </ul>
+                <p>{{ post.description }}</p>
 
-        </div>
+                <ul class="list-reset mb0">
+                    <li class="inline-block">
+                       <a href="{{ post.project-url | prepend: site.baseurl }}" class="inline-block mr1">Open Project</a>
+                    </li>
+                    <li class="inline-block">
+                       <a href="{{ post.url | prepend: site.baseurl }}" class="inline-block ml1">Continue Reading</a>
+                    </li>
+                </ul>
 
-        {% endfor %}
-    </article>
+            </div>
+
+            {% endfor %}
+        </article>
+
+    </div>
 
 </div>
