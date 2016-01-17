@@ -6,13 +6,14 @@ type: post
 accent: '#1f9bde'
 ---
 
-In this blog post I would like to introduce you to some advanced techniques to Laravels / Eloquents Relationship model. The most common usecases for Relationships are already [documented](https://laravel.com/docs/5.2/eloquent-relationships), so I suppose you know something about PHP, Laravel and Relationship.
+In this blog post I would like to introduce you to some advanced techniques to Laravels / Eloquents Relationship model. The most common usecases for Relationships are already well [documented](https://laravel.com/docs/5.2/eloquent-relationships), so I assume you know something about PHP, Laravel and Relationships.
 
-All steps I've written up here are available in [this demo project](https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot) on Github.
+The code for this article is available in [this demo project](https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot) on Github.
 
 ## Requirements
 
-The following use case is straight from a real word application I worked on in the past month. Let's imagine you want to provide a way to write data into your database through an API for your customers. The source of the data are simple HTML forms, but the structure of those forms changes depending on the page they are displayed on. Maymbe there's a form to hire a lawyer, one to search the best mortgage or you wan't an offer for a painter. Because we didn't want to code every single API endpoint over and over again, we created a system where we can "build" our API with a drag & drop interface.
+The following use case is straight from a real word application I worked on in the past months. 
+Let's imagine you want to provide a way to write data into your database through an API for your customers. The source of the data are simple HTML forms, but the structure of those forms changes depending on the page they are displayed on. Maymbe there's a form to hire a lawyer, one to search the best mortgage or you wan't an offer for a painter. Because we didn't want to code every single API endpoint over and over again, we created a system where we can "build" our API with a drag & drop interface.
 
 Below are the simplified requirements (I just want to cover the important stuff for this article):
 
