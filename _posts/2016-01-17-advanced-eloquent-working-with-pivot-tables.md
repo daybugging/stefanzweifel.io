@@ -17,6 +17,12 @@ Let's imagine you want to provide a way to write data into your database through
 
 Below are the simplified requirements (I just want to cover the important stuff for this article):
 
+<figure>
+    <img src="{{ site.url }}/img/posts/advanced-eloquent/diagram.jpg" alt="Database Schema for this example">
+    <figcaption>Database Schema for this example</figcaption>
+</figure>
+
+
 ### Rule
 
 - Represent validation rules which are applied to `Field` (A default set of Rules wich are always applied; eg. field "email" should always be validated as an email) or to `FieldEndpoint` (Attach a Rule when you build your API)
