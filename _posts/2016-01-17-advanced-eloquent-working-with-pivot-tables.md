@@ -13,7 +13,7 @@ The code for this article is available in [this demo project](https://github.com
 ## Requirements
 
 The following use case is straight from a real word application I worked on in the past months. 
-Let's imagine you want to provide a way to write data into your database through an API for your customers. The source of the data are simple HTML forms, but the structure of those forms changes depending on the page they are displayed on. Maymbe there's a form to hire a lawyer, one to search the best mortgage or you wan't an offer for a painter. Because we didn't want to code every single API endpoint over and over again, we created a system where we can "build" our API with a drag & drop interface.
+Let's imagine you want to provide a way to write data into your database through an API for your customers. The source of the data are simple HTML forms, but the structure of those forms changes depending on the page they are displayed on. Maybe there's a form to hire a lawyer, one to search the best mortgage or you want an offer for a painter. Because we didn't want to code every single API endpoint over and over again, we created a system where we can "build" our API with a drag & drop interface.
 
 Below are the simplified requirements (I just want to cover the important stuff for this article):
 
