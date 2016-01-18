@@ -6,20 +6,26 @@ type: post
 accent: '#1f9bde'
 ---
 
-In this blog post I would like to introduce you to some advanced techniques to Laravels / Eloquents Relationship model. The most common usecases for Relationships are already well [documented](https://laravel.com/docs/5.2/eloquent-relationships), so I assume you know something about PHP, Laravel and Relationships.
+In this blog post I would like to introduce you to some advanced techniques to Laravels / Eloquents Relationship model. The most common usecases for Relationships are already well [documented](https://laravel.com/docs/5.2/eloquent-relationships). I assume you know something about PHP, Laravel and Eloquent Relationships.
 
 The code for this article is available in [this demo project](https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot) on Github.
 
 ## Requirements
 
-The following use case is straight from a real word application I worked on in the past months. 
-Let's imagine you want to provide a way to write data into your database through an API for your customers. The source of the data are simple HTML forms, but the structure of those forms changes depending on the page they are displayed on. Maymbe there's a form to hire a lawyer, one to search the best mortgage or you wan't an offer for a painter. Because we didn't want to code every single API endpoint over and over again, we created a system where we can "build" our API with a drag & drop interface.
+The following use case is straight from a real word application I worked on in the last months. 
+Let's imagine you want to provide a way to write data into your database through an API for your customers. The data-source are simple HTML forms, but the structure of those forms changes depending on the page they are displayed. Maybe there's a form to hire a lawyer, one to search the best mortgage or you want an offer for a painter. Because we didn't want to code every API endpoint over and over again, we created a system where we can "build" our API with a drag & drop interface.
 
 Below are the simplified requirements (I just want to cover the important stuff for this article):
 
+<figure>
+    <img src="{{ site.url }}/img/posts/advanced-eloquent/diagram.jpg" alt="Database Schema for this example">
+    <figcaption>Database Schema for this example</figcaption>
+</figure>
+
+
 ### Rule
 
-- Represent validation rules which are applied to `Field` (as a default Rule) or to `FieldEndpoint`
+- Represent validation rules which are applied to `Field` (A default set of Rules wich are always applied; eg. field "email" should always be validated as an email) or to `FieldEndpoint` (Attach a Rule when you build your API)
 - `Rule` morphedByMany `Field`
 - `Rule` morphedByMany `FieldEndpoint` (That's the Pivot Table!)
 
