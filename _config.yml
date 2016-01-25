@@ -6,7 +6,6 @@ baseurl: ""
 url: "https://stefanzweifel.io"
 timezone: Europe/Zurich
 name: stefanzweifel.io
-
 source: "./src"
 destination: "./dist"
 
@@ -20,11 +19,6 @@ collections:
     portfolio:
         output: true
         permalink: /portfolio/:path/
-
-#Special Things
-include:     ['.htaccess']
-exclude:     [ '_dev', 'node_modules', '_drafts', 'README.md', 'gulpfile.js', 'package.json', 'gulpconfig.json', 'gulpconfig.json.example', 'Gemfile', 'Gemfile.lock']
-
 
 image_url: "http://stefanzweifel.io/img"
 
