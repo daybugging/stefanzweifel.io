@@ -7,6 +7,7 @@ url: "https://stefanzweifel.io"
 timezone: Europe/Zurich
 name: stefanzweifel.io
 
+destination: "dist"
 
 # Build settings
 markdown: kramdown
