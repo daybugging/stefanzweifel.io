@@ -22,6 +22,7 @@ collections:
 
 image_url: "http://stefanzweifel.io/img"
 
+exclude: [vendor]
 
 gems:
   - jekyll-sitemap
