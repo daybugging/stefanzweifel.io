@@ -14,8 +14,8 @@ var config       = require('./gulpconfig.json'),
  * Default Task
  */
 gulp.task('default', function() {
-    gulp.watch('./_dev/sass/**/*.scss', ['css']);
-    gulp.watch('./img/**/*', ['images']);
+    gulp.watch('./src/_dev/sass/**/*.scss', ['css']);
+    gulp.watch('./src/img/**/*', ['images']);
 });
 
 
@@ -23,11 +23,11 @@ gulp.task('default', function() {
  * Optimize Images
  */
 gulp.task('images', function () {
-    return gulp.src('img/**/*')
+    return gulp.src('./src/img/**/*')
         .pipe(imagemin({
             progressive: true
         }))
-        .pipe(gulp.dest('img/'));
+        .pipe(gulp.dest('./src/img/'));
 });
 
 /**
@@ -35,16 +35,16 @@ gulp.task('images', function () {
  */
 gulp.task('css', function() {
 
-    gulp.src('./_dev/sass/*.scss')
+    gulp.src('./src/_dev/sass/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(minifyCSS( { keepBreaks:false } ))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./src/css'));
 
-    gulp.watch('./_dev/sass/**/*.scss', ['css']);
+    gulp.watch('./src/_dev/sass/**/*.scss', ['css']);
 
 });
 
@@ -55,6 +55,6 @@ gulp.task('css-scss', function() {
 
   return gulp.src('./node_modules/basscss*/**/*.css')
     .pipe(cssScss())
-    .pipe(gulp.dest('./_dev/sass/vendor'));
+    .pipe(gulp.dest('./src/_dev/sass/vendor'));
 
 });
