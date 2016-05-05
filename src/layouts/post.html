@@ -1,0 +1,18 @@
+{% extends 'master.html' %}
+
+{% block contents %}
+
+    <h1>{{ title }}</h1>
+    <footer>
+        <span>{{ wordCount}} words</span> &bull;
+        <span>{{ readingTime }}</span>
+    </footer>
+
+    {{ contents | safe }}
+
+    <section>
+        <h4>Questions?</h4>
+        <p>If you have any questions to this article or to this site. Leave me a message!</p>
+    </section>
+
+{% endblock %}
