@@ -4,5 +4,6 @@ module.exports = layouts({
     engine: 'swig',
     default: 'post.html',
     directory: 'src/layouts',
-    partials: 'src/partials'
+    partials: 'src/partials',
+    pattern: '**/*.{html,md}'
 });

@@ -16,10 +16,12 @@ var slug               = require('metalsmith-slug');
 var wordcount          = require("metalsmith-word-count");
 var linkcheck          = require('metalsmith-linkcheck');
 var images             = require('metalsmith-project-images');
+var define = require('metalsmith-define');
+
 
 module.exports = function() {
 
-    return gulp.src("./src/**/*")
+    return gulp.src(["./src/**/*"])
         .pipe(gulp_front_matter()).on("data", function(file) {
             assign(file, file.frontMatter);
             delete file.frontMatter;
@@ -27,13 +29,16 @@ module.exports = function() {
         .pipe(
             gulpsmith()
                 .metadata(require('./metadata.js'))
+                .use(define({
+                    moment: require('moment')
+                }))
                 .use(require('./collections.js'))
                 .use(require('./markdown.js'))
                 .use(require('./permalinks.js'))
                 .use(drafts())
+                .use(ignore(['layouts/**/*', 'partials/**/*']))
                 .use(pageTitles())
                 .use(wordcount())
-                .use(ignore(['layouts/**/*', 'partials/**/*']))
                 .use(images({
                     pattern: '**/**/*.md'
                 }))
