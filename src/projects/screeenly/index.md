@@ -1,7 +1,7 @@
 ---
 title:  screeenly
 date:   2014-07-15 16:16:08
-project-url: http://screeenly.com
+project_url: http://screeenly.com
 image: images/hero-image.png
 description: Screeenly is a webservice which allows you to generate Screenshots of websites through a simple API for free.
 ---

@@ -1,5 +1,6 @@
 ---
 title: Resources
+layout: page.html
 ---
 
 <h1>Resources</h1>

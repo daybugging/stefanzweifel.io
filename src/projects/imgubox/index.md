@@ -1,7 +1,7 @@
 ---
 title:  ImguBox
 date:   2015-05-20 14:15:00
-project-url: https://imgubox.wnx.ch
+project_url: https://imgubox.wnx.ch
 image: images/imgubox-hero@2x.png
 description: An "IFTTT" like service, which connects Imgur with Dropbox
 ---

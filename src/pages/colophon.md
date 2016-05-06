@@ -1,6 +1,6 @@
 ---
 title: Colophon
-permalink: /colophon/
+layout: page.html
 ---
 
 This website was built with <a href="https://jekyllrb.com">Jekyll</a>, a static website generator. The code is versioned with <a href="http://git-scm.com">Git</a>. The repository is hosted on <a href="https://github.com/stefanzweifel/stefanzweifel.io">Github</a> (Feel free to fork, open issues or send pull requests).

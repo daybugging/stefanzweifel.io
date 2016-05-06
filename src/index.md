@@ -1,5 +1,5 @@
 ---
-title: Homepage
+title: '👋'
 date: 2012-08-20
  .html
 permalink: false

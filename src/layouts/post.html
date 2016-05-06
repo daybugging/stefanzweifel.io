@@ -3,7 +3,8 @@
 {% block contents %}
 
     <h1>{{ title }}</h1>
-    <footer>
+    <footer class="mid-gray i">
+        <span>Published: {{ moment(date).format('MMMM Do YYYY') }}</span> &bull;
         <span>{{ wordCount}} words</span> &bull;
         <span>{{ readingTime }}</span>
     </footer>
