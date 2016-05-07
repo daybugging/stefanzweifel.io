@@ -1,6 +1,6 @@
 var gulp               = require('gulp');
 var gulpsmith          = require('gulpsmith');
-var gulp_front_matter  = require('gulp-front-matter');
+var frontMatter  = require('gulp-front-matter');
 var assign             = require('lodash.assign');
 var assets             = require('metalsmith-assets');
 var drafts             = require('metalsmith-drafts');
@@ -20,10 +20,14 @@ var define             = require('metalsmith-define');
 var excerpts           = require('metalsmith-better-excerpts');
 var excerpts           = require('metalsmith-excerpts');
 
+
 module.exports = function() {
 
-    return gulp.src(["./src/**/*"])
-        .pipe(gulp_front_matter()).on("data", function(file) {
+    // gulp.src(["./src/**/*"])
+    gulp.src(["./src/**/*.{md,html,css,xml,txt}"])
+        .pipe(frontMatter()).on("data", function(file) {
+
+            // This thing fucks up with my images. And I can't stop it :(
             assign(file, file.frontMatter);
             delete file.frontMatter;
         })
@@ -72,5 +76,4 @@ module.exports = function() {
                 // .use(linkcheck())
         )
         .pipe(gulp.dest("./dist"));
-
 };
