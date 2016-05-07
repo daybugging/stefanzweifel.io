@@ -5,7 +5,8 @@ module.exports = function () {
 
     return gulp.src('./dist/**/*.css')
         .pipe(uncss({
-            html: ['./dist/**/*.html']
+            html: ['./dist/**/*.html'],
+            ignore: ['/hljs/']
         }))
         .pipe(gulp.dest('./dist/'));
 };
