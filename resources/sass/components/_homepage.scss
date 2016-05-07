@@ -1,0 +1,28 @@
+.shaped-background {
+
+    position: relative;
+
+    color: white;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        background: $black;
+        height: calc(100% + 3rem);
+        width: 100vw;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 66%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 66%, 0% 100%);
+    }
+
+    .link--blog {
+        color: $red;
+    }
+
+    .link--work {
+        color: $blue;
+    }
+}

@@ -3,19 +3,18 @@ title: Posts
 layout: page.html
 ---
 
-# Articles
-
 <ul class="list pa0 ma0">
     {% for article in collections.articles %}
       <li class="mv3">
-            <h3 class="f4 ma0 pa0">
-                <a href="/{{ article.path.dir }}" class="link black">
+            <h3 class="f3-ns mb0 pa0">
+                <a href="/{{ article.path.dir }}" class="link dim">
                     {{ article.title }}
                 </a>
             </h3>
-            <p class="ma0 pa0">
-                <small>{{ moment(article.date).format() }}</small>
-            </p>
+            <div class="lh-copy measure">{{ article.excerpt|safe }}</div>
+            <footer class="mid-gray i mb3 pv1">
+                <span>{{ article.readingTime }} read</span>
+            </footer>
       </li>
     {% endfor %}
 </ul>

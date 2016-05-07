@@ -6,8 +6,8 @@ module.exports = function() {
     browserSync.init({
         server: {
             baseDir: "./dist",
-            open: false
-        }
+        },
+        open: false
     });
 
     gulp.watch("app/scss/*.scss", ['sass']);

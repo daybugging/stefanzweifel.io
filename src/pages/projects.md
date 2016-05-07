@@ -3,22 +3,19 @@ title: Projects
 layout: page.html
 ---
 
-<h1>Projects</h1>
-
-<section>
-
+<section class="df flx-w">
     {% for article in collections.projects %}
-        <div class="dib mr5 mb4 mw6">
-            <h2 class="f5 f4-ns ma0 mv2">
-                <a href="/{{ article.path.dir }}" class="link black">{{ article.title }}</a>
-            </h2>
-            <p class="ma0">{{ article.description }}</p>
-            <footer>                
-                <ul class="list pa0 ma0">
-                    <li class="dib mr2"><a href="{{ article.project_url }}" class="db link dim mid-gray">Visit Project</a></li>
-                </ul>
-            </footer>
+        <div class="mb2" style="flex:0 0 320px;">
+            <div class="ph2">
+                <h3 class="f3-ns mb2 pa0">
+                    <a href="/{{ article.path.dir }}" class="link dim">{{ article.title }}</a>
+                </h3>
+                <p class="ma0 lh-copy">{{ article.description }}</p>
+
+                <footer class="pa0 ma0">                
+                    <a href="{{ article.project_url }}" class="db link dim mid-gray">Visit Project</a>
+                </footer>
+            </div>
         </div>
     {% endfor %}
-
 </section>

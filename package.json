@@ -33,12 +33,12 @@
     "metalsmith": "^1.0.0",
     "metalsmith-archive": "^0.1.1",
     "metalsmith-assets": "^0.1.0",
-    "metalsmith-browser-sync": "^1.1.1",
+    "metalsmith-better-excerpts": "^0.1.7",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-define": "^2.0.1",
     "metalsmith-drafts": "0.0.1",
+    "metalsmith-excerpts": "^1.1.0",
     "metalsmith-feed": "^0.2.0",
-    "metalsmith-gzip": "^1.1.0",
     "metalsmith-headings": "^0.1.0",
     "metalsmith-headings-identifier": "0.0.11",
     "metalsmith-html-minifier": "^2.0.0",
@@ -53,13 +53,12 @@
     "metalsmith-page-titles": "^1.0.2",
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-project-images": "^1.0.1",
-    "metalsmith-redirect": "^2.0.1",
-    "metalsmith-serve": "0.0.7",
     "metalsmith-slug": "^0.2.0",
     "metalsmith-watch": "^1.0.1",
     "metalsmith-word-count": "0.0.4",
     "moment": "^2.13.0",
     "swig": "^1.3.2",
-    "tachyons": "^4.0.0-beta.24"
+    "tachyons": "^4.0.0-beta.24",
+    "tachyons-flex": "^1.1.1"
   }
 }

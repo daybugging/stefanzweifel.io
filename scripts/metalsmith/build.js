@@ -16,8 +16,9 @@ var slug               = require('metalsmith-slug');
 var wordcount          = require("metalsmith-word-count");
 var linkcheck          = require('metalsmith-linkcheck');
 var images             = require('metalsmith-project-images');
-var define = require('metalsmith-define');
-
+var define             = require('metalsmith-define');
+var excerpts           = require('metalsmith-better-excerpts');
+var excerpts           = require('metalsmith-excerpts');
 
 module.exports = function() {
 
@@ -42,6 +43,11 @@ module.exports = function() {
                 .use(images({
                     pattern: '**/**/*.md'
                 }))
+
+                .use(excerpts({
+                    pruneLength: 160
+                }))
+
                 // Experimental Stuff ------------------------------------------
                 // .use(assets({
                 //     source: './src/assets', // relative to the working directory

@@ -1,19 +1,14 @@
 @import "node_modules/tachyons/css/tachyons";
+@import "node_modules/tachyons-flex/src/tachyons-flex";
 
 $black: #212121;
 $yellow: #FCB500;
 $red: #db2828;
+$blue: #303F9F;
 
-.black {
-    color: #212121;
-}
-
-.nav {
-    background: $yellow;
-}
 
 body, html {
-    font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,Ubuntu,segoe ui,arial,sans-serif;
+    @extend .sans-serif;
     color: $black;
 }
 
@@ -26,7 +21,6 @@ img,
 figure {
     @extend .w-100;
     @extend .f5;
-    @extend .measure;
 }
 
 hr {
@@ -36,39 +30,49 @@ hr {
     @extend .b--black-10;
 }
 
-.article .heading-anchor {
-    text-decoration: none;
 
-    &:after {
-        content:"\00b6";
-        color: #E0E0E0;
-        padding-right: .5rem;
-        font-weight: normal;
-        margin-left: -1.5rem;
-        font-size: 75%;
-    }
+.black {
+    color: $black;
 }
 
+.bg-black {
+    background: $black;
+}
 
-.article {
-    @extend .pa3;
-    @extend .pv3-ns;
-    @extend .ph5-ns;
+a {
+    color: $blue;
+}
 
-    h1:first-child {
-       @extend .f1;
-       @extend .measure;
-    }
+// .article .heading-anchor {
+//     text-decoration: none;
+
+//     &:after {
+//         content:"\00b6";
+//         color: #E0E0E0;
+//         padding-right: .5rem;
+//         font-weight: normal;
+//         margin-left: -1.5rem;
+//         font-size: 75%;
+//     }
+// }
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page--article {
+
+    margin: 0 auto;
+    max-width: 900px;
 
     p {
-        // @extend .measure;
         @extend .lh-copy;
-        max-width: 50em;
+        @extend .measure;
     }
 
     ul {
-        max-width: 50em;
-        line-height: 1.6;
+        @extend .lh-copy;
     }
 
     .hljs {
@@ -94,3 +98,20 @@ blockquote {
 .bg-red {
     background: $red;
 }
+
+.bg-blue {
+    background: $blue;
+}
+
+.bg-yellow {
+    background: $yellow;
+}
+
+
+
+
+/**
+ * Homepage Stuff
+ */
+
+@import "components/homepage";
