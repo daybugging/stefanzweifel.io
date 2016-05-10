@@ -13,11 +13,11 @@ Implementation is easy.
 Download the code or use the [CDN-Version](http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js) and do your Ajax-Request as usual:
 
 
-```
+```javascript
 $.getJSON('http://jsonmoon.jsapp.us/').done(function(data) {
   console.log(data.name.first);
 });
-``
+```
 
 The plugin will handle the rest for you!
 Now grab a cup of coffee and enjoy the time you saved.

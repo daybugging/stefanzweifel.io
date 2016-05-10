@@ -15,7 +15,7 @@ Ich selbst nutzte IRC selten, da ich keinen passenden Client fand der "Alyways c
 
 [Shout](https://github.com/erming/shout) läuft wie gesagt mit Node. Daher ist es wichtig zuerst node.js auf eurem Uberspace korrekt einzurichten. Das geht ganz einfach, indem ihr eure eigene `.npmrc` anlegt. [Zum Uberspace Wiki Eintrag dazu](https://wiki.uberspace.de/development:nodejs?s[]=node#npm).
 
-```
+```shell
 cat > ~/.npmrc <<__EOF__
 prefix = $HOME
 umask = 077
@@ -26,7 +26,7 @@ __EOF__
 
 Weiter gehts mit dem installieren von Shout:
 
-```
+```shell
 npm install -g shout
 ```
 
@@ -55,7 +55,7 @@ Während ihr auf eure Portfreischaltung wartet, könnt ihr noch eure .htaccess D
 
 Der Inhalt der .htaccess-Datei müsste so aussehen (Port 61000 natürlich anpassen):
 
-```
+```htaccess
 RewriteEngine On
 RewriteRule ^(.*) http://localhost:61000/$1 [P]
 ```

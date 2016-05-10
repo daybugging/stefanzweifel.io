@@ -76,18 +76,24 @@ a {
         @extend .lh-copy;
     }
 
+    code {
+        background: $yellow;
+        padding: 1px 6px;
+        word-wrap: break-word;
+        font-size: 14px;
+        border-radius: 3px;
+    }
+
     .hljs {
         @extend .pa4;
     }
 
-}
+    pre > code {
+        @extend .hljs;
+        padding: 2rem;
+        line-height: 1.8;
+    }
 
-code {
-    background: $yellow;
-    padding: 1px 6px;
-    word-wrap: break-word;
-    font-size: 14px;
-    border-radius: 3px;
 }
 
 blockquote {

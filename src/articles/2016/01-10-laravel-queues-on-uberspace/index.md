@@ -11,7 +11,7 @@ I knew there where other solutions like Beanstalk or AWS but I wanted to keep th
 
 Use the following command to create your own `~/service` folder. (Skip this step if you're already used daemons on your server)
 
-```
+```shell
 uberspace-setup-svscan 
 ```
 
@@ -19,7 +19,7 @@ uberspace-setup-svscan
 First you need to create a skript which is exceuted by the daemon. I collect all my daemon-scripts in `~/etc/` and prefix them with `run-`.
 So let's create the file `~/etc/run-acme-worker` and store the following script in it. Check the command near `exec`, you have to adjust it to your own project!
 
-```
+```shell
 #!/bin/sh
 
 # These environment variables are sometimes needed by the running daemons
@@ -36,7 +36,7 @@ exec /package/host/localhost/php-5.6.6/bin/php /var/www/virtual/$USER/html/acme-
 ## Link your service
 Now you can link your new worker with daemontools. Uberspace provides a neat little helper for this.
 
-```
+```shell
 uberspace-setup-service run-acme-worker ~/etc/run-acme-worker
 ```
 

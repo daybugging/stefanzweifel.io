@@ -48,7 +48,7 @@ If you don't use the default folder structure ( `Dropbox/Apps/up-export/up-logs/
 
 If everything is setup correctly you can know execute the script from the terminal with the following command:
 
-```
+```shell
 sh toDayOne.sh
 ```
 

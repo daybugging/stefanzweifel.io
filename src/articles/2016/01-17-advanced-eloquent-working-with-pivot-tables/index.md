@@ -57,7 +57,7 @@ Next we need the database tables. Because they're quite easy I just link them he
 
 Let's create our first Model, `Rule`. The `fields` method returns a simple [Many to Many Polymorphic](https://laravel.com/docs/5.2/eloquent-relationships#many-to-many-polymorphic-relations) relationship. Nothing special. The second relationship `fieldEndpoints` is also a "Many to Many Polymorphic" Relationship but instead of a "normal" Model we point to the `FieldEndpoint` Pivot Model.
 
-```
+```php
 <?php
 
 namespace App;
@@ -93,7 +93,7 @@ Next we create our `Field` Model. Here we have a simple "Belongs to Many" Relati
 We also have the counterpart to the polymorphic relationship of the `Rule` model.
 And then there's something new. We override the `newPivot` method and check if the passed `$parent` variable is an instance of `Endpoint`, if this is true we create a new instance of the `FieldEndpoint` model. This if-clause is resolved, when we access the `endpoint`-Relationship.
 
-```
+```php
 <?php
 
 namespace App;
@@ -135,7 +135,7 @@ class Field extends Model
 
 Next we create the `Endpoint` Model. It's quite similar to the `Field` Model. We also have a "Belongs To Many" Relationship called `fields` (don't forget the `withPivot`-Statement) and we also override the `newPivot` method. This time, we check if the passed `$parent` variable is an instance of the `Field` Model.
 
-```
+```php
 <?php
 
 namespace App;
@@ -171,7 +171,7 @@ Thanks to the previously overwritten `newPivot` methods, this Model is now initi
 
 Now we can add our final Relationship to this Model. It is another "Many to Many Polymorphic" Relationship called `rules`. Thanks to this, we can attach a `Rule` to the connection between `Endpoint` and `Field`
 
-```
+```php
 <?php
 
 namespace App;
@@ -199,7 +199,7 @@ The hard work is done. Our Relationships are all setup and now we can start usin
 
 I annotated the test with some comments, which should explain the workflow for this Relationship system.
 
-```
+```php
 <?php
 
 use App\Endpoint;
