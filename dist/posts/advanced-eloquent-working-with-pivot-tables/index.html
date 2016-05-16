@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Advanced Eloquent: Working with Pivot Tables | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">Advanced Eloquent: Working with Pivot Tables</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: January 17th 2016</span> &bull; <span>1061 words</span> &bull; <span>4 min read</span></footer><p>In this blog post I would like to introduce you to some advanced techniques to Laravels / Eloquents Relationship model. The most common usecases for Relationships are already well <a href=https://laravel.com/docs/5.2/eloquent-relationships>documented</a>. I assume you know something about PHP, Laravel and Eloquent Relationships.</p><p>The code for this article is available in <a href=https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot>this demo project</a> on Github.</p><h2>Requirements</h2><p>The following use case is straight from a real word application I worked on in the last months.<br>Let’s imagine you want to provide a way to write data into your database through an API for your customers. The data-source are simple HTML forms, but the structure of those forms changes depending on the page they are displayed. Maybe there’s a form to hire a lawyer, one to search the best mortgage or you want an offer for a painter. Because we didn’t want to code every API endpoint over and over again, we created a system where we can “build” our API with a drag &amp; drop interface.</p><p>Below are the simplified requirements (I just want to cover the important stuff for this article):</p><figure><img src=images/diagram.jpg alt="Database Schema for this example"><figcaption>Database Schema for this example</figcaption></figure><h3>Rule</h3><ul><li>Represent validation rules which are applied to <code>Field</code> (A default set of Rules wich are always applied; eg. field “email” should always be validated as an email) or to <code>FieldEndpoint</code> (Attach a Rule when you build your API)</li><li><code>Rule</code> morphedByMany <code>Field</code></li><li><code>Rule</code> morphedByMany <code>FieldEndpoint</code> (That’s the Pivot Table!)</li></ul><h3>Field</h3><ul><li>Represents a single HTML field; &quot;firstname&quot;, &quot;street&quot;, “email”</li><li><code>Field</code> belongsToMany <code>Endpoint</code></li><li><code>Field</code> morphToMany <code>Rule</code></li></ul><h3>Endpoint</h3><ul><li>Represents a single API endpoint (&quot;hire-painter&quot;, &quot;hire-lawyer&quot;, etc.)</li><li><code>Endpoint</code> hasMany <code>Field</code></li></ul><h3>FieldEndpoint</h3><ul><li>Represents the Pivot table (the connection) between a single <code>Field</code> and a single <code>Endpoint</code></li><li><code>FieldEndpoint</code> morphToMany <code>Rule</code></li></ul><h2>The Migrations</h2><p>Next we need the database tables. Because they’re quite easy I just link them here. The most important part is, that our pivot table has an <code>id</code> column.</p><ul><li><a href=https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot/blob/master/database/migrations/2016_01_16_175254_create_rules_table.php>Migration for rules</a></li><li><a href=https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot/blob/master/database/migrations/2016_01_16_175312_create_fields_table.php>Migration for fields</a></li><li><a href=https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot/blob/master/database/migrations/2016_01_16_175246_create_endpoints_table.php>Migration for endpoints</a></li><li><a href=https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot/blob/master/database/migrations/2016_01_16_183742_create_fields_endpoints_table.php>Migration for fields_endpoints</a></li><li><a href=https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot/blob/master/database/migrations/2016_01_16_183915_create_ruleables_table.php>Migration for rulables</a></li></ul><h2>The Models</h2><p>Let’s create our first Model, <code>Rule</code>. The <code>fields</code> method returns a simple <a href=https://laravel.com/docs/5.2/eloquent-relationships#many-to-many-polymorphic-relations>Many to Many Polymorphic</a> relationship. Nothing special. The second relationship <code>fieldEndpoints</code> is also a “Many to Many Polymorphic” Relationship but instead of a “normal” Model we point to the <code>FieldEndpoint</code> Pivot Model.</p><pre><code class="hljs language-php"><span class=hljs-meta>&lt;?php</span>
+
+<span class=hljs-keyword>namespace</span> <span class=hljs-title>App</span>;
+
+<span class=hljs-keyword>use</span> <span class=hljs-title>Illuminate</span>\<span class=hljs-title>Database</span>\<span class=hljs-title>Eloquent</span>\<span class=hljs-title>Model</span>;
+
+<span class=hljs-class><span class=hljs-keyword>class</span> <span class=hljs-title>Rule</span> <span class=hljs-keyword>extends</span> <span class=hljs-title>Model</span>
+</span>{
+    <span class=hljs-comment>/**
+     * Relationship with the Field model.
+     *
+     * <span class=hljs-doctag>@return</span>    Illuminate\Database\Eloquent\Relations\MorphToMany
+     */</span>
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>fields</span><span class=hljs-params>()</span>
+    </span>{
+        <span class=hljs-keyword>return</span> $this-&gt;morphedByMany(Field::class, <span class=hljs-string>'ruleable'</span>);
+    }
+
+    <span class=hljs-comment>/**
+     * Relationship with the FieldEndpoint model.
+     *
+     * <span class=hljs-doctag>@return</span>    Illuminate\Database\Eloquent\Relations\MorphToMany
+     */</span>
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>fieldEndpoints</span><span class=hljs-params>()</span>
+    </span>{
+        <span class=hljs-keyword>return</span> $this-&gt;morphedByMany(FieldEndpoint::class, <span class=hljs-string>'ruleable'</span>);
+    }
+}
+
+</code></pre><p>Next we create our <code>Field</code> Model. Here we have a simple “Belongs to Many” Relationship called <code>endpoints</code>. It is important you add the <code>-&gt;withPivot([&quot;id&quot;])</code> statement here.<br>We also have the counterpart to the polymorphic relationship of the <code>Rule</code> model.<br>And then there’s something new. We override the <code>newPivot</code> method and check if the passed <code>$parent</code> variable is an instance of <code>Endpoint</code>, if this is true we create a new instance of the <code>FieldEndpoint</code> model. This if-clause is resolved, when we access the <code>endpoint</code>-Relationship.</p><pre><code class="hljs language-php"><span class=hljs-meta>&lt;?php</span>
+
+<span class=hljs-keyword>namespace</span> <span class=hljs-title>App</span>;
+
+<span class=hljs-keyword>use</span> <span class=hljs-title>Illuminate</span>\<span class=hljs-title>Database</span>\<span class=hljs-title>Eloquent</span>\<span class=hljs-title>Model</span>;
+
+<span class=hljs-class><span class=hljs-keyword>class</span> <span class=hljs-title>Field</span> <span class=hljs-keyword>extends</span> <span class=hljs-title>Model</span>
+</span>{
+    <span class=hljs-comment>/**
+     * Relationship with the Endpoint model.
+     *
+     * <span class=hljs-doctag>@return</span>    Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */</span>
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>endpoints</span><span class=hljs-params>()</span>
+    </span>{
+        <span class=hljs-keyword>return</span> $this-&gt;belongsToMany(Endpoint::class)-&gt;withPivot([<span class=hljs-string>'id'</span>]);
+    }
+
+    <span class=hljs-comment>/**
+     * Relationship with the Rule model.
+     *
+     * <span class=hljs-doctag>@return</span>    Illuminate\Database\Eloquent\Relations\MorphToMany
+     */</span>
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>rules</span><span class=hljs-params>()</span>
+    </span>{
+        <span class=hljs-keyword>return</span> $this-&gt;morphToMany(Rule::class, <span class=hljs-string>'ruleable'</span>);
+    }
+
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>newPivot</span><span class=hljs-params>(Model $parent, array $attributes, $table, $exists)</span>
+    </span>{
+        <span class=hljs-keyword>if</span> ($parent <span class=hljs-keyword>instanceof</span> Endpoint) {
+            <span class=hljs-keyword>return</span> <span class=hljs-keyword>new</span> FieldEndpoint($parent, $attributes, $table, $exists);
+        }
+
+        <span class=hljs-keyword>return</span> <span class=hljs-keyword>parent</span>::newPivot($parent, $attributes, $table, $exists);
+    }
+}
+</code></pre><p>Next we create the <code>Endpoint</code> Model. It’s quite similar to the <code>Field</code> Model. We also have a “Belongs To Many” Relationship called <code>fields</code> (don’t forget the <code>withPivot</code>-Statement) and we also override the <code>newPivot</code> method. This time, we check if the passed <code>$parent</code> variable is an instance of the <code>Field</code> Model.</p><pre><code class="hljs language-php"><span class=hljs-meta>&lt;?php</span>
+
+<span class=hljs-keyword>namespace</span> <span class=hljs-title>App</span>;
+
+<span class=hljs-keyword>use</span> <span class=hljs-title>Illuminate</span>\<span class=hljs-title>Database</span>\<span class=hljs-title>Eloquent</span>\<span class=hljs-title>Model</span>;
+
+<span class=hljs-class><span class=hljs-keyword>class</span> <span class=hljs-title>Endpoint</span> <span class=hljs-keyword>extends</span> <span class=hljs-title>Model</span>
+</span>{
+    <span class=hljs-comment>/**
+     * Relationship with the Field model.
+     *
+     * <span class=hljs-doctag>@return</span>    Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */</span>
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>fields</span><span class=hljs-params>()</span>
+    </span>{
+        <span class=hljs-keyword>return</span> $this-&gt;belongsToMany(Field::class, <span class=hljs-string>'fields_endpoints'</span>)-&gt;withPivot([<span class=hljs-string>'id'</span>]);
+    }
+
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>newPivot</span><span class=hljs-params>(Model $parent, array $attributes, $table, $exists)</span>
+    </span>{
+        <span class=hljs-keyword>if</span> ($parent <span class=hljs-keyword>instanceof</span> Field) {
+            <span class=hljs-keyword>return</span> <span class=hljs-keyword>new</span> FieldEndpoint($parent, $attributes, $table, $exists);
+        }
+
+        <span class=hljs-keyword>return</span> <span class=hljs-keyword>parent</span>::newPivot($parent, $attributes, $table, $exists);
+    }
+}
+
+</code></pre><p>Finally we create our Pivot-Model <code>FieldEndpoint</code>. Because this is not a normal Model the class extends the <code>Pivot</code> class rather than the <code>Model</code> class.<br>Thanks to the previously overwritten <code>newPivot</code> methods, this Model is now initiated everytime we access the “Belongs to Many” Relationships.</p><p>Now we can add our final Relationship to this Model. It is another “Many to Many Polymorphic” Relationship called <code>rules</code>. Thanks to this, we can attach a <code>Rule</code> to the connection between <code>Endpoint</code> and <code>Field</code></p><pre><code class="hljs language-php"><span class=hljs-meta>&lt;?php</span>
+
+<span class=hljs-keyword>namespace</span> <span class=hljs-title>App</span>;
+
+<span class=hljs-keyword>use</span> <span class=hljs-title>Illuminate</span>\<span class=hljs-title>Database</span>\<span class=hljs-title>Eloquent</span>\<span class=hljs-title>Relations</span>\<span class=hljs-title>Pivot</span>;
+
+<span class=hljs-class><span class=hljs-keyword>class</span> <span class=hljs-title>FieldEndpoint</span> <span class=hljs-keyword>extends</span> <span class=hljs-title>Pivot</span>
+</span>{
+    <span class=hljs-comment>/**
+     * Relationship with the Rule model.
+     *
+     * <span class=hljs-doctag>@return</span>    Illuminate\Database\Eloquent\Relations\MorphToMany
+     */</span>
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>rules</span><span class=hljs-params>()</span>
+    </span>{
+        <span class=hljs-keyword>return</span> $this-&gt;morphToMany(Rule::class, <span class=hljs-string>'ruleable'</span>)-&gt;withPivot(<span class=hljs-string>'parameters'</span>);
+        ;
+    }
+}
+</code></pre><h2>Usage</h2><p>The hard work is done. Our Relationships are all setup and now we can start using it in our code. I won’t cover, how you create a userfriendly interface for this usecase, but rather how you would attach and access the Models. You find more examples in <a href=https://github.com/stefanzweifel/example-advanced-eloquent-with-pivot/blob/master/tests/RelationshipTest.php>this test</a>.</p><p>I annotated the test with some comments, which should explain the workflow for this Relationship system.</p><pre><code class="hljs language-php"><span class=hljs-meta>&lt;?php</span>
+
+<span class=hljs-keyword>use</span> <span class=hljs-title>App</span>\<span class=hljs-title>Endpoint</span>;
+<span class=hljs-keyword>use</span> <span class=hljs-title>App</span>\<span class=hljs-title>Field</span>;
+<span class=hljs-keyword>use</span> <span class=hljs-title>App</span>\<span class=hljs-title>Rule</span>;
+<span class=hljs-keyword>use</span> <span class=hljs-title>Illuminate</span>\<span class=hljs-title>Foundation</span>\<span class=hljs-title>Testing</span>\<span class=hljs-title>DatabaseMigrations</span>;
+<span class=hljs-keyword>use</span> <span class=hljs-title>Illuminate</span>\<span class=hljs-title>Foundation</span>\<span class=hljs-title>Testing</span>\<span class=hljs-title>DatabaseTransactions</span>;
+<span class=hljs-keyword>use</span> <span class=hljs-title>Illuminate</span>\<span class=hljs-title>Foundation</span>\<span class=hljs-title>Testing</span>\<span class=hljs-title>WithoutMiddleware</span>;
+
+<span class=hljs-class><span class=hljs-keyword>class</span> <span class=hljs-title>RelationshipTest</span> <span class=hljs-keyword>extends</span> <span class=hljs-title>TestCase</span>
+</span>{
+    <span class=hljs-keyword>public</span> <span class=hljs-function><span class=hljs-keyword>function</span> <span class=hljs-title>an_endpoint_can_have_many_fields_and_this_connection_can_have_many_rules</span><span class=hljs-params>()</span>
+    </span>{
+        <span class=hljs-comment>// A Field may have a default set of Rules, which are always applied</span>
+        $fieldRules = factory(Rule::class, <span class=hljs-number>2</span>)-&gt;create();
+        $field      = factory(Field::class)-&gt;create();
+        $endpoint   = factory(Endpoint::class)-&gt;create();
+
+        <span class=hljs-comment>// Attach default Rules to Field</span>
+        $field-&gt;rules()-&gt;sync($fieldRules);
+
+        <span class=hljs-comment>// Attach Field with default set of Rules to Endpoint</span>
+        $endpoint-&gt;fields()-&gt;attach($field);
+
+        <span class=hljs-comment>// Create 5 new Rules which will be stored to the pivot table Model</span>
+        $fieldEndpointRules = factory(Rule::class, <span class=hljs-number>5</span>)-&gt;create();
+
+        <span class=hljs-comment>/**
+         * This is the "not so nice part". We have to receive the Pivot Model,
+         * which connects Endpoint and Fields. In this example we only have
+         * one Field which connects with the Endpoint, so we can simply
+         * call `first()`. In your implementation you would have to
+         * do `whereName($field-&gt;name)` or something similar.
+         */</span>
+        $pivotModel = $endpoint-&gt;fields()-&gt;first()-&gt;pivot;
+
+        <span class=hljs-comment>// Attach Rules to the Pivot Model</span>
+        $pivotModel-&gt;rules()-&gt;sync($fieldEndpointRules);
+
+        $this-&gt;assertCount(<span class=hljs-number>2</span>, $field-&gt;rules);
+        $this-&gt;assertCount(<span class=hljs-number>1</span>, $endpoint-&gt;fields);
+        $this-&gt;assertCount(<span class=hljs-number>5</span>, $endpoint-&gt;fields()-&gt;first()-&gt;pivot-&gt;rules);
+    }
+}
+</code></pre><p>As you can imageine there are thousands of ways on how you can use this in your application. If you have any questions about this post or want to chat about Laravel im also available on <a href=http://larachat.co>http://larachat.co</a>.</p><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
