@@ -9,7 +9,6 @@ var headingsidentifier = require("metalsmith-headings-identifier");
 var htmlMinifier       = require("metalsmith-html-minifier");
 var hyphenate          = require('metalsmith-hyphenate');
 var ignore             = require('metalsmith-ignore');
-var metallic           = require('metalsmith-metallic');
 var pageTitles         = require('metalsmith-page-titles');
 var sitemap            = require('metalsmith-mapsite');
 var slug               = require('metalsmith-slug');
@@ -50,7 +49,6 @@ Metalsmith('./')
     //     "langModule": "hyphenation.de",
     //     "ignore": ["archives/*"] // All the files inside 'archive' will not be hyphenated
     // }))
-    .use(metallic()) // highlight.js
     // .use(feed({
     //     collection: 'articles',
     //     destination: 'feed.xml'
