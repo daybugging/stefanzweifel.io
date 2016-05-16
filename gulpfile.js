@@ -10,7 +10,7 @@ gulp.task('serve', require('./scripts/browserSync.js'));
 gulp.task('sass', require('./scripts/css.js'));
 gulp.task('uncss', require('./scripts/uncss.js'));
 gulp.task("js", require('./scripts/javascript.js'));
-gulp.task('deploy', ['build'], require('./scripts/deploy.js'));
+gulp.task('deploy', require('./scripts/deploy.js'));
 gulp.task('test', require('./scripts/test.js'));
 
 // Task Executes build-metalsmith.js through node

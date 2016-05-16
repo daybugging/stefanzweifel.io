@@ -2,5 +2,6 @@
 .sass-cache
 /node_modules
 gulpconfig.json
+secrets.json
 dist
 .gulp
