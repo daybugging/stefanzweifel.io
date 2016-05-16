@@ -66,7 +66,7 @@ Metalsmith('./')
     // }))
 
     .use(htmlMinifier()) // Use the default options
-    // .use(linkcheck())
+    .use(linkcheck())
     .destination('./dist')
     .build(function(err) {
     if (err) throw err;
