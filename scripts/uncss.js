@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var uncss = require('gulp-uncss');
+var cleanCSS = require('gulp-clean-css');
 
 module.exports = function () {
 
@@ -8,5 +9,6 @@ module.exports = function () {
             html: ['./dist/**/*.html'],
             ignore: ['/hljs/']
         }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./dist/'));
 };
