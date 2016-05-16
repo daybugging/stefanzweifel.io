@@ -39,6 +39,12 @@ Don't forget to make the script executable:
 chmod +x run-acme-worker
 ```
 
+Don't forget to make the script executable
+
+{% highlight bash %}
+chmod +x run-acme-worker
+{% endhighlight%}
+
 ## Link your service
 Now you can link your new worker with daemontools. Uberspace provides a neat little helper for this.
 
