@@ -1,60 +1,23 @@
-/**
- * Gulp specific Variables
- */
-var config       = require('./gulpconfig.json'),
-    gulp         = require('gulp'),
-    sass         = require('gulp-sass'),
-    minifyCSS    = require('gulp-minify-css'),
-    cssScss      = require('gulp-css-scss'),
-    autoprefixer = require('gulp-autoprefixer'),
-    imagemin     = require('gulp-imagemin');
+var gulp = require('gulp');
+var exec = require('child_process').exec;
 
-
-/**
- * Default Task
- */
-gulp.task('default', function() {
-    gulp.watch('./src/_dev/sass/**/*.scss', ['css']);
-    gulp.watch('./src/img/**/*', ['images']);
+gulp.task('default', ['sass', 'build'] ,function() {
+    gulp.watch('./src/**/*', ['build']);
+    gulp.watch('./resources/sass/**/*.scss', ['sass']);
 });
 
+gulp.task('serve', require('./scripts/browserSync.js'));
+gulp.task('sass', require('./scripts/css.js'));
+gulp.task('uncss', require('./scripts/uncss.js'));
+gulp.task('js', require('./scripts/javascript.js'));
+gulp.task('deploy', require('./scripts/deploy.js'));
+gulp.task('test', require('./scripts/test.js'));
 
-/**
- * Optimize Images
- */
-gulp.task('images', function () {
-    return gulp.src('./src/img/**/*')
-        .pipe(imagemin({
-            progressive: true
-        }))
-        .pipe(gulp.dest('./src/img/'));
-});
-
-/**
- * Build CSS for this site
- */
-gulp.task('css', function() {
-
-    gulp.src('./src/_dev/sass/*.scss')
-        .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(minifyCSS( { keepBreaks:false } ))
-        .pipe(gulp.dest('./src/css'));
-
-    gulp.watch('./src/_dev/sass/**/*.scss', ['css']);
-
-});
-
-/**
- * Transform CSS4 into SASS
- */
-gulp.task('css-scss', function() {
-
-  return gulp.src('./node_modules/basscss*/**/*.css')
-    .pipe(cssScss())
-    .pipe(gulp.dest('./src/_dev/sass/vendor'));
-
-});
+// Task Executes build-metalsmith.js through node
+gulp.task('build', function (cb) {
+  exec('node ./scripts/metalsmith/build.js', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+})

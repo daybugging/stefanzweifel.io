@@ -1,0 +1,63 @@
+/**
+ * This CSS shows a ¶-symbol, while hovering a heading
+ * on an article page.
+ */
+
+.heading-anchor {
+    display: none;
+}
+
+.page--article .heading-anchor {
+    text-decoration: none;
+    display: inline-block;
+
+    &--element {
+        visibility: hidden;
+        color: $red;
+    }
+
+}
+
+/**
+ * While hovering a Heading, show "Anchor-Element"
+ */
+.page--article {
+
+    h1:hover,
+    h2:hover,
+    h3:hover{
+        .heading-anchor--element {
+            visibility: visible;
+        }
+    }
+
+}
+
+
+.page--article {
+
+    h1 .heading-anchor {
+        margin-left: -2.5rem;
+        padding-right: 1rem;
+    }
+
+    @media screen and (min-width: 48em) {
+
+        h1 .heading-anchor {
+            padding-right: .3rem;
+        }
+
+    }
+
+
+    h2 .heading-anchor {
+        margin-left: -1.5rem;
+        padding-right: .5rem;
+    }
+
+    h3 .heading-anchor {
+        margin-left: -1.5rem;
+        padding-right: .6rem;
+    }
+
+}

@@ -1,34 +1,27 @@
 # stefanzweifel.io
 
-[![Build Status](https://travis-ci.org/stefanzweifel/stefanzweifel.io.svg?branch=master)](https://travis-ci.org/stefanzweifel/stefanzweifel.io)
-
 Hi. You found the uncompiled source code of my personal [website](https://stefanzweifel.io).
 
 ## Workflow
 
-This project uses Gulp for it's build process. Gulp compiles and minifys the CSS file. There's also a command to compress image files (`grunt images`).
+This project uses [Metalsmith](http://metalsmith.io) and Gulp for it's build process.
 
 ## How to setup the site on your local machine
 
-You need Ruby, [Jekyll](http://jekyllrb.com), [node.js](http://nodejs.org) and [Gulp](http://gulpjs.com).
+You need [node.js](http://nodejs.org) and [Gulp](http://gulpjs.com).
 
 ```
 $ git clone https://github.com/stefanzweifel/stefanzweifel.io.git
 $ cd stefanzweifel.io
 $ npm install
-$ mv gulpconfig.json.example gulpconfig.json
-$ jekyll serve --watch
+$ gulp serve
 ```
 
-To compile SASS execute the following command. Gulp will automatically watch for changes in all SASS files.
-
-```
-$ cd path/to/stefanzweifel.io
-$ gulp
-```
+There are also command for `sass`, `uncss`, `js` and `deploy`.
 
 ## Continous Integration
-This website has some simple tests, which will be triggered everytime someone pushes to this repository. [See Travis-CI](https://travis-ci.org/stefanzweifel/stefanzweifel.io/)
+
+~~This website has some simple tests, which will be triggered everytime someone pushes to this repository. [See Travis-CI](https://travis-ci.org/stefanzweifel/stefanzweifel.io/)~~
 
 ## Contribution
 
@@ -43,7 +36,7 @@ Feel free to use some snippets from my code. I would appreciate it, if you would
 
 The MIT License (MIT)
 
-Copyright (c) [2015] [Stefan Zweifel]
+Copyright (c) [2016] [Stefan Zweifel]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

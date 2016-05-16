@@ -1,0 +1,173 @@
+@import "node_modules/tachyons/css/tachyons";
+@import "node_modules/tachyons-flex/src/tachyons-flex";
+@import "node_modules/highlight.js/styles/dracula";
+
+$black: #212121;
+$yellow: #FCB500;
+$red: #CC265C;
+$blue: #4867C1;
+$header-font: "Montserrat";
+
+.red {
+    color: $red;
+}
+
+.blue {
+    color: $blue;
+}
+
+body, html {
+    @extend .sans-serif;
+    color: $black;
+}
+
+figure {
+    @extend .mv4;
+    @extend .mh0;
+}
+
+img,
+figure {
+    @extend .w-100;
+    @extend .f5;
+}
+
+hr {
+    @extend .mw5;
+    @extend .bb;
+    @extend .bw1;
+    @extend .b--black-10;
+}
+
+h1 {
+    font-family: $header-font, sans-serif;
+}
+
+
+.black {
+    color: $black;
+}
+
+.bg-black {
+    background: $black;
+}
+
+a {
+    color: $blue;
+}
+
+
+// @import "components/article_headings";
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page--article {
+
+    margin: 0 auto;
+    max-width: 900px;
+
+    .lh-title::after {
+        content: '';
+        display: block;
+        border-bottom: solid 5px $black;
+        width: 125px;
+        margin-top: .5rem;
+    }
+
+    p {
+        @extend .lh-copy;
+        @extend .measure;
+    }
+
+    ul {
+        @extend .lh-copy;
+    }
+
+    code {
+        background: $yellow;
+        padding: 1px 6px;
+        word-wrap: break-word;
+        font-size: 14px;
+        border-radius: 3px;
+    }
+
+    .hljs {
+        @extend .pa4;
+    }
+
+    pre > code {
+        @extend .hljs;
+        padding: 2rem;
+        line-height: 1.8;
+    }
+
+}
+
+blockquote {
+    border-left: 5px solid $black;
+    margin-left: 0;
+    padding-left: 1rem;
+}
+
+.bg-red {
+    background: $red;
+}
+
+.bg-blue {
+    background: $blue;
+}
+
+.bg-yellow {
+    background: $yellow;
+}
+
+
+
+
+/**
+ * Homepage Stuff
+ */
+
+@import "components/homepage";
+
+
+
+.waving {
+    display: inline-block;
+    line-height: 1;
+    -webkit-animation: a 1s infinite;
+    animation: a 1s infinite;
+    -webkit-transform-origin: 85% 75%;
+    transform-origin: 85% 75%
+}
+@-webkit-keyframes a {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    50% {
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg)
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}
+@keyframes a {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    50% {
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg)
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}

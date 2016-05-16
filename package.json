@@ -1,28 +1,73 @@
 {
   "name": "stefanzweifel.io",
   "version": "1.0.0",
-  "description": "Personal Website",
-  "dependencies": {
-    "basscss": "^6.1.6",
-    "basscss-sass": "^1.0.2",
-    "basscss-responsive-white-space": "0.0.1",
-    "gulp": "^3.8.8"
-  },
-  "devDependencies": {
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-css-scss": "0.0.2",
-    "gulp-imagemin": "^2.3.0",
-    "gulp-minify-css": "^0.3.10",
-    "gulp-sass": "^2.1.0"
+  "description": "Sourcecode of my personal website / blog / portfolio",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stefanzweifel/stefanzweifel.io"
+    "url": "git+https://github.com/stefanzweifel/stefanzweifel.io.git"
   },
   "author": "Stefan Zweifel",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stefanzweifel/stefanzweifel.io/issues"
   },
-  "homepage": "https://github.com/stefanzweifel/stefanzweifel.io"
+  "homepage": "https://github.com/stefanzweifel/stefanzweifel.io#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.7.7",
+    "babel-core": "^6.7.7",
+    "babel-preset-es2015": "^6.6.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.12.5",
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-sftp": "^0.1.5",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uncss": "^1.0.5",
+    "handlebars": "^4.0.5",
+    "highlight.js": "^9.3.0",
+    "highlighter": "0.0.3",
+    "lodash.assign": "^4.0.8",
+    "metalsmith": "^1.0.0",
+    "metalsmith-archive": "^0.1.1",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-better-excerpts": "^0.1.7",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-define": "^2.0.1",
+    "metalsmith-drafts": "0.0.1",
+    "metalsmith-excerpts": "^1.1.0",
+    "metalsmith-feed": "^0.2.0",
+    "metalsmith-headings": "^0.1.0",
+    "metalsmith-headings-identifier": "0.0.11",
+    "metalsmith-html-minifier": "^2.0.0",
+    "metalsmith-hyphenate": "^0.3.3",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-in-place": "^1.4.4",
+    "metalsmith-layouts": "^1.4.1",
+    "metalsmith-linkcheck": "^0.2.5",
+    "metalsmith-mapsite": "^1.0.4",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-markdown-remarkable": "^0.1.1",
+    "metalsmith-page-titles": "^1.0.2",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-prism": "^2.2.0",
+    "metalsmith-project-images": "^1.0.1",
+    "metalsmith-slug": "^0.2.0",
+    "metalsmith-watch": "^1.0.1",
+    "metalsmith-word-count": "0.0.4",
+    "moment": "^2.13.0",
+    "swig": "^1.3.2",
+    "tachyons": "^4.0.0-beta.24",
+    "tachyons-flex": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }

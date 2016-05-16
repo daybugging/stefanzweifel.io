@@ -1,8 +1,7 @@
-_site
-dist
 .DS_Store
 .sass-cache
 /node_modules
 gulpconfig.json
+secrets.json
 .gulp
-.jekyll-metadata
+src/.links_checked.json

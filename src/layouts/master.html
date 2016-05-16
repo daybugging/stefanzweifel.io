@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "../partials/head.html" %}
+</head>
+<body>
+
+    {% include "../partials/navigation.html" %}
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        {% block contents %}{% endblock %}
+    </div>
+
+    {% include "../partials/footer.html" %}
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>
