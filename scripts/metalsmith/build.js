@@ -59,8 +59,13 @@ Metalsmith('./')
     // ----------------------------------------------------------
     .use(require('./layouts.js'))
     .use(require('./inPlace.js'))
-    .use(headingsidentifier())
-    // .use(htmlMinifier()) // Use the default options
+
+    // .use(headingsidentifier({
+    //     linkTemplate: "<a class='heading-anchor' href='#%s'><span class='heading-anchor--element'>¶</span></a>",
+    //     selector: ['h1', 'h2', 'h3']
+    // }))
+
+    .use(htmlMinifier()) // Use the default options
     // .use(linkcheck())
     .destination('./dist')
     .build(function(err) {

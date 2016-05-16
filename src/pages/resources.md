@@ -3,4 +3,7 @@ title: Resources
 layout: post.html
 ---
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+On this site I will share tools and scripts I use in my day to day work. More stuff coming soon!
+
+- [My Dotfiles](https://github.com/stefanzweifel/dotfiles)
+- [Sublime Text Settings](https://gist.github.com/stefanzweifel/9397728)

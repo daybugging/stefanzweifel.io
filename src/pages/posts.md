@@ -7,7 +7,7 @@ layout: page.html
     {% for article in collections.articles %}
       <li class="mv3">
             <h3 class="f3-ns mb0 pa0">
-                <a href="/{{ article.path.dir }}" class="link dim">
+                <a href="/{{ article.path.dir }}" class="link dim red">
                     {{ article.title }}
                 </a>
             </h3>

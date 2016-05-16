@@ -10,10 +10,9 @@ layout: page.html
                 <h3 class="f3-ns mb2 pa0">
                     <a href="/{{ article.path.dir }}" class="link dim">{{ article.title }}</a>
                 </h3>
-                <p class="ma0 lh-copy">{{ article.description }}</p>
-
-                <footer class="pa0 ma0">                
-                    <a href="{{ article.project_url }}" class="db link dim mid-gray">Visit Project</a>
+                <p class="ma0 lh-copy">{{ article.description|safe }}</p>
+                <footer class="pa0 ma0 mt2">                
+                    <a href="{{ article.project_url }}" class="db link dim">Visit Project</a>
                 </footer>
             </div>
         </div>

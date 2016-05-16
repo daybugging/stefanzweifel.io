@@ -4,11 +4,11 @@
 
 <div class="page--article">
 
-    <h1 class="f1-ns measure lh-title">{{ title }}</h1>
+    <h1 class="f1-ns measure lh-title mt0 mb2">{{ title }}</h1>
     <footer class="mid-gray i bb b--light-gray mb3 pv2">
         <span>Published: {{ moment(date).format('MMMM Do YYYY') }}</span> &bull;
         <span>{{ wordCount}} words</span> &bull;
-        <span>{{ readingTime }}</span>
+        <span>{{ readingTime }} read</span>
     </footer>
 
     {{ contents | safe }}

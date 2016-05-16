@@ -4,9 +4,17 @@
 
 $black: #212121;
 $yellow: #FCB500;
-$red: #db2828;
-$blue: #303F9F;
+$red: #CC265C;
+$blue: #4867C1;
+$header-font: "Montserrat";
 
+.red {
+    color: $red;
+}
+
+.blue {
+    color: $blue;
+}
 
 body, html {
     @extend .sans-serif;
@@ -31,6 +39,10 @@ hr {
     @extend .b--black-10;
 }
 
+h1 {
+    font-family: $header-font, sans-serif;
+}
+
 
 .black {
     color: $black;
@@ -44,18 +56,8 @@ a {
     color: $blue;
 }
 
-// .article .heading-anchor {
-//     text-decoration: none;
 
-//     &:after {
-//         content:"\00b6";
-//         color: #E0E0E0;
-//         padding-right: .5rem;
-//         font-weight: normal;
-//         margin-left: -1.5rem;
-//         font-size: 75%;
-//     }
-// }
+// @import "components/article_headings";
 
 .container {
     max-width: 900px;
@@ -66,6 +68,14 @@ a {
 
     margin: 0 auto;
     max-width: 900px;
+
+    .lh-title::after {
+        content: '';
+        display: block;
+        border-bottom: solid 5px $black;
+        width: 125px;
+        margin-top: .5rem;
+    }
 
     p {
         @extend .lh-copy;
@@ -122,3 +132,42 @@ blockquote {
  */
 
 @import "components/homepage";
+
+
+
+.waving {
+    display: inline-block;
+    line-height: 1;
+    -webkit-animation: a 1s infinite;
+    animation: a 1s infinite;
+    -webkit-transform-origin: 85% 75%;
+    transform-origin: 85% 75%
+}
+@-webkit-keyframes a {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    50% {
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg)
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}
+@keyframes a {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    50% {
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg)
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}

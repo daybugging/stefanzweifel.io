@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include "../partials/head.html" %}
-</head>
-<body>
-    {% include "../partials/navigation-homepage.html" %}
+{% extends 'master.html' %}
 
+{% block contents %}
+
+    <h1 class="f2 f1-ns mt0 measure lh-title waving">{{ title }}</h1>
     {{ contents | safe }}
 
-    {% include "../partials/footer.html" %}
-
-    <script src="/assets/js/main.js" async></script>
-</body>
-</html>
+{% endblock %}
