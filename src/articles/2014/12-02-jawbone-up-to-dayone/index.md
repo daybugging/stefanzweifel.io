@@ -59,7 +59,7 @@ The script will `cd` into the directory and extract the entry date by the filena
 You could automate the execution of the script, but I like it simple (and I don't know how to do it :)).
 Personally, I use a simple [Alfred Workflow](https://github.com/stefanzweifel/up-to-dayone/releases/download/v.1.0.0/up-to-dayone.alfredworkflow) to execute the script.
 
-**Update:** I recently published a follow up post on how to automate the script with Hazel. You find the post [here](/posts/automate-up-to-dayone/).
+**Update:** I recently published a follow up post on how to automate the script with Hazel. You find the post [here](/posts/automate-todayone-sh/).
 
 ### It doesn't work!
 

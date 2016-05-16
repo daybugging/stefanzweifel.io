@@ -11,7 +11,6 @@ Earlier this year I had the idea to publish a monthly post containing resources 
 At work, we decided to set our focus this year on Angular. Even though no one in our team is an expert in Javascript frameworks, in our eyes Angular does a perfect job and has a great community.      
 While researching we stumbled upon ngBoilerplate, a premade Gruntfile which handles the whole build-process of a modern Angular application. I modified the script so it's even more flexible and gives you the ability to create new Angular applications, just with one terminal command. (I hope I can share this script, or some of the ideas behind it in the upcoming weeks).
 
-- [ngBoilerplate](http://joshdmiller.github.io/ng-boilerplate)
 - [ngBoilerplate on Github](https://github.com/ngbp/ngbp)
 
 ## json-api

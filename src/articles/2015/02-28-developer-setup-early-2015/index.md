@@ -188,7 +188,7 @@ If you got so far, thanks for reading this post. I still didn't covered every si
 If you have any questions or want to know more about my setup / workflow, feel free to ask on [Twitter](http://twitter.com/_stefanzweifel) or by [email (mailto-Link)](mailto:hello@stefanzweifel.io).
 
 
-[^1]: I shared my settings.json on [Github](https://gist.github.com/stefanzweifel/9397728). I also wrote a dedicated [blog post (GERMAN)](/posts/sublime-text/) some time ago.
+[^1]: I shared my settings.json on [Github](https://gist.github.com/stefanzweifel/9397728). I also wrote a dedicated [blog post (GERMAN)](/posts/sublime-text-3/) some time ago.
 [^2]: [Alfred Dash Workflow on Github](https://github.com/willfarrell/alfred-dash-workflow).
 [^3]: [clearSharingFolder.sh](https://github.com/stefanzweifel/uberspaceScripts/blob/master/bin/clearSharingFolder.sh)
 [^4]: As of January 1th 2015 the pricing policy [changed](https://blog.pinboard.in/2014/11/new_pricing_policy/).

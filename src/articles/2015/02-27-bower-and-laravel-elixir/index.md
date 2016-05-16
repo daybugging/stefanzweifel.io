@@ -4,7 +4,7 @@ date:   2015-02-27 20:45
 accent: '#f4645f'
 ---
 
-I'm in the process of upgrading [screeenly](/portfolio/screeenly) to the newest release. While switching from Grunt to Gulp I had some problems binding third-party packages into the Gulp workflow.     
+I'm in the process of upgrading [screeenly](/projects/screeenly) to the newest release. While switching from Grunt to Gulp I had some problems binding third-party packages into the Gulp workflow.     
 Luckily there is a nice and simple way to configure the output directory of Bower. Just add a `.bowerrc` file to the root of your Laravel Project and insert the following code:
 
 ```json
