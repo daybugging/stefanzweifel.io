@@ -5,3 +5,4 @@ gulpconfig.json
 secrets.json
 dist
 .gulp
+src/.links_checked.json
