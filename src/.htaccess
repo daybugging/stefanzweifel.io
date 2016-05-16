@@ -518,3 +518,16 @@ FileETag None
 # RewriteRule ^posts/(.*) /journal/$1 [R=301,L]
 
 RewriteRule ^about / [R=301,L]
+
+# The Switch from Jekyll to Metalsmith messed up with some permalinks.
+# Let's redirect them :)
+
+Redirect /posts/automate-up-to-dayone/ /posts/automate-todayone-sh/ [R=301,L]
+Redirect /posts/monthly-learning-log-january/ /posts/monthly-learning-log-mll-january/ [R=301,L]
+Redirect /posts/envoyer-io-auf-uberspace/ /posts/envoyer-io-auf-einem-uberspace-nutzen/ [R=301,L]
+Redirect /posts/shout-on-uberspace/ /posts/how-to-install-shout-on-uberspace/ [R=301,L]
+Redirect /posts/gandi-and-uberspace/ /posts/gandi-domain-auf-uberspace-einrichten/ [R=301,L]
+Redirect /posts/bulletproof-crossdomain-ajax/ /posts/bulletproof-crossdomain-with-ajax/ [R=301,L]
+Redirect /posts/laravel-vagrant/ /posts/laravel-vagrant-sequelpro/ [R=301,L]
+Redirect /posts/sublime-text/ /posts/sublime-text-3/ [R=301,L]
+Redirect /posts/uberspace-skripts/ /posts/uberspace-scripts/ [R=301,L]
