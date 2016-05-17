@@ -1,7 +1,4 @@
 var Metalsmith         = require('Metalsmith');
-var gulpsmith          = require('gulpsmith');
-var frontMatter        = require('gulp-front-matter');
-var assign             = require('lodash.assign');
 var assets             = require('metalsmith-assets');
 var drafts             = require('metalsmith-drafts');
 var feed               = require('metalsmith-feed');
