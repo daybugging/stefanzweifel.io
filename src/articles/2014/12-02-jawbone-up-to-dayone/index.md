@@ -37,7 +37,7 @@ Maybe you can use it too.
 
 <figure>
     <a href="images/example-structure.png" target="blank">
-        <img src="{{ site.url }}/img/posts/jawbone-up-to-dayone/example-structure.png" alt="My directory structure">  
+        <img src="images/example-structure.png" alt="My directory structure">  
     </a>
     <figcaption>This is my personal folder structure. Click on the image to enlarge it.</figcaption>
 </figure>
