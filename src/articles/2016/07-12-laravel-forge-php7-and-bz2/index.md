@@ -18,7 +18,7 @@ But how on earth could I fix that? (Sidenote: I still have no experience in devo
 
 ## The Solution
 
-After some research the solution was so simple I couldn’t believe it. Just execute a one-liner and restart the server … done.[^: Or you could add `extension=bz2.so` to your `php.ini` file and restart the server]
+After some research the solution was so simple I couldn’t believe it. Just execute a one-liner and restart the server … done.[^1]
 
 ```shell
 sudo apt-get install php7.0-bz2
@@ -31,3 +31,6 @@ sudo apt-get install php7.0-bz2
 - Packages are not perfect, but [PRs](https://github.com/jakoch/phantomjs-installer/pull/33) make them better
 
 ¯\\_(ツ)_/¯ 
+
+
+[^1]: Or you could add `extension=bz2.so` to your `php.ini` file and restart the server
