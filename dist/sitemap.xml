@@ -7,12 +7,12 @@
 <url> <loc>https://stefanzweifel.io/posts/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/projects/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/resources/index.html</loc> </url>
-<url> <loc>https://stefanzweifel.io/projects/screeenly/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/projects/imgubox/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/projects/user-agent-analyzer/index.html</loc> </url>
+<url> <loc>https://stefanzweifel.io/projects/screeenly/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/uberspace-scripts/index.html</loc> </url>
-<url> <loc>https://stefanzweifel.io/posts/bulletproof-crossdomain-with-ajax/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/sublime-text-3/index.html</loc> </url>
+<url> <loc>https://stefanzweifel.io/posts/bulletproof-crossdomain-with-ajax/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/sensitive-data-in-gulp/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/laravel-vagrant-sequelpro/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/gandi-domain-auf-uberspace-einrichten/index.html</loc> </url>
@@ -23,8 +23,9 @@
 <url> <loc>https://stefanzweifel.io/posts/bower-and-laravel-elixir/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/envoyer-io-auf-einem-uberspace-nutzen/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/developer-setup-early-2015/index.html</loc> </url>
-<url> <loc>https://stefanzweifel.io/posts/introducing-dirby/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/automate-todayone-sh/index.html</loc> </url>
+<url> <loc>https://stefanzweifel.io/posts/introducing-dirby/index.html</loc> </url>
+<url> <loc>https://stefanzweifel.io/posts/laravel-forge-php7-and-bzip2/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/laravel-queues-on-uberspace/index.html</loc> </url>
 <url> <loc>https://stefanzweifel.io/posts/advanced-eloquent-working-with-pivot-tables/index.html</loc> </url>
 </urlset>
