@@ -11,9 +11,11 @@ layout: page.html
                     <a href="/{{ article.path.dir }}" class="link dim">{{ article.title }}</a>
                 </h3>
                 <p class="ma0 lh-copy">{{ article.description|safe }}</p>
-                <footer class="pa0 ma0 mt2">                
-                    <a href="{{ article.project_url }}" class="db link dim">Visit Project</a>
-                </footer>
+                {% if article.project_url %}
+                    <footer class="pa0 ma0 mt2">                
+                        <a href="{{ article.project_url }}" class="db link dim">Visit Project</a>
+                    </footer>
+                {% endif %}
             </div>
         </div>
     {% endfor %}
