@@ -1,7 +1,7 @@
-var gulp       = require("gulp");
-var source     = require('vinyl-source-stream');
-var babel      = require("babelify");
-var browserify = require('browserify');
+import gulp from 'gulp';
+import source from 'vinyl-source-stream';
+import babel from 'babelify';
+import browserify from 'browserify';
 
 module.exports = function () {
     browserify("./resources/js/main.js", {

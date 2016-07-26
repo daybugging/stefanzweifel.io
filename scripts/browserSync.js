@@ -1,9 +1,11 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+
+let browser = browserSync.create();
 
 module.exports = function() {
 
-    browserSync.init({
+    browser.init({
         server: {
             baseDir: "./dist",
         },
@@ -11,6 +13,6 @@ module.exports = function() {
     });
 
     gulp.watch("app/scss/*.scss", ['sass']);
-    gulp.watch("./dist/*.html").on('change', browserSync.reload);
+    gulp.watch("./dist/*.html").on('change', browser.reload);
 
 };

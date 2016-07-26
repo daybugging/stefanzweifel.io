@@ -1,6 +1,6 @@
-var gulp        = require('gulp');
-var sass        = require('gulp-sass');
-var browserSync = require('browser-sync');
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import browserSync from 'browser-sync';
 
 // Compile sass into CSS & auto-inject into browsers
 module.exports = function() {

@@ -1,6 +1,6 @@
-var gulp = require('gulp');
-var uncss = require('gulp-uncss');
-var cleanCSS = require('gulp-clean-css');
+import gulp from 'gulp';
+import uncss from 'gulp-uncss';
+import cleanCSS from 'gulp-clean-css';
 
 module.exports = function () {
 
