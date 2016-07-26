@@ -1,5 +1,7 @@
-var gulp = require('gulp');
-var exec = require('child_process').exec;
+import gulp from 'gulp';
+import childProcess from 'child_process';
+
+let exec = childProcess.exec;
 
 gulp.task('default', ['sass', 'build'] ,function() {
     gulp.watch('./src/**/*', ['build']);
