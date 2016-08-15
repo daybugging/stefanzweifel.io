@@ -1,4 +1,99 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Bulletproof CrossDomain with Ajax | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">Bulletproof CrossDomain with Ajax</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: June 13th 2014</span> &bull; <span>117 words</span> &bull; <span>1 min read</span></footer><p>At work, I recently had a lot to do with CrossDomain-Scripting. The thing I was building has to be bulletproof on older browsers, even IE8.</p><p>If you’re familiar with <a href=http://www.html5rocks.com/en/tutorials/cors/ >CORS</a>, you know it’s a pain, to get this working on older browsers. And debugging IE8 on a VM is also not so funny.</p><p>Thanks to Github, I found a nice little Jquery-Plugin which helps you on doing Ajax-Requests on older Browser. You can find the code <a href=https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest>here</a>.</p><p>Implementation is easy.<br>Download the code or use the <a href=http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js>CDN-Version</a> and do your Ajax-Request as usual:</p><pre><code class="hljs language-javascript">$.getJSON(<span class=hljs-string>'http://jsonmoon.jsapp.us/'</span>).done(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params>data</span>) </span>{
-  <span class=hljs-built_in>console</span>.log(data.name.first);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulletproof CrossDomain with Ajax | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">Bulletproof CrossDomain with Ajax</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: June 13th 2014</span> &bull;
+        <span>117 words</span> &bull;
+        <span>1 min read</span>
+    </footer>
+
+    <p>At work, I recently had a lot to do with CrossDomain-Scripting. The thing I was building has to be bulletproof on older browsers, even IE8.</p>
+<p>If you’re familiar with <a href="http://www.html5rocks.com/en/tutorials/cors/">CORS</a>, you know it’s a pain, to get this working on older browsers. And debugging IE8 on a VM is also not so funny.</p>
+<p>Thanks to Github, I found a nice little Jquery-Plugin which helps you on doing Ajax-Requests on older Browser. You can find the code <a href="https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest">here</a>.</p>
+<p>Implementation is easy.<br>
+Download the code or use the <a href="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js">CDN-Version</a> and do your Ajax-Request as usual:</p>
+<pre><code class="hljs language-javascript">$.getJSON(<span class="hljs-string">'http://jsonmoon.jsapp.us/'</span>).done(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(data.name.first);
 });
-</code></pre><p>The plugin will handle the rest for you!<br>Now grab a cup of coffee and enjoy the time you saved.</p><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
+</code></pre>
+<p>The plugin will handle the rest for you!<br>
+Now grab a cup of coffee and enjoy the time you saved.</p>
+
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>

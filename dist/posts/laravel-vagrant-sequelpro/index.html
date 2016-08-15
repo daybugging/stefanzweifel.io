@@ -1,1 +1,147 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Laravel + Vagrant + SequelPro | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">Laravel + Vagrant + SequelPro</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: March 24th 2014</span> &bull; <span>439 words</span> &bull; <span>2 min read</span></footer><p><strong>Update</strong>: With Version 4.2 Laravel introduced <em>Homestead</em>. A Vagrant-Box to use Laravel right out of the box. If the tutorial below is to difficult to you, give <a href=http://laravel.com/docs/homestead>Homestead</a> a try.</p><hr><p>I’m pretty new to <a href=http://laravel.com>Laravel</a> and I just started to work on a new webapp (soon more) where I want to use Laravel in connection with <a href=http://vagrantup.com>Vagrant</a>.</p><p>Since I didn’t found a proper solution that worked for me, here is my little tutorial.</p><p><em>Note: At the time of writting this guide, I used Vagrant 1.4.3 and Mac OS X 10.9.2.</em></p><h3>PuPHPet</h3><p>Head over to <a href=https://puphpet.com>PuPHPet</a> and configure your server like so:</p><p><strong>Deploy Target</strong><br><img src=images/deploy_target-2.png alt="Screenshot of PuPHPet.com"><br>Remember <code>Local VM IP Address</code>. We need this later.</p><p><strong>Webserver</strong><br><img src=images/webservers.png alt="Screenshot of PuPHPet.com"><br>Set <code>Server Name</code>to a URL you want to work with. Change <code>Document Root</code>to <code>/var/www/your-project-name/public</code>.</p><p><strong>MySQL</strong><br><img src=images/mysql.png alt="Screenshot of PuPHPet.com"><br>Just remember the credentials. We need them later.</p><p>All set? Then hit the download button.</p><h3>Setup Vagrant</h3><p><em>I assume you have Vagrant alredy installed. If not, head over to their website and follow their <a href=http://www.vagrantup.com/ >Get Started Guide</a>.</em></p><p>So you unpacked your PuPHPet-Files and moved them into your local development folder? Great. Next we should edit the <code>Vagrant</code>-File.<br>I stumbled upon a permission error, when I used Laravel with Vagrant and searched through Stackoverflow and many forums, and the following changes should fix the problem:</p><p>Replace<br><code>config.vm.synced_folder &quot;#{folder['source']}&quot;, &quot;#{folder['target']}&quot;, id: &quot;#{folder['id']}&quot;, type: nfs</code></p><p>with<br><code>config.vm.synced_folder &quot;#{folder['source']}&quot;, &quot;#{folder['target']}&quot;, id: &quot;#{folder['id']}&quot;, type: nfs, :mount_options =&gt; [&quot;dmode=777&quot;,&quot;fmode=666&quot;]</code></p><p>(You find an example file <a href=https://gist.github.com/stefanzweifel/9722708>here</a> ).<br>Save the file and open a terminal window and <code>cd</code> into your development folder.</p><p><img src=images/terminal.png alt="Screenshot of Terminal App with example structure"></p><ul><li>Initialize Vagrant with <code>vagrant up</code>. This may take some minutes</li></ul><p><img src=images/vagrant_demo_2.gif alt="Animated GIF containing booting process of vagrant"></p><ul><li>SSH into VM with <code>vagrant ssh</code></li><li><code>cd /var/www</code></li><li>Install Laravel with <code>composer create-project laravel/laravel your-project-name --prefer-dist</code>. This may also take some minutes to download.</li><li><code>exit</code></li></ul><p>Next we need to adjust our <code>hosts</code>-File. Open your Hosts-File via <code>sudo nano /etc/hosts/</code>and enter your previously entered IP-address and server name. In my example I used <code>10.10.10.10 project.dev</code>.</p><p><img src=images/vagrant_demo_3.gif alt="Animated GIF showing the process of chaning hosts files"></p><p>If your’e done, open your browser and head to <code>http://project.dev</code>.</p><p><img src=images/success.png alt="Screenshot of the Laravel Welcomepage"></p><p>If you don’t see anything, try this in your terminal:<br><code>chmod -R 777 your-project-name/app/storage</code>.</p><p>###Sequel Pro Settings<br>PhpMyAdmin is ugly as hell and I don’t like it anymore. So I use <a href=http://www.sequelpro.com/ >Sequel Pro</a>. These are the credentials I use to connect to my VM.</p><p><img src=images/sequel_pro.png alt="Screenshot of SequelPro Settings Page"></p><blockquote><p>MySQL-Host: <code>10.10.10.10</code> (or IP that you choose for it)<br>Username: <code>dbuser</code> (or username you created)<br>Password: <code>123</code> (or your choosen MySQL Password)</p></blockquote><blockquote><p>SSH Host: <code>10.10.10.10</code> (or IP that you choose for it)<br>SSH User: <code>vagrant</code> (vagrants default username)<br>SSH Pasword: <code>vagrant</code> (vagrants default password)</p></blockquote><h3>Outro</h3><p>I hope this little guide helps you with setting up Laravel with Vagrant. If you have any problems, found a typo let me <a href=http://twitter.com/_stefanzweifel>know</a>.</p><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laravel + Vagrant + SequelPro | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">Laravel + Vagrant + SequelPro</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: March 24th 2014</span> &bull;
+        <span>439 words</span> &bull;
+        <span>2 min read</span>
+    </footer>
+
+    <p><strong>Update</strong>: With Version 4.2 Laravel introduced <em>Homestead</em>. A Vagrant-Box to use Laravel right out of the box. If the tutorial below is to difficult to you, give <a href="http://laravel.com/docs/homestead">Homestead</a> a try.</p>
+<hr/>
+<p>I’m pretty new to <a href="http://laravel.com">Laravel</a> and I just started to work on a new webapp (soon more) where I want to use Laravel in connection with <a href="http://vagrantup.com">Vagrant</a>.</p>
+<p>Since I didn’t found a proper solution that worked for me, here is my little tutorial.</p>
+<p><em>Note: At the time of writting this guide, I used Vagrant 1.4.3 and Mac OS X 10.9.2.</em></p>
+<h3>PuPHPet</h3>
+<p>Head over to <a href="https://puphpet.com">PuPHPet</a> and configure your server like so:</p>
+<p><strong>Deploy Target</strong><br>
+<img src="images/deploy_target-2.png" alt="Screenshot of PuPHPet.com"><br>
+Remember <code>Local VM IP Address</code>. We need this later.</p>
+<p><strong>Webserver</strong><br>
+<img src="images/webservers.png" alt="Screenshot of PuPHPet.com"><br>
+Set <code>Server Name</code>to a URL you want to work with. Change <code>Document Root</code>to <code>/var/www/your-project-name/public</code>.</p>
+<p><strong>MySQL</strong><br>
+<img src="images/mysql.png" alt="Screenshot of PuPHPet.com"><br>
+Just remember the credentials. We need them later.</p>
+<p>All set? Then hit the download button.</p>
+<h3>Setup Vagrant</h3>
+<p><em>I assume you have Vagrant alredy installed. If not, head over to their website and follow their <a href="http://www.vagrantup.com/">Get Started Guide</a>.</em></p>
+<p>So you unpacked your PuPHPet-Files and moved them into your local development folder? Great. Next we should edit the <code>Vagrant</code>-File.<br>
+I stumbled upon a permission error, when I used Laravel with Vagrant and searched through Stackoverflow and many forums, and the following changes should fix the problem:</p>
+<p>Replace<br>
+<code>config.vm.synced_folder &quot;#{folder['source']}&quot;, &quot;#{folder['target']}&quot;, id: &quot;#{folder['id']}&quot;, type: nfs</code></p>
+<p>with<br>
+<code>config.vm.synced_folder &quot;#{folder['source']}&quot;, &quot;#{folder['target']}&quot;, id: &quot;#{folder['id']}&quot;, type: nfs, :mount_options =&gt; [&quot;dmode=777&quot;,&quot;fmode=666&quot;]</code></p>
+<p>(You find an example file <a href="https://gist.github.com/stefanzweifel/9722708">here</a> ).<br>
+Save the file and open a terminal window and <code>cd</code> into your development folder.</p>
+<p><img src="images/terminal.png" alt="Screenshot of Terminal App with example structure"></p>
+<ul>
+<li>Initialize Vagrant with <code>vagrant up</code>. This may take some minutes</li>
+</ul>
+<p><img src="images/vagrant_demo_2.gif" alt="Animated GIF containing booting process of vagrant"></p>
+<ul>
+<li>SSH into VM with <code>vagrant ssh</code></li>
+<li><code>cd /var/www</code></li>
+<li>Install Laravel with <code>composer create-project laravel/laravel your-project-name --prefer-dist</code>. This may also take some minutes to download.</li>
+<li><code>exit</code></li>
+</ul>
+<p>Next we need to adjust our <code>hosts</code>-File. Open your Hosts-File via <code>sudo nano /etc/hosts/</code>and enter your previously entered IP-address and server name. In my example I used <code>10.10.10.10 project.dev</code>.</p>
+<p><img src="images/vagrant_demo_3.gif" alt="Animated GIF showing the process of chaning hosts files"></p>
+<p>If your’e done, open your browser and head to <code>http://project.dev</code>.</p>
+<p><img src="images/success.png" alt="Screenshot of the Laravel Welcomepage"></p>
+<p>If you don’t see anything, try this in your terminal:<br>
+<code>chmod -R 777 your-project-name/app/storage</code>.</p>
+<p>###Sequel Pro Settings<br>
+PhpMyAdmin is ugly as hell and I don’t like it anymore. So I use <a href="http://www.sequelpro.com/">Sequel Pro</a>. These are the credentials I use to connect to my VM.</p>
+<p><img src="images/sequel_pro.png" alt="Screenshot of SequelPro Settings Page"></p>
+<blockquote>
+<p>MySQL-Host: <code>10.10.10.10</code> (or IP that you choose for it)<br>
+Username: <code>dbuser</code> (or username you created)<br>
+Password: <code>123</code> (or your choosen MySQL Password)</p>
+</blockquote>
+<blockquote>
+<p>SSH Host: <code>10.10.10.10</code> (or IP that you choose for it)<br>
+SSH User: <code>vagrant</code> (vagrants default username)<br>
+SSH Pasword: <code>vagrant</code> (vagrants default password)</p>
+</blockquote>
+<h3>Outro</h3>
+<p>I hope this little guide helps you with setting up Laravel with Vagrant. If you have any problems, found a typo let me <a href="http://twitter.com/_stefanzweifel">know</a>.</p>
+
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>

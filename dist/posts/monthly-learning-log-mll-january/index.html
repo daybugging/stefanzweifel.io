@@ -1,1 +1,102 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Monthly Learning Log (MLL): January | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">Monthly Learning Log (MLL): January</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: February 1st 2015</span> &bull; <span>239 words</span> &bull; <span>1 min read</span></footer><p>Earlier this year I had the idea to publish a monthly post containing resources I used in my day to day work or I found while browsing the web. This is the first part of this series. I do this mostly for me, so I have like a &quot;developer diary&quot;, but maybe you find something for you too.</p><h2>ngBoilerplate</h2><p>At work, we decided to set our focus this year on Angular. Even though no one in our team is an expert in Javascript frameworks, in our eyes Angular does a perfect job and has a great community.<br>While researching we stumbled upon ngBoilerplate, a premade Gruntfile which handles the whole build-process of a modern Angular application. I modified the script so it’s even more flexible and gives you the ability to create new Angular applications, just with one terminal command. (I hope I can share this script, or some of the ideas behind it in the upcoming weeks).</p><ul><li><a href=https://github.com/ngbp/ngbp>ngBoilerplate on Github</a></li></ul><h2>json-api</h2><p>Ever built an API? I did and it’s hard. You have to think through so many scenarios and nearly every day you want to restructure youre responses. Luckily there are smart people out there, who want to create a web-wide standard for JSON APIs.<br>I will redo a sideproject I’ve been working on for some time and will try to implement the standard. Maybe this is something for you or your team too.</p><ul><li><a href=http://jsonapi.org/ >jsonapi.org</a></li><li><a href=https://github.com/json-api>json-api on Github</a></li></ul><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monthly Learning Log (MLL): January | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">Monthly Learning Log (MLL): January</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: February 1st 2015</span> &bull;
+        <span>239 words</span> &bull;
+        <span>1 min read</span>
+    </footer>
+
+    <p>Earlier this year I had the idea to publish a monthly post containing resources I used in my day to day work or I found while browsing the web. This is the first part of this series. I do this mostly for me, so I have like a &quot;developer diary&quot;, but maybe you find something for you too.</p>
+<h2>ngBoilerplate</h2>
+<p>At work, we decided to set our focus this year on Angular. Even though no one in our team is an expert in Javascript frameworks, in our eyes Angular does a perfect job and has a great community.<br>
+While researching we stumbled upon ngBoilerplate, a premade Gruntfile which handles the whole build-process of a modern Angular application. I modified the script so it’s even more flexible and gives you the ability to create new Angular applications, just with one terminal command. (I hope I can share this script, or some of the ideas behind it in the upcoming weeks).</p>
+<ul>
+<li><a href="https://github.com/ngbp/ngbp">ngBoilerplate on Github</a></li>
+</ul>
+<h2>json-api</h2>
+<p>Ever built an API? I did and it’s hard. You have to think through so many scenarios and nearly every day you want to restructure youre responses. Luckily there are smart people out there, who want to create a web-wide standard for JSON APIs.<br>
+I will redo a sideproject I’ve been working on for some time and will try to implement the standard. Maybe this is something for you or your team too.</p>
+<ul>
+<li><a href="http://jsonapi.org/">jsonapi.org</a></li>
+<li><a href="https://github.com/json-api">json-api on Github</a></li>
+</ul>
+
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>

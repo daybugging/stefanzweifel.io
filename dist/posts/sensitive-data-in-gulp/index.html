@@ -1,9 +1,102 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Sensitive data in Gulp | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">Sensitive data in Gulp</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: October 16th 2014</span> &bull; <span>169 words</span> &bull; <span>1 min read</span></footer><p>While developing this site I decided to use <a href=http://gulpjs.com>Gulp</a> instead of <a href=http://gruntjs.com>Grunt</a> to do all the fancy stuff you should do today (SASS, concat, minify, uglify). I’m already familiar with Grunt from work so I wanted to try something new.</p><p>But what does this have to do with sensitive data in Javascript? Well I use <a href=https://tinypng.com/ >tinypng</a> to compress all images on this site. There is even an API and a Gulp wrapper available. But how can I share my Gulpfile with you without sharing my personal API key?</p><p>It’s simple. You create a config file - let’s call it <code>gulpconfig.json</code> - and within the file there is a property called <code>tinypng_api_key</code>. Now in the gulpfile you load this the file and use it.</p><pre><code class="hljs language-javascript"><span class=hljs-keyword>var</span> config    = <span class=hljs-built_in>require</span>(<span class=hljs-string>'./gulpconfig.json'</span>),
-    gulp      = <span class=hljs-built_in>require</span>(<span class=hljs-string>'gulp'</span>);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sensitive data in Gulp | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
-gulp.task(<span class=hljs-string>'png'</span>, <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params></span>) </span>{
-    gulp.src(<span class=hljs-string>'img/portfolio/**/*.png'</span>)
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">Sensitive data in Gulp</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: October 16th 2014</span> &bull;
+        <span>169 words</span> &bull;
+        <span>1 min read</span>
+    </footer>
+
+    <p>While developing this site I decided to use <a href="http://gulpjs.com">Gulp</a> instead of <a href="http://gruntjs.com">Grunt</a> to do all the fancy stuff you should do today (SASS, concat, minify, uglify). I’m already familiar with Grunt from work so I wanted to try something new.</p>
+<p>But what does this have to do with sensitive data in Javascript? Well I use <a href="https://tinypng.com/">tinypng</a> to compress all images on this site. There is even an API and a Gulp wrapper available. But how can I share my Gulpfile with you without sharing my personal API key?</p>
+<p>It’s simple. You create a config file - let’s call it <code>gulpconfig.json</code> - and within the file there is a property called <code>tinypng_api_key</code>. Now in the gulpfile you load this the file and use it.</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> config    = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./gulpconfig.json'</span>),
+    gulp      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+gulp.task(<span class="hljs-string">'png'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    gulp.src(<span class="hljs-string">'img/portfolio/**/*.png'</span>)
         .pipe(tinypng( config.tinypng_api_key ))
-        .pipe(gulp.dest(<span class=hljs-string>'compressed_images'</span>));
+        .pipe(gulp.dest(<span class="hljs-string">'compressed_images'</span>));
 });
-</code></pre><p>Now you simply have to add <code>gulpconfig.json</code> to your <code>.gitignore</code> and commit it.<br>But add a <a href=https://github.com/stefanzweifel/stefanzweifel.io/blob/335a4b4f71ae605130744fe2e9b2353774056d4d/gulpconfig.json.example><code>gulpconfig.json.example</code></a> to your repo so your future you knows how to use it.</p><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
+</code></pre>
+<p>Now you simply have to add <code>gulpconfig.json</code> to your <code>.gitignore</code> and commit it.<br>
+But add a <a href="https://github.com/stefanzweifel/stefanzweifel.io/blob/335a4b4f71ae605130744fe2e9b2353774056d4d/gulpconfig.json.example"><code>gulpconfig.json.example</code></a> to your repo so your future you knows how to use it.</p>
+
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>

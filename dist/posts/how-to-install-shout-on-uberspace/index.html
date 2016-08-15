@@ -1,10 +1,135 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>How to install Shout on Uberspace | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">How to install Shout on Uberspace</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: October 12th 2014</span> &bull; <span>404 words</span> &bull; <span>2 min read</span></footer><p><a href=http://shout-irc.com/ >Shout</a> ist ein self-hosted IRC Client. Das tolle an Shout ist, dass man “Always connected” ist und somit keine Konversation in seinen Lieblingschannels verpasst. Eine Live-Demo des Clients gibt es <a href=http://demo.shout-irc.com/ >hier</a>.</p><p>Ich selbst nutzte IRC selten, da ich keinen passenden Client fand der “Alyways connected” war. Mit Shout habe ich das nun gelöst.</p><p><img src=images/client.png alt="Shout in Aktion"></p><blockquote><p>Die folgende Anleitung gilt nur für den Hoster <a href=http://uberspace.de>Uberspace</a>. Ich übernehme keine Haftung, falls ihr euren Server irgendwie zerschiesst.</p></blockquote><h2>1. Uberspace-Server vorbereiten</h2><p><a href=https://github.com/erming/shout>Shout</a> läuft wie gesagt mit Node. Daher ist es wichtig zuerst node.js auf eurem Uberspace korrekt einzurichten. Das geht ganz einfach, indem ihr eure eigene <code>.npmrc</code> anlegt. <a href="https://wiki.uberspace.de/development:nodejs?s[]=node#npm">Zum Uberspace Wiki Eintrag dazu</a>.</p><pre><code class="hljs language-shell">cat &gt; ~/<span class=hljs-selector-class>.npmrc</span> &lt;&lt;__EOF__
-prefix = <span class=hljs-variable>$HOME</span>
-umask = <span class=hljs-number>077</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to install Shout on Uberspace | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">How to install Shout on Uberspace</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: October 12th 2014</span> &bull;
+        <span>404 words</span> &bull;
+        <span>2 min read</span>
+    </footer>
+
+    <p><a href="http://shout-irc.com/">Shout</a> ist ein self-hosted IRC Client. Das tolle an Shout ist, dass man “Always connected” ist und somit keine Konversation in seinen Lieblingschannels verpasst. Eine Live-Demo des Clients gibt es <a href="http://demo.shout-irc.com/">hier</a>.</p>
+<p>Ich selbst nutzte IRC selten, da ich keinen passenden Client fand der “Alyways connected” war. Mit Shout habe ich das nun gelöst.</p>
+<p><img src="images/client.png" alt="Shout in Aktion"></p>
+<blockquote>
+<p>Die folgende Anleitung gilt nur für den Hoster <a href="http://uberspace.de">Uberspace</a>. Ich übernehme keine Haftung, falls ihr euren Server irgendwie zerschiesst.</p>
+</blockquote>
+<h2>1. Uberspace-Server vorbereiten</h2>
+<p><a href="https://github.com/erming/shout">Shout</a> läuft wie gesagt mit Node. Daher ist es wichtig zuerst node.js auf eurem Uberspace korrekt einzurichten. Das geht ganz einfach, indem ihr eure eigene <code>.npmrc</code> anlegt. <a href="https://wiki.uberspace.de/development:nodejs?s[]=node#npm">Zum Uberspace Wiki Eintrag dazu</a>.</p>
+<pre><code class="hljs language-shell">cat &gt; ~/<span class="hljs-selector-class">.npmrc</span> &lt;&lt;__EOF__
+prefix = <span class="hljs-variable">$HOME</span>
+umask = <span class="hljs-number">077</span>
 __EOF__
-</code></pre><h2>2. Shout installieren</h2><p>Weiter gehts mit dem installieren von Shout:</p><pre><code class="hljs language-shell">npm <span class=hljs-keyword>install </span>-g <span class=hljs-keyword>shout
-</span></code></pre><h2>3. Shout konfigurieren</h2><p>Sobald nun alles installiert ist geht es um das Konfigurieren von Shout. In eurer Shell öffnet ihr das Config File mit <code>shout config</code>.<br>Ich empfehle euch folgende Einstellungspunkte anzupassen:</p><ul><li>public: <code>false</code> wenn nur ihr den Client nutzen wollt</li><li>port: Ein Wert grösser als 61000</li><li>defaults: Hier könnt ihr die Standard Channels und Nicknames anpassen</li></ul><h3>3.1. User anlegen</h3><p>Falls ihr in den Einstellungen definiert habt, dass nur ihr allein oder eine Hand von Auserwählten den Client nutzen wollt, dann müsst ihr zusätzlich noch <code>shout add &lt;name&gt;</code> ausführen. Dadurch wird der Client mit Username und Passwort geschützt.</p><h2>4. Port freischalten lassen</h2><p>Ich hoffe ihr habt euch den Port gemerkt?<br>Nun müsst ihr euch beim netten Uberspace Support genau diesen Port freischalten lassen. Klappt super via <a href=https://twitter.com/ubernauten>Tweet</a> oder <a href=mailto:hallo@uberspace.de>Email</a>. Vergesst nicht euren Uberspace-Namen zu erwähnen.<br>In der Regel dauert dass keine 2 Stunden und der Port ist freigeschaltet.</p><h2>5. .htaccess erstellen</h2><p>Während ihr auf eure Portfreischaltung wartet, könnt ihr noch eure .htaccess Datei anpassen / erstellen. Ich habe Shout auf einer Subdomain (Bsp.: shout.domain.de) eingerichtet.</p><p>Der Inhalt der .htaccess-Datei müsste so aussehen (Port 61000 natürlich anpassen):</p><pre><code class="hljs language-htaccess"><span class=hljs-attribute><span class=hljs-nomarkup>RewriteEngine</span></span> <span class=hljs-literal>On</span>
-<span class=hljs-attribute><span class=hljs-nomarkup>RewriteRule</span></span> ^(.*) http://localhost:61000/<span class=hljs-number>$1</span><span class=hljs-meta> [P]</span>
-</code></pre><h2>6. Service einrichten</h2><p>Shout würde man nun mit <code>shout</code> in eurerer Konsole starten. Sobald ihr aber die Shell wieder schliesst, ist auch Shout weg. Um das Problem zu lösen, erstellt ihr nun einen neuen Service:</p><pre><code>uberspace-setup-service <span class=hljs-keyword>shout-irc </span><span class=hljs-keyword>shout
-</span></code></pre><p><code>shout-irc</code> ist der Servicename; <code>shout</code> der der Befehl.</p><p>Falls der Service nicht automatisch startet, führt ihr noch den folgenden Befehlt aus.</p><pre><code><span class=hljs-keyword>svc </span>-u ~/service/shout-irc
-</code></pre><h2>7. Profit</h2><p>Das wars auch schon. Jetzt solltet ihr unter eurer gesetzten Domain (shout.domain.de) euren Web-IRC Client finden.</p><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
+</code></pre>
+<h2>2. Shout installieren</h2>
+<p>Weiter gehts mit dem installieren von Shout:</p>
+<pre><code class="hljs language-shell">npm <span class="hljs-keyword">install </span>-g <span class="hljs-keyword">shout
+</span></code></pre>
+<h2>3. Shout konfigurieren</h2>
+<p>Sobald nun alles installiert ist geht es um das Konfigurieren von Shout. In eurer Shell öffnet ihr das Config File mit <code>shout config</code>.<br>
+Ich empfehle euch folgende Einstellungspunkte anzupassen:</p>
+<ul>
+<li>public: <code>false</code> wenn nur ihr den Client nutzen wollt</li>
+<li>port: Ein Wert grösser als 61000</li>
+<li>defaults: Hier könnt ihr die Standard Channels und Nicknames anpassen</li>
+</ul>
+<h3>3.1. User anlegen</h3>
+<p>Falls ihr in den Einstellungen definiert habt, dass nur ihr allein oder eine Hand von Auserwählten den Client nutzen wollt, dann müsst ihr zusätzlich noch <code>shout add &lt;name&gt;</code> ausführen. Dadurch wird der Client mit Username und Passwort geschützt.</p>
+<h2>4. Port freischalten lassen</h2>
+<p>Ich hoffe ihr habt euch den Port gemerkt?<br>
+Nun müsst ihr euch beim netten Uberspace Support genau diesen Port freischalten lassen. Klappt super via <a href="https://twitter.com/ubernauten">Tweet</a> oder <a href="mailto:hallo@uberspace.de">Email</a>. Vergesst nicht euren Uberspace-Namen zu erwähnen.<br>
+In der Regel dauert dass keine 2 Stunden und der Port ist freigeschaltet.</p>
+<h2>5. .htaccess erstellen</h2>
+<p>Während ihr auf eure Portfreischaltung wartet, könnt ihr noch eure .htaccess Datei anpassen / erstellen. Ich habe Shout auf einer Subdomain (Bsp.: shout.domain.de)  eingerichtet.</p>
+<p>Der Inhalt der .htaccess-Datei müsste so aussehen (Port 61000 natürlich anpassen):</p>
+<pre><code class="hljs language-htaccess"><span class="hljs-attribute"><span class="hljs-nomarkup">RewriteEngine</span></span> <span class="hljs-literal">On</span>
+<span class="hljs-attribute"><span class="hljs-nomarkup">RewriteRule</span></span> ^(.*) http://localhost:61000/<span class="hljs-number">$1</span><span class="hljs-meta"> [P]</span>
+</code></pre>
+<h2>6. Service einrichten</h2>
+<p>Shout würde man nun mit <code>shout</code> in eurerer Konsole starten. Sobald ihr aber die Shell wieder schliesst, ist auch Shout weg. Um das Problem zu lösen, erstellt ihr nun einen neuen Service:</p>
+<pre><code>uberspace-setup-service <span class="hljs-keyword">shout-irc </span><span class="hljs-keyword">shout
+</span></code></pre>
+<p><code>shout-irc</code> ist der Servicename; <code>shout</code> der der Befehl.</p>
+<p>Falls der Service nicht automatisch startet, führt ihr noch den folgenden Befehlt aus.</p>
+<pre><code><span class="hljs-keyword">svc </span>-u ~/service/shout-irc
+</code></pre>
+<h2>7. Profit</h2>
+<p>Das wars auch schon. Jetzt solltet ihr unter eurer gesetzten Domain (shout.domain.de) euren Web-IRC Client finden.</p>
+
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>

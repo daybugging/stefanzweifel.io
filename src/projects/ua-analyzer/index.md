@@ -5,7 +5,7 @@ project_url: https://ua-analyzer.wnx.ch
 description: SaaS which analyzes big chunks of User Agents and generates Reports
 ---
 
-At my current job, I wear different'./src/articles/2016/*.md' hats. Because we're such a small team, I also create Reports for our internal "departements" or external clients. Often I have to deal with raw "User Agent Data" and with raw I mean strings like these:
+At my current job, I wear different hats. Because we're such a small team, I also create Reports for our internal "departements" or external clients. Often I have to deal with raw "User Agent Data" and with raw I mean strings like these:
 
 ```
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2729.3 Safari/537.36
@@ -13,7 +13,7 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like 
 
 Basically you can't do anything with them. But I always need numbers grouped by device type (mobile, desktop, tablet).
 
-I built a little [application](https://ua-analyzer.wnx.ch) which let's anyone upload raw user-agent strings and parse the data so it's more useful to me (and hopefully others).
+I've built a little [application](https://ua-analyzer.wnx.ch) which let's anyone upload raw user-agent strings and parse the data so it's more useful to me (and hopefully others).
 
 <figure>
     <img src="images/screenshot-of-report.png" alt="Report">

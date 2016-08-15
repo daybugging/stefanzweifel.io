@@ -1,1 +1,99 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Swiss Canton Iconfont | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">Swiss Canton Iconfont</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: December 30th 2014</span> &bull; <span>204 words</span> &bull; <span>1 min read</span></footer><p>During my christmas holidays I finally found the time to finish some of my side and weekend projects. One of those many project is an iconfont. “Not another FontAwesome or Glyphicons clone” you may think. Nope it’s not.</p><p>Somewhen in 2014 I stumpled upon <a href=http://mapglyphs.com/ >Map Glyphs</a>. An iconfont with all the maps of every country in the world. I tought &quot;Would be cool if I could use this for Switzerland specific maps, like our cantons&quot;. I wrote it down and never looked at it again.<br>But during the holidays and wanted to do something with <a href=http://bower.io>Bower</a> and icons.<br>So I grabbed an SVG from Wikipedia, sliced and exported it, uploaded it to <a href=http://icomoon.io>Icomoon.io</a> and exported it as a font. Done. Thanks to the SVG source the icons are sharp on all display resolutions.</p><p>Then I read the docs of Bower, on how to register a new package and boom… Now I can simply execute <code>bower install swiss-canton-iconfont --save</code> and use the font in my projects.<br>It was a lot of fun and I learned another thing of the always growing web development universe.</p><figure><img src=images/demo.png alt="Screenshot of a working demo on Github"><figcaption>Screenshot of a working demo on Github.</figcaption></figure><p>You can checkout a working demo <a href=http://stefanzweifel.github.io/swiss-canton-iconfont/demo.html>here</a>. Source code is as always on <a href=https://github.com/stefanzweifel/swiss-canton-iconfont>Github</a>.</p><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swiss Canton Iconfont | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">Swiss Canton Iconfont</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: December 30th 2014</span> &bull;
+        <span>204 words</span> &bull;
+        <span>1 min read</span>
+    </footer>
+
+    <p>During my christmas holidays I finally found the time to finish some of my side and weekend projects. One of those many project is an iconfont. “Not another FontAwesome or Glyphicons clone” you may think. Nope it’s not.</p>
+<p>Somewhen in 2014 I stumpled upon <a href="http://mapglyphs.com/">Map Glyphs</a>. An iconfont with all the maps of every country in the world. I tought &quot;Would be cool if I could use this for Switzerland specific maps, like our cantons&quot;. I wrote it down and never looked at it again.<br>
+But during the holidays and wanted to do something with <a href="http://bower.io">Bower</a> and icons.<br>
+So I grabbed an SVG from Wikipedia, sliced and exported it, uploaded it to <a href="http://icomoon.io">Icomoon.io</a> and exported it as a font. Done. Thanks to the SVG source the icons are sharp on all display resolutions.</p>
+<p>Then I read the docs of Bower, on how to register a new package and boom… Now I can simply execute <code>bower install swiss-canton-iconfont --save</code> and use the font in my projects.<br>
+It was a lot of fun and I learned another thing of the always growing web development universe.</p>
+<figure>
+    <img src="images/demo.png" alt="Screenshot of a working demo on Github">
+    <figcaption>Screenshot of a working demo on Github.</figcaption>
+</figure>
+<p>You can checkout a working demo <a href="http://stefanzweifel.github.io/swiss-canton-iconfont/demo.html">here</a>. Source code is as always on <a href="https://github.com/stefanzweifel/swiss-canton-iconfont">Github</a>.</p>
+
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>

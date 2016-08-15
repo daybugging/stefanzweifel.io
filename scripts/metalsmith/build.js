@@ -60,7 +60,7 @@ Metalsmith('./')
     //     selector: ['h1', 'h2', 'h3']
     // }))
 
-    .use(htmlMinifier()) // Use the default options
+    // .use(htmlMinifier()) // Use the default options
     .use(linkcheck())
     .destination('./dist')
     .build(function(err) {

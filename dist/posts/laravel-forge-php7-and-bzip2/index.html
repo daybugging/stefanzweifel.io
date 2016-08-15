@@ -1,2 +1,111 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Laravel Forge: PHP7 and bzip2 | stefanzweifel</title><link rel=author href=/humans.txt><link rel=stylesheet type=text/css href=/assets/css/main.css><link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel=stylesheet type=text/css><meta name=theme-color content=#2C2C2C><link rel=icon href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type=image/x-icon><link rel=apple-touch-icon sizes=60x60 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60"><link rel=apple-touch-icon sizes=76x76 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76"><link rel=apple-touch-icon sizes=120x120 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120"><link rel=apple-touch-icon sizes=152x152 href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152"><meta property=og:site_name content=stefanzweifel><meta property=og:type content=blog><meta property=article:author content=https://facebook.com/stefan.zweifel></head><body><nav class="nav pa3 pa4-ns container"><a class="link dim black b f6 f5-ns dib mr3" href=/ title=Home>stefanzweifel</a> <a class="link dim gray f6 f5-ns dib mr3 red" href=/posts title=Posts>Writing</a> <a class="link dim gray f6 f5-ns dib mr3 blue" href=/projects title=Projects>Projects</a></nav><div class="pa3 ph4-m pv5-ns mt5-ns container"><div class=page--article><h1 class="f1-ns measure lh-title mt0 mb2">Laravel Forge: PHP7 and bzip2</h1><footer class="mid-gray i bb b--light-gray mb3 pv2"><span>Published: July 13th 2016</span> &bull; <span>251 words</span> &bull; <span>1 min read</span></footer><p>In the last weeks I finnaly got my Mojo™ back and began working on <a href=http://screeenly.com>Screeenly</a> again. One thing that bugged me the most in the last months was the overall performance of the app. I currently host it on <a href=http://uberspace.de>uberspace</a> which is meant for small sites or projects that doesn’t use a ton of memory (phantomjs uses a lot of memory 😦).<br>I always wanted to try a Cloud Hoster like Digital Ocean for one of my projects and I think Screeenly finally deserves it’s own server. The cost and my not existing devops knowledge always scared me off this idea. But <a href=https://forge.laravel.com>Forge</a> comes to the rescue.</p><h2>The Bug Hunt</h2><p>I setup all accounts and began tinkering around. For hours I couldn’t figure out, why composer and one of my used packages would try to download <code>phantomjs</code> 4 times, exit with a <code>Successfull download</code> message but wouldn’t put the binary in the correct place.</p><p>After reading the actual PHP Code of the pacakge which get’s executed the problem was found. Zip-extraction failed. 😑</p><p>But how on earth could I fix that? (Sidenote: I still have no experience in devops. 😂)</p><h2>The Solution</h2><p>After some research the solution was so simple I couldn’t believe it. Just execute a one-liner and restart the server … done.<sup class=footnote-ref><a href=#fn1 id=fnref1>[1]</a></sup></p><pre><code class="hljs language-shell"><span class=hljs-symbol>sudo</span> apt-<span class=hljs-meta>get</span> install php7.<span class=hljs-number>0</span>-<span class=hljs-keyword>bz2
-</span></code></pre><h2>The Verdict</h2><ul><li>Forge doesn’t install the <code>bz2</code> extension automatically</li><li>Packages are not perfect, but <a href=https://github.com/jakoch/phantomjs-installer/pull/33>PRs</a> make them better</li></ul><p>¯\<em>(ツ)</em>/¯</p><hr class=footnotes-sep><section class=footnotes><ol class=footnotes-list><li id=fn1 class=footnote-item><p>Or you could add <code>extension=bz2.so</code> to your <code>php.ini</code> file and restart the server <a href=#fnref1 class=footnote-backref>↩</a></p></li></ol></section><section class="mt4 mt5-ns pa3 bg-light-gray br2"><h4 class="mt2 mb3">Questions?</h4><p>Have a question about this post or anything else?</p><ul class="list pa0"><li class=di>Ask on <a href=https://twitter.com/_stefanzweifel class="link dim">Twitter</a></li><li class=di>or send me an <a href=mailto:hello@stefanzweifel.io class="link dim">Email</a></li></ul></section></div></div><footer class="pa3 ph4-m pv5-ns container"><div><a target=blank href=https://github.com/stefanzweifel title=Language class="f6 dib ph2 link mid-gray dim">Github</a> <a target=blank href=https://twitter.com/_stefanzweifel title=Terms class="f6 dib ph2 link mid-gray dim">Twitter</a> <a href=/imprint/ title=Privacy class="f6 dib ph2 link mid-gray dim">Imprint</a> <a href=/colophon/ title=Privacy class="f6 dib ph2 link mid-gray dim">Colophon</a></div></footer><script src=/assets/js/main.js async></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laravel Forge: PHP7 and bzip2 | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">Laravel Forge: PHP7 and bzip2</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: July 13th 2016</span> &bull;
+        <span>251 words</span> &bull;
+        <span>1 min read</span>
+    </footer>
+
+    <p>In the last weeks I finnaly got my Mojo™ back and began working on <a href="http://screeenly.com">Screeenly</a> again. One thing that bugged me the most in the last months was the overall performance of the app. I currently host it on <a href="http://uberspace.de">uberspace</a> which is meant for small sites or projects that doesn’t use a ton of memory (phantomjs uses a lot of memory 😦).<br>
+I always wanted to try a Cloud Hoster like Digital Ocean for one of my projects and I think Screeenly finally deserves it’s own server. The cost and my not existing devops knowledge always scared me off this idea. But <a href="https://forge.laravel.com">Forge</a> comes to the rescue.</p>
+<h2>The Bug Hunt</h2>
+<p>I setup all accounts and began tinkering around. For hours I couldn’t figure out, why composer and one of my used packages would try to download <code>phantomjs</code> 4 times, exit with a <code>Successfull download</code> message but wouldn’t put the binary in the correct place.</p>
+<p>After reading the actual PHP Code of the pacakge which get’s executed the problem was found. Zip-extraction failed. 😑</p>
+<p>But how on earth could I fix that? (Sidenote: I still have no experience in devops. 😂)</p>
+<h2>The Solution</h2>
+<p>After some research the solution was so simple I couldn’t believe it. Just execute a one-liner and restart the server … done.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<pre><code class="hljs language-shell"><span class="hljs-symbol">sudo</span> apt-<span class="hljs-meta">get</span> install php7.<span class="hljs-number">0</span>-<span class="hljs-keyword">bz2
+</span></code></pre>
+<h2>The Verdict</h2>
+<ul>
+<li>Forge doesn’t install the <code>bz2</code> extension automatically</li>
+<li>Packages are not perfect, but <a href="https://github.com/jakoch/phantomjs-installer/pull/33">PRs</a> make them better</li>
+</ul>
+<p>¯\<em>(ツ)</em>/¯</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1"  class="footnote-item"><p>Or you could add <code>extension=bz2.so</code> to your <code>php.ini</code> file and restart the server <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>
