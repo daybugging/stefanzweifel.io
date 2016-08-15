@@ -1,11 +1,11 @@
 import gulp from 'gulp';
 import textlint from 'gulp-textlint';
 
-module.exports = function () {
+export default () =>  {
 
-  return gulp.src('./src/**/*.md')
-    .pipe(textlint({
-        formatterName: "pretty-error"
-    }));
+    return gulp.src('./src/**/*.md')
+        .pipe(textlint({
+            formatterName: "pretty-error"
+        }));
 
-};
+}
