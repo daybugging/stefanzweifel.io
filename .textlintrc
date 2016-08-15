@@ -1,0 +1,20 @@
+{
+    "rules": {
+        "editorconfig": false,
+        "unexpanded-acronym" : {
+            "min_acronym_len" : 5
+        },
+        "spellchecker": false,
+        "common-misspellings": {
+            // Misspellings to be ignored (case-insensitive)
+            "ignore": []
+        },
+        "write-good": {
+            "passive": false,
+            "thereIs": false
+        },
+        "rousseau": {
+            "showLevels": ["suggestion", "warning", "error"]
+        }
+    }
+}

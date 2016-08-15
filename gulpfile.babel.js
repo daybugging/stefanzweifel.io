@@ -14,6 +14,7 @@ gulp.task('uncss', require('./scripts/uncss.js'));
 gulp.task('js', require('./scripts/javascript.js'));
 gulp.task('deploy', require('./scripts/deploy.js'));
 gulp.task('test', require('./scripts/test.js'));
+gulp.task('textlint', require('./scripts/textlint.js'));
 
 // Task Executes build-metalsmith.js through node
 gulp.task('build', function (cb) {
