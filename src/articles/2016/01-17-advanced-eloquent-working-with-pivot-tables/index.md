@@ -23,7 +23,7 @@ Below are the simplified requirements (I just want to cover the important stuff 
 
 ### Rule
 
-- Represent validation rules which are applied to `Field` (A default set of Rules wich are always applied; eg. field "email" should always be validated as an email) or to `FieldEndpoint` (Attach a Rule when you build your API)
+- Represent validation rules which are applied to `Field` (A default set of Rules which are always applied; eg. field "email" should always be validated as an email) or to `FieldEndpoint` (Attach a Rule when you build your API)
 - `Rule` morphedByMany `Field`
 - `Rule` morphedByMany `FieldEndpoint` (That's the Pivot Table!)
 
@@ -167,7 +167,7 @@ class Endpoint extends Model
 ```
 
 Finally we create our Pivot-Model `FieldEndpoint`. Because this is not a normal Model the class extends the `Pivot` class rather than the `Model` class.
-Thanks to the previously overwritten `newPivot` methods, this Model is now initiated everytime we access the "Belongs to Many" Relationships. 
+Thanks to the previously overwritten `newPivot` methods, this Model is now initiated every time we access the "Belongs to Many" Relationships. 
 
 Now we can add our final Relationship to this Model. It is another "Many to Many Polymorphic" Relationship called `rules`. Thanks to this, we can attach a `Rule` to the connection between `Endpoint` and `Field`
 

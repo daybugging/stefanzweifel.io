@@ -9,7 +9,7 @@ At work I’m responsible for some projects which are optimized for Google Adwor
 For example you’re searching Google for `pet shelter in Zurich`. You would click on the ad of our imaginary pet shelter website and the term `zurich` or `zh` would be passed to the website.
 Now we would like to adapt images and texts on the page to your search term. Sounds easy right? Well, the easy part is to change images based on the location string. But it it’s much more complicated when your dealing with text in 2 to 3 languages. `php-swiss-cantons@1.0.0` is the first steps to manage all of this in a single package.
 
-Version 1.0 is currently just a nice abstracted API to search through arrays. Here’s a simple example:
+Version 1.0 is currently a nice abstracted API to search through arrays. Here’s a simple example:
 
 **Get the Canton by it’s abbreviation**
 

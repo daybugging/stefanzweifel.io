@@ -9,7 +9,7 @@ description: An "IFTTT" like service, which connects Imgur with Dropbox
 
 In the early months of 2015 [Imgur](http://imgur.com) released their iOS app. After hours waisted in the endless stream of cat pictures, funny gifs and interesting stories, I thought it would be great to store my favorited albums in Dropbox. Just for convenience.
 
-I often discovered [huge albums with wallpapers](http://imgur.com/gallery/sWhDa) or [interesting stuff about food](http://imgur.com/gallery/zP7nZ) which I wanted to store for further usage.
+I often discovered [big albums with wallpapers](http://imgur.com/gallery/sWhDa) or [interesting stuff about food](http://imgur.com/gallery/zP7nZ) which I wanted to store for further usage.
 And that's how "ImguBox" was born.
 
 <div>
@@ -20,12 +20,12 @@ With my favorite PHP Framework, [Laravel 5](http://laravel.com) I quickly scaffo
 
 ## The struggles
 
-The idea sounded pretty simple. Everytime a user marks an album as their favorite, the corresponding images and description should be stored in a Dropbox account. Simple, right?.
+The idea sounded pretty simple. Every time a user marks an album as their favorite, the corresponding images and description should be stored in a Dropbox account. Simple, right?.
 
-But there is one small thing which bothered me. The Imgur API returns a collection of albums a user has favorited. So everytime ImguBox would to it's Magic&trade;, it would fetch all albums and store it in Dropbox. And that's bad.      
+But there is one small thing which bothered me. The Imgur API returns a collection of albums a user has favorited. So every time ImguBox would to it's Magic&trade;, it would fetch all albums and store it in Dropbox. And that's bad.      
 Let's say the app has 100 users. Every user has 100 favorites. If ImguBox fetches those favorites every hour, it has to fetch 10'000 albums (and each album contains maybe 50 images) every hour. For know I've implemented a simple solution. A database records every parsed image for a given user. Now, when we fetch the favorites from Imgur we subtract the already processed albums from the collection and proceed with a much smaller collection.
 
-But now the good news. Imgur is working on webhooks. This would eliminate the database overhead and the app would be even smaller and simpler.
+But now the good news. Imgur is working on webhooks. This could replace the database overhead and the app would be even smaller and simpler.
 
 <div class="m2 md-m4">
     <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/_stefanzweifel">@_stefanzweifel</a> On our radar! 🚀</p>&mdash; Imgur API (@imgurAPI) <a href="https://twitter.com/imgurAPI/status/590281859453493248">April 20, 2015</a></blockquote>
@@ -38,7 +38,7 @@ But now the good news. Imgur is working on webhooks. This would eliminate the da
 - [Push queues](http://laravel.com/docs/5.0/queues#push-queues) are awesome! They let you move time intensive tasks into the background. Due to it's nature, the processing of uploading favorites to Dropbox is time consuming I've used queues to process them asynchronously.    
 For like half a year I struggled with understanding how those queues work, what the differences between push and pull is and how I can use them in a project. Now I got the hang of them and I don't want to miss them anymore.
 - Integration Tests are great for small projects like this. Thanks to Jeffrey Way from Laracasts, there is a great package for [Laravel](https://github.com/laracasts/integrated). I watched some screencasts, wrote some tests and now I can be certain that the crucial parts of the app work.
-- **Don't rush!** I've written the core code of the app in an afternoon. I immediately thought "Okay, let's deploy it. Someone will probably like it.", but then I realized I should do some deeper tests and then all kinds of exceptions where thrown. I went back to the drawing board and I've rewritten the app.    
+- **Don't rush!** I've written the core code of the app in an afternoon. I immediately thought "Okay, let's deploy it. Someone will probably like it.", but then I realized I should do some deeper tests and then all kinds of exceptions where thrown. After a complete rewrite, I was happy with the application and deployed it.
 Now the app should handle most common errors well and I will be informed if something goes wrong.
 
 

@@ -15,7 +15,7 @@ We quickly patched a working prototype together, but it never looked good. It ne
 
 ## Under the hood
 
-In its core it's just Bootstrap, [Hightlight.js](https://highlightjs.org/) (for code snippets), [Clipboard.js](https://zenorocha.github.io/clipboard.js/) (to easily share urls) and some basic pages (Search, Sitemap and Login).
+In its core it's just Bootstrap, [Hightlight.js](https://highlightjs.org/) (for code snippets), [Clipboard.js](https://zenorocha.github.io/clipboard.js/) (to share urls) and some basic pages (Search, Sitemap and Login).
 
 ## Use it!
 

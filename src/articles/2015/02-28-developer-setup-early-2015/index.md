@@ -45,7 +45,7 @@ When I first started programming many years ago Notepad++ was the go to editor o
 I tried them all, but Dropbox remains the best sync service for my usage. I keep all my app settings in a "sync"-folder which is symlinked to various locations through out the OS.
 
 #### Chrome
-I'm really in love with the dev tools of Chrome. It's just so easy to debug your website with all the various plugins and built in features. Sadly Chrome is extremly energy hungry and I use it only when im hooked to an energy plug.
+I'm really in love with the dev tools of Chrome. It's just so easy to debug your website with all the various plugins and built in features. Sadly Chrome is extremely energy hungry and I use it only when im hooked to an energy plug.
 I also try to keep the number of extensions as low as possible, but I don't want to miss the following:
 
 - [JSON Formatter](https://github.com/callumlocke/json-formatter)
@@ -122,7 +122,7 @@ I still read some RSS feeds but I try to keep them to a minimum. Reeder is a wel
 
 
 ## Workflows
-As I mentioned earlier I'm an Alfred power user. Everytime I repeatedly do a task and I think I can automate it, I write an Alfred shortcut / workflow for that. 
+As I mentioned earlier I'm an Alfred power user. Every time I repeatedly do a task and I think I can automate it, I write an Alfred shortcut / workflow for that. 
 Here are some selected workflows I often use:
 
 - [Open a project in Sublime](https://github.com/franzheidl/alfred-workflows/tree/master/open-with-sublime-text-2)

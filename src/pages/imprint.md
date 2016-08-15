@@ -10,5 +10,5 @@ CH-8152 Glattpark
 
 Email: [hello@stefanzweifel.io](mailto:hello@stefanzweifel.io)
 
-### TOS
+### "Terms of Service"
 This page uses [Google Analytics](http://google.com/analytics).

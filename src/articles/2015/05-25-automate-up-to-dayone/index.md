@@ -28,7 +28,7 @@ The rule should look like my rule in the picture below.
     <figcaption>Hazel rule to execute the toDayOne.sh script as soon a new file is added to your Dropbox folder.</figcaption>
 </figure>
 
-## It doesnt'work
+## It doesn't work
 
 As always I'm happy to help you out. Just send me a message by <a href="mailto:{{ site.data.urls.email}}">email</a> or create a new [issue on Github](//github.com/stefanzweifel/up-to-dayone/issues/new).
 
