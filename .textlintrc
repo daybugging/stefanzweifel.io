@@ -11,10 +11,11 @@
         },
         "write-good": {
             "passive": false,
-            "thereIs": false
+            "thereIs": false,
+            "adverb": false
         },
-        "rousseau": {
-            "showLevels": ["suggestion", "warning", "error"]
-        }
+        // "rousseau": {
+        //     "showLevels": ["suggestion", "warning", "error"]
+        // }
     }
 }
