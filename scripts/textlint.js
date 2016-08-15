@@ -9,7 +9,6 @@ export default () =>  {
         './src/pages/**/*.md'
     ];
 
-
     return gulp.src(files)
         .pipe(textlint({
             formatterName: "pretty-error"

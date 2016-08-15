@@ -17,7 +17,7 @@ $ npm install
 $ gulp serve
 ```
 
-There are also command for `sass`, `uncss`, `js` and `deploy`.
+There are also command for `sass`, `uncss`, `js`, `deploy` and `textlint`.
 
 ## Continous Integration
 
