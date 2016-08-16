@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign your commits with Tower.app | stefanzweifel</title>
+<link rel="author" href="/humans.txt">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+<!-- <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml"> -->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<meta name="theme-color" content="#2C2C2C">
+
+<link rel="icon" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=64" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="60x60" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=60" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=76" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=120" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://secure.gravatar.com/avatar/3167d3c561e09a670de97b080f897984?s=152" />
+
+<meta property="og:site_name" content="stefanzweifel"/>
+<meta property="og:type" content="blog"/>
+<meta property="article:author" content="https://facebook.com/stefan.zweifel"/>
+</head>
+<body>
+
+    <nav class="nav pa3 pa4-ns container">
+    <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">stefanzweifel</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 red" href="/posts" title="Posts">Writing</a>
+    <a class="link dim gray    f6 f5-ns dib mr3 blue" href="/projects" title="Projects">Projects</a>
+    <!-- <a class="link dim gray    f6 f5-ns dib mr3" href="/resources" title="Resources">Resources</a> -->
+</nav>
+
+
+    <div class="pa3 ph4-m pv5-ns mt5-ns container">
+        
+
+<div class="page--article">
+
+    <h1 class="f1-ns measure lh-title mt0 mb2">Sign your commits with Tower.app</h1>
+    <footer class="mid-gray i bb b--light-gray mb3 pv2">
+        <span>Published: August 16th 2016</span> &bull;
+        <span>175 words</span> &bull;
+        <span>1 min read</span>
+    </footer>
+
+    <p>Today Github’s weekly newsletter brought me <a href="https://github.com/pstadler/keybase-gpg-github">this</a> handy Guide about GPG signing, git and Github. I tried setting everything up after Github released <a href="https://github.com/blog/2144-gpg-signature-verification">the feature</a> back in April 2016, but I couldn’t get it to work with Tower, because Tower doesn’t officially support it.</p>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/dmilith">@dmilith</a> Currently, support for PGP signing is not planned. Although I wouldn&#39;t say &quot;never&quot;...</p>&mdash; Tower (@gittower) <a href="https://twitter.com/gittower/status/428576001246134272">January 29, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>After some research and tinkering I found a working solution for me. Here’s how I’ve done it:</p>
+<h2>1. Follow @pstadlers <a href="https://github.com/pstadler/keybase-gpg-github">Guide</a></h2>
+<p>Just follow Patrick’s guide step by step. I would also recommend to do the extra work and complete the optional steps for a password-less process.</p>
+<h2>2. Create a GPG wrapper command</h2>
+<p>Create a new executable file here <code>/usr/local/bin/gpg_wrap</code>. It will contain the following code:</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta">#!/bin/sh
+</span>
+/usr/<span class="hljs-built_in">local</span>/bin/gpg --batch $*
+</code></pre>
+<blockquote>
+<p>Thanks to <a href="https://twitter.com/dmilith/status/719457497053061121">@dmilith on Twitter</a> for the idea!</p>
+</blockquote>
+<h2>3. Update your <code>.gitconfig</code></h2>
+<p>Add the following line to your <code>.gitconfig</code>:</p>
+<pre><code class="hljs language-config">[gpg]
+    program = <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/g</span>pg_wrap
+</code></pre>
+<p>That’s it! Now you should be able to sign your Git commits with your selected GPG key without leaving Tower!</p>
+<figure>
+    <a href="images/screenshot.png">
+        <img src="images/screenshot.png" alt="Screenshot of a signed Commit on github.com">  
+    </a>   
+</figure>
+
+    <section class="mt4 mt5-ns pa3 bg-light-gray br2">
+    <h4 class="mt2 mb3">Questions?</h4>
+    <p>Have a question about this post or anything else?</p>
+
+    <ul class="list pa0">
+        <li class="di">
+            Ask on <a href="https://twitter.com/_stefanzweifel" class="link dim">Twitter</a>
+        </li>
+        <li class="di">
+            or send me an <a href="mailto:hello@stefanzweifel.io" class="link dim">Email</a>
+        </li>
+    </ul>
+</section>
+
+</div>
+
+
+    </div>
+
+    <footer class="pa3 ph4-m pv5-ns container">
+    <div>
+        <a
+            target="blank"
+            href="https://github.com/stefanzweifel"
+            title="Language"
+            class="f6 dib ph2 link mid-gray dim"
+            >
+        Github</a>
+        <a target="blank" href="https://twitter.com/_stefanzweifel"    title="Terms" class="f6 dib ph2 link mid-gray dim">Twitter</a>
+        <a href="/imprint/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Imprint</a>
+        <a href="/colophon/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Colophon</a>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js" async></script>
+
+</body>
+</html>
