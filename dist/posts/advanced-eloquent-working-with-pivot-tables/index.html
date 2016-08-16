@@ -103,7 +103,7 @@ Let’s imagine you want to provide a way to write data into your database throu
      */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
     </span>{
-        <span class="hljs-keyword">return</span> $this-&gt;morphedByMany(Field::class, <span class="hljs-string">'ruleable'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;morphedByMany(Field::class, <span class="hljs-string">'ruleable'</span>);
     }
 
     <span class="hljs-comment">/**
@@ -113,7 +113,7 @@ Let’s imagine you want to provide a way to write data into your database throu
      */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fieldEndpoints</span><span class="hljs-params">()</span>
     </span>{
-        <span class="hljs-keyword">return</span> $this-&gt;morphedByMany(FieldEndpoint::class, <span class="hljs-string">'ruleable'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;morphedByMany(FieldEndpoint::class, <span class="hljs-string">'ruleable'</span>);
     }
 }
 
@@ -136,7 +136,7 @@ And then there’s something new. We override the <code>newPivot</code> method a
      */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">endpoints</span><span class="hljs-params">()</span>
     </span>{
-        <span class="hljs-keyword">return</span> $this-&gt;belongsToMany(Endpoint::class)-&gt;withPivot([<span class="hljs-string">'id'</span>]);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;belongsToMany(Endpoint::class)-&gt;withPivot([<span class="hljs-string">'id'</span>]);
     }
 
     <span class="hljs-comment">/**
@@ -146,7 +146,7 @@ And then there’s something new. We override the <code>newPivot</code> method a
      */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
     </span>{
-        <span class="hljs-keyword">return</span> $this-&gt;morphToMany(Rule::class, <span class="hljs-string">'ruleable'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;morphToMany(Rule::class, <span class="hljs-string">'ruleable'</span>);
     }
 
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">newPivot</span><span class="hljs-params">(Model $parent, array $attributes, $table, $exists)</span>
@@ -175,7 +175,7 @@ And then there’s something new. We override the <code>newPivot</code> method a
      */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
     </span>{
-        <span class="hljs-keyword">return</span> $this-&gt;belongsToMany(Field::class, <span class="hljs-string">'fields_endpoints'</span>)-&gt;withPivot([<span class="hljs-string">'id'</span>]);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;belongsToMany(Field::class, <span class="hljs-string">'fields_endpoints'</span>)-&gt;withPivot([<span class="hljs-string">'id'</span>]);
     }
 
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">newPivot</span><span class="hljs-params">(Model $parent, array $attributes, $table, $exists)</span>
@@ -207,7 +207,7 @@ Thanks to the previously overwritten <code>newPivot</code> methods, this Model i
      */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
     </span>{
-        <span class="hljs-keyword">return</span> $this-&gt;morphToMany(Rule::class, <span class="hljs-string">'ruleable'</span>)-&gt;withPivot(<span class="hljs-string">'parameters'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;morphToMany(Rule::class, <span class="hljs-string">'ruleable'</span>)-&gt;withPivot(<span class="hljs-string">'parameters'</span>);
         ;
     }
 }
@@ -254,9 +254,9 @@ Thanks to the previously overwritten <code>newPivot</code> methods, this Model i
         <span class="hljs-comment">// Attach Rules to the Pivot Model</span>
         $pivotModel-&gt;rules()-&gt;sync($fieldEndpointRules);
 
-        $this-&gt;assertCount(<span class="hljs-number">2</span>, $field-&gt;rules);
-        $this-&gt;assertCount(<span class="hljs-number">1</span>, $endpoint-&gt;fields);
-        $this-&gt;assertCount(<span class="hljs-number">5</span>, $endpoint-&gt;fields()-&gt;first()-&gt;pivot-&gt;rules);
+        <span class="hljs-keyword">$this</span>-&gt;assertCount(<span class="hljs-number">2</span>, $field-&gt;rules);
+        <span class="hljs-keyword">$this</span>-&gt;assertCount(<span class="hljs-number">1</span>, $endpoint-&gt;fields);
+        <span class="hljs-keyword">$this</span>-&gt;assertCount(<span class="hljs-number">5</span>, $endpoint-&gt;fields()-&gt;first()-&gt;pivot-&gt;rules);
     }
 }
 </code></pre>
