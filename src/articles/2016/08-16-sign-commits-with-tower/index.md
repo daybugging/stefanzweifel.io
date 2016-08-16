@@ -11,7 +11,7 @@ Today Github's weekly newsletter brought me [this](https://github.com/pstadler/k
 
 After some research and tinkering I found a working solution for me. Here's how I've done it:
 
-## 1. Follow @pstadlers [Guide](https://github.com/pstadler/keybase-gpg-github)
+## 1. Follow @pstadler's [Guide](https://github.com/pstadler/keybase-gpg-github)
 
 Just follow Patrick's guide step by step. I would also recommend to do the extra work and complete the optional steps for a password-less process.
 
