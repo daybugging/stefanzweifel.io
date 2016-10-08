@@ -23,6 +23,10 @@ Maybe you can use it too.
 - [IFTTT Account](http://ifttt.com)
 - Jawbone UP (connected with IFTTT)
 
+<div class="pa3 bg-near-white br2">
+    <p class="ma0"><b>Important Notice:</b> In this article I use the old Day One App (now called "Day One Classic"). If you're using the newest Day One App (Version 2) you should read <a href="https://gist.github.com/bjhomer/cca5ab5c346cb21480e4e19695aa5c8b">this</a> short post on how to use DayOne CLI with DayOne 2.</p>
+</div>
+
 ## What you have to do
 
 - Grab the [DayOne CLI](http://dayoneapp.com/downloads/dayone-cli.pkg) and install it.
