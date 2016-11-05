@@ -14,6 +14,7 @@ You need [node.js](http://nodejs.org) and [Gulp](http://gulpjs.com).
 $ git clone https://github.com/stefanzweifel/stefanzweifel.io.git
 $ cd stefanzweifel.io
 $ npm install
+$ mv secrets.example.json secrets.json
 $ gulp serve
 ```
 
